@@ -17,5 +17,6 @@ public class ContainerDef : ScriptableObject
     public LockType lockType;
     public ItemDef keyItem;
 
-    public int maxHitpoints;
+    public int maxHP;
+    public bool isInvincible;
 }

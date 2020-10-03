@@ -13,4 +13,15 @@ public class ScriptableObjectMenu
 
         ProjectWindowUtil.CreateAsset(asset, path);
     }
+
+    [MenuItem("Assets/Create/Items/Container Def")]
+    static void NewContainerDef()
+    {
+        var asset = ScriptableObject.CreateInstance<ContainerDef>();
+        var path = AssetDatabase.GetAssetPath(Selection.activeObject);
+
+        path += "/New ContainerDef.asset";
+
+        ProjectWindowUtil.CreateAsset(asset, path);
+    }
 }

@@ -14,17 +14,20 @@ public class Item : MonoBehaviour
     bool isBroken;
     public bool doNotReset;
 
+    Vector2 originalPosition;
+    bool isOriginal;
     // Start is called before the first frame update
     void Start()
     {
         interactable.OnInteract += Interact;
+        originalPosition = transform.position;
     }
 
     // Update is called once per frame
     void Update()
     {
         //might move this out of update for optimzation
-        itemSpriteRenderer.sortingOrder = Mathf.RoundToInt(transform.position.y * 100f) * -1;
+        itemSpriteRenderer.sortingOrder = Mathf.RoundToInt(transform.position.y * 16f) * -1;
     }
 
     private void OnValidate()
@@ -37,12 +40,24 @@ public class Item : MonoBehaviour
             if (itemSpriteRenderer != null)
             {
                 itemSpriteRenderer.sprite = itemDef.defaultSprite;
-                itemSpriteRenderer.sortingOrder = Mathf.RoundToInt(transform.position.y * 100f) * -1;
+                itemSpriteRenderer.sortingOrder = Mathf.RoundToInt(transform.position.y * 16f) * -1;
             }
         }
         //spriteRenderer = GetComponent<SpriteRenderer>();
         interactable = GetComponent<Interactable>();
-        gameObject.layer = 8; //set layer to interactable
+        if (gameObject.layer != 8)
+        {
+            gameObject.layer = 8; //set layer to interactable
+        }
+        isOriginal = true; //items placed in the world in the editor won't be destroyed on reset
+    }
+
+    public void SetDef(ItemDef itemDef)
+    {
+        this.itemDef = itemDef;
+        itemSpriteRenderer.sprite = itemDef.defaultSprite;
+        gameObject.name = itemDef.itemName;
+        currentUses = itemDef.maxUses;
     }
 
     public void Interact(Item item)
@@ -96,16 +111,22 @@ public class Item : MonoBehaviour
         itemSpriteRenderer.sprite = itemDef.defaultSprite;
     }
 
-    public void Reset()
+    public void ResetState()
     {
         if (doNotReset)
         {
             return;
+        }        
+        else if (isOriginal)
+        {
+            transform.position = originalPosition;
+            currentUses = itemDef.maxUses;
+            isBroken = false;
+            itemSpriteRenderer.sprite = itemDef.defaultSprite;
         }
         else
         {
-            currentUses = itemDef.maxUses;
-            itemSpriteRenderer.sprite = itemDef.defaultSprite;
+            Destroy(gameObject);
         }
     }
 }

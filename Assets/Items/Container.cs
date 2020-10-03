@@ -12,6 +12,10 @@ public class Container : MonoBehaviour
 
     public SpriteRenderer spriteRenderer;
     public Interactable interactable;
+    public ParticleSystem damageParticle;
+
+    public Vector2 minThrowRange;
+    public Vector2 maxThrowRange;
 
     public bool hasLock;
     public bool isOpen;
@@ -35,7 +39,16 @@ public class Container : MonoBehaviour
     {
         spriteRenderer = GetComponent<SpriteRenderer>();
         interactable = GetComponent<Interactable>();
-        gameObject.layer = 8; //set layer to interactable
+        if (containerDef != null)
+        {
+            spriteRenderer.sprite = containerDef.defaultSprite;
+            currentHP = containerDef.maxHP;
+        }
+        spriteRenderer.sortingOrder = Mathf.RoundToInt(transform.position.y * 16f) * -1;
+        if (gameObject.layer != 8)
+        {
+            gameObject.layer = 8; //set layer to interactable
+        }
     }
 
     public void Interact(Item item)
@@ -74,6 +87,42 @@ public class Container : MonoBehaviour
         }
     }
 
+    public void Bash(int dmg)
+    {
+        if (isOpen || containerDef.isInvincible)
+        {
+            return;
+        }
+
+        currentHP -= dmg;
+
+        currentHP = Mathf.Clamp(currentHP, 0, containerDef.maxHP);
+
+        if (currentHP <= 0)
+        {
+            ForceOpen();
+        }
+        else
+        {
+            if (dmg > 0)
+            {
+                StartCoroutine(Jiggle());
+            }
+            //other effects
+        }
+    }
+
+    public void ForceOpen()
+    {
+        if (isOpen)
+        {
+            return;
+        }
+
+        StartCoroutine(Jiggle());
+        Open();
+    }
+
     void Open()
     {
         isOpen = true;
@@ -84,29 +133,41 @@ public class Container : MonoBehaviour
 
     IEnumerator Jiggle()
     {
-        transform.Translate(new Vector3(0.02f, 0.02f));
+        transform.Translate(new Vector3(0.1f, 0.1f));
         yield return new WaitForSeconds(0.1f);
-        transform.Translate(new Vector3(-0.04f, -0.04f));
+        transform.Translate(new Vector3(-0.2f, -0.2f));
         yield return new WaitForSeconds(0.1f);
-        transform.Translate(new Vector3(0.02f, 0.02f));
+        transform.Translate(new Vector3(0.1f, 0.1f));
     }
 
     IEnumerator ThrowInventory()
     {
-        //TODO
+        if (damageParticle != null)
+        {
+            if (!damageParticle.isPlaying)
+            {
+                damageParticle.Play();
+            }
+        }
         foreach (ItemDef i in inventory)
         {
             Item item = Instantiate(Resources.Load<Item>("Prefabs/Item Prefab"), transform.position, Quaternion.identity);
-            item.GetComponent<BounceBehaviour>().Throw(new Vector2(UnityEngine.Random.Range(-0.3f, 0.3f), UnityEngine.Random.Range(-0.3f, 0.3f)));
-            yield return new WaitForSeconds(0.25f);
+            yield return new WaitForEndOfFrame();
+
+            item.SetDef(i);
+            item.GetComponent<BounceBehaviour>().Throw(new Vector2(UnityEngine.Random.Range(minThrowRange.x, maxThrowRange.x), UnityEngine.Random.Range(minThrowRange.y, maxThrowRange.y)));
+            yield return new WaitForSeconds(0.15f);
         }
+
         //inventory.Clear(); don't need to clear inventory, unless later on the player can choose items to withdraw
+
         yield return null;
     }
 
     public void ResetState()
     {
         isOpen = false;
+        currentHP = containerDef.maxHP;
         spriteRenderer.sprite = containerDef.defaultSprite;
     }
 }

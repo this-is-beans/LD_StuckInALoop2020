@@ -42,13 +42,40 @@ public class ItemTesting : MonoBehaviour
         }
     }
 
+    public void BashContainers()
+    {
+        Container[] allContainers = FindObjectsOfType<Container>();
+
+        foreach (Container c in allContainers)
+        {
+            c.Bash(Random.Range(0,3));
+        }
+    }
+
     public void OpenAllContainers()
     {
+        Container[] allContainers = FindObjectsOfType<Container>();
 
+        foreach (Container c in allContainers)
+        {
+            c.ForceOpen();
+        }
     }
 
     public void ResetLoop()
     {
+        Container[] allContainers = FindObjectsOfType<Container>();
 
+        foreach (Container c in allContainers)
+        {
+            c.ResetState();
+        }
+
+        Item[] allItems = FindObjectsOfType<Item>();
+
+        foreach (Item i in allItems)
+        {
+            i.ResetState();
+        }
     }
 }
