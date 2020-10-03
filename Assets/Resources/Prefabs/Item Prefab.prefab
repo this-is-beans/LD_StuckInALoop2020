@@ -274,7 +274,7 @@ MonoBehaviour:
   direction: {x: 0, y: 0}
   dead: 0
   initialHeight: 0
-  initialYVelocity: 0
-  speed: 0
-  gravity: 0
-  bounciness: 0
+  initialYVelocity: 4
+  speed: 1
+  gravity: -12
+  bounciness: 0.5

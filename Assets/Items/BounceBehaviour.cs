@@ -20,20 +20,17 @@ public class BounceBehaviour : MonoBehaviour
 
     void Start()
     {
-
-    }
-
-    private void OnValidate()
-    {
-        
+        enabled = false;
     }
 
     public void Throw(Vector2 dir)
     {
+        enabled = true;
+        dead = false;
+
         spriteTransform.localPosition = new Vector2(0, initialHeight);
         direction = dir;
         currentYVelocity = initialYVelocity;
-        dead = false;
     }
 
     public void Update()
@@ -71,10 +68,10 @@ public class BounceBehaviour : MonoBehaviour
     public void Dead()
     {
         dead = true;
-        speed = 0;
-        GetComponent<BoxCollider2D>().enabled = false;
+        //speed = 0;
+        //GetComponent<BoxCollider2D>().enabled = false;
         enabled = false;
-        gameObject.layer = 8;
+        //gameObject.layer = 8;
     }
 
     void OnCollisionEnter2D(Collision2D collision)

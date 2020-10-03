@@ -61,9 +61,10 @@ public class Item : MonoBehaviour
 
     }
 
-    public void Deplete()
+    public void Deplete(int amt)
     {
-        currentUses--;
+        currentUses -= amt;
+        currentUses = Mathf.Clamp(currentUses, 0, itemDef.maxUses);
 
         if (currentUses <= 0)
         {

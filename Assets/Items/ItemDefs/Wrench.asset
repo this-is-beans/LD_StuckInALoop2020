@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: Wrench
   m_EditorClassIdentifier: 
   itemName: Wrench
-  defaultSprite: {fileID: 0}
-  damagedSprite: {fileID: 0}
+  defaultSprite: {fileID: 21300000, guid: bd8fee0ea7f122c428ae61bf52e12b7f, type: 3}
+  damagedSprite: {fileID: 21300000, guid: 65f33aba4b4c47e41aed3821e7a50b14, type: 3}
   toolType: 0
   maxUses: 3
