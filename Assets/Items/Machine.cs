@@ -163,6 +163,7 @@ public class Machine : MonoBehaviour
         if (storedItem != null)
         {
             storedItem.Retrieved();
+            yield return new WaitForEndOfFrame();
             storedItem.GetComponent<BounceBehaviour>().Throw(new Vector2(UnityEngine.Random.Range(minThrowRange.x, maxThrowRange.x), UnityEngine.Random.Range(minThrowRange.y, maxThrowRange.y)));
         }
 
