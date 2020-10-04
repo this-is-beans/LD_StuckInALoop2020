@@ -86,8 +86,9 @@ MonoBehaviour:
   speed: 5
   enableBounce: 0
   bounceSpeed: 1
-  bounceHeight: 0
-  needBounce: 1
+  bounceMaxHeight: 0
+  bounceMinHeight: 0
+  isBouncing: 0
   bounceUp: 0
   interactableArea: {x: 0.4, y: 0.4}
   hands: {fileID: 2269332389389089208}
@@ -199,7 +200,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2269332389389089208}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -0.037, y: 0.892, z: 0}
+  m_LocalPosition: {x: -0.12, y: 0.24, z: 0}
   m_LocalScale: {x: 0.25, y: 0.25, z: 0.25}
   m_Children: []
   m_Father: {fileID: 1301591926301877379}
