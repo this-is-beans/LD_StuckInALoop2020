@@ -52,11 +52,16 @@ public class Container : Interactable
     {
         if (isOpen)
         {
-            return null;
+            return item;
         }
 
         if (hasLock)
         {
+            if (item == null)
+            {
+                return null;
+            }
+
             if (CheckItemKey(item.itemDef))
             {
                 Open();
@@ -65,9 +70,15 @@ public class Container : Interactable
                     item.Consume();
                 }
             }
+            else if (item.itemDef == containerDef.destroyItem)
+            {
+                Bash(item.itemDef.damageStrength);
+                item.Deplete(1);
+                return item;
+            }
             else
             {
-                return null;
+                return item;
             }
         }
         else //no lock
@@ -75,7 +86,7 @@ public class Container : Interactable
             Open();
         }
 
-        return null;
+        return item;
     }
 
     bool CheckItemKey(ItemDef itemDef)

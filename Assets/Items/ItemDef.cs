@@ -20,6 +20,7 @@ public class ItemDef : ScriptableObject
 
     public ToolType toolType;
     public int maxUses;
+    public int damageStrength;
 
     public List<ItemDef> combinableList;
     public List<ItemDef> combinableListTarget;
