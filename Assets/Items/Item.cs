@@ -97,7 +97,13 @@ public class Item : Interactable
 
     public void Drop()
     {
+        StartCoroutine(DropCoroutine());
+    }
 
+    IEnumerator DropCoroutine()
+    {
+        yield return new WaitForEndOfFrame();
+        GetComponent<BounceBehaviour>().Throw(new Vector2(UnityEngine.Random.Range(0f, 0f), UnityEngine.Random.Range(0f,0f)));
     }
 
     public void Stored()

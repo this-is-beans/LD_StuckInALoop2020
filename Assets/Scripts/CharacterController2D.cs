@@ -90,7 +90,7 @@ public class CharacterController2D : MonoBehaviour {
         if (Input.GetKey(KeyCode.A) || Input.GetKey(KeyCode.LeftArrow)) {
             moveVec2 += Vector2.left;
         }
-        if (Input.GetKey(KeyCode.S) || Input.GetKey(KeyCode.RightArrow)) {
+        if (Input.GetKey(KeyCode.D) || Input.GetKey(KeyCode.RightArrow)) {
             moveVec2 += Vector2.right;
         }
         if (Input.GetKey(KeyCode.W) || Input.GetKey(KeyCode.UpArrow)) {
@@ -178,6 +178,7 @@ public class CharacterController2D : MonoBehaviour {
 
     void DropItem() {
         heldItem.transform.SetParent(null);
+        heldItem.Drop();
         heldItem = null;
     }
     void AddItem(Item item) {
