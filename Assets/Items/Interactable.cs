@@ -20,8 +20,10 @@ public class Interactable : MonoBehaviour
         
     }
 
-    public Item Interact(Item item)
+    public virtual Item Interact(Item item)
     {
+        print("shouldn't be here!");
+
         // OnInteract?.Invoke(item);
         return null;
     }
