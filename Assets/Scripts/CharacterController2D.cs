@@ -92,6 +92,7 @@ public class CharacterController2D : MonoBehaviour {
 
                     break;
                 }
+                
             }
         }
         else {
