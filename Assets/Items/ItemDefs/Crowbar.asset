@@ -10,15 +10,15 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 67f3f8102317f2d44a8011daf3a1542b, type: 3}
-  m_Name: Hammer
+  m_Name: Crowbar
   m_EditorClassIdentifier: 
-  itemName: Hammer
-  defaultSprite: {fileID: 21300000, guid: 80491780c6edbe9418bbd51f6349f8aa, type: 3}
-  damagedSprite: {fileID: 21300000, guid: b252dc3b5465c1f43a64a68fb682462b, type: 3}
+  itemName: Crowbar
+  defaultSprite: {fileID: 21300000, guid: e0094343e7a8b61429722c682bcdda7c, type: 3}
+  damagedSprite: {fileID: 21300000, guid: e9c50d11913cae24c9fb95e7183fc9b6, type: 3}
   itemTextColor: {r: 0, g: 0, b: 1, a: 0}
-  itemDescription: Smash obstructing machines!
+  itemDescription: Smashes open Containers!
   toolType: 0
-  maxUses: 3
-  damageStrength: 0
+  maxUses: 15
+  damageStrength: 1
   combinableList: []
   combinableListTarget: []
