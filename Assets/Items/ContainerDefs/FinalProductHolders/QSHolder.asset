@@ -10,13 +10,13 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 9dbbed016a24e464b99bbeb1346f2c62, type: 3}
-  m_Name: PlantPot
+  m_Name: QSHolder
   m_EditorClassIdentifier: 
-  defaultSprite: {fileID: -2658115467873888437, guid: aa1146017606a064c986485c58506a5a, type: 3}
-  openedSprite: {fileID: -5233094815540895547, guid: aa1146017606a064c986485c58506a5a, type: 3}
-  lockType: 1
-  keyItem: {fileID: 11400000, guid: ce31dd2d27352384fa7376717b567528, type: 2}
+  defaultSprite: {fileID: -4466221149383954103, guid: aa1146017606a064c986485c58506a5a, type: 3}
+  openedSprite: {fileID: -4466221149383954103, guid: aa1146017606a064c986485c58506a5a, type: 3}
+  lockType: 0
+  keyItem: {fileID: 11400000, guid: 45135d2bc26b9374b8b6f9ca3f6f531c, type: 2}
   consumesItem: 0
   destroyItem: {fileID: 0}
-  maxHP: 1
-  isInvincible: 0
+  maxHP: 0
+  isInvincible: 1
