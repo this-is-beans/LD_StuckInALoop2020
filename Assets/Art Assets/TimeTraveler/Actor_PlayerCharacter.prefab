@@ -297,7 +297,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4529180322981067101}
   - component: {fileID: 141710529330266540}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: WorldCollider
   m_TagString: Untagged
   m_Icon: {fileID: 0}
