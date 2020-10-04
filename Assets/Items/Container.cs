@@ -2,6 +2,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Events;
 
 [RequireComponent(typeof(SpriteRenderer))]
 [RequireComponent(typeof(Interactable))]
@@ -51,7 +52,7 @@ public class Container : MonoBehaviour
         }
     }
 
-    public void Interact(Item item)
+    void Interact(Item item)
     {
         if (isOpen)
         {
@@ -63,6 +64,10 @@ public class Container : MonoBehaviour
             if (CheckItemKey(item.itemDef))
             {
                 Open();
+                if (containerDef.consumesItem)
+                {
+                    item.Consume();
+                }
             }
             else
             {
@@ -127,7 +132,7 @@ public class Container : MonoBehaviour
     {
         isOpen = true;
         spriteRenderer.sprite = containerDef.openedSprite;
-
+        gameObject.layer = 2;
         StartCoroutine(ThrowInventory());
     }
 
@@ -169,5 +174,6 @@ public class Container : MonoBehaviour
         isOpen = false;
         currentHP = containerDef.maxHP;
         spriteRenderer.sprite = containerDef.defaultSprite;
+        gameObject.layer = 8; //set layer to interactable
     }
 }

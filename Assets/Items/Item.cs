@@ -60,7 +60,7 @@ public class Item : MonoBehaviour
         currentUses = itemDef.maxUses;
     }
 
-    public void Interact(Item item)
+    void Interact(Item item)
     {
         //check if items can be combined
 
@@ -74,6 +74,25 @@ public class Item : MonoBehaviour
     public void Drop()
     {
 
+    }
+
+    public void Stored()
+    {
+        gameObject.layer = 2; //set layer to ignore raycast
+        foreach(Transform t in transform)
+        {
+            t.gameObject.SetActive(false);
+        }
+    }
+
+    public void Retrieved()
+    {
+        transform.SetParent(null);
+        gameObject.layer = 8; //set layer to interactable        
+        foreach (Transform t in transform)
+        {
+            t.gameObject.SetActive(true);
+        }
     }
 
     public void Deplete(int amt)
@@ -92,6 +111,19 @@ public class Item : MonoBehaviour
         isBroken = true;
         itemSpriteRenderer.sprite = itemDef.damagedSprite;
         Drop(); //drop the item gives player feedback that it is broken
+    }
+
+    public void Consume()
+    {
+        if (isOriginal)
+        {
+            doNotReset = false;
+            Stored();
+        }
+        else
+        {
+            Destroy(gameObject);
+        }        
     }
 
     public void Charge(int amt)
@@ -119,6 +151,11 @@ public class Item : MonoBehaviour
         }        
         else if (isOriginal)
         {
+            gameObject.layer = 8; //set layer to interactable        
+            foreach (Transform t in transform)
+            {
+                t.gameObject.SetActive(true);
+            }
             transform.position = originalPosition;
             currentUses = itemDef.maxUses;
             isBroken = false;
