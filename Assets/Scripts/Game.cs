@@ -34,7 +34,7 @@ public class Game : MonoBehaviour
             pause = true;
         }
 
-        timeDisplayText.text = System.TimeSpan.FromSeconds(timer).ToString("mm\\:ss\\.ff");
+        timeDisplayText.text = System.TimeSpan.FromSeconds(timer).ToString("mm\\:ss\\:ff");
         //timeDisplayText.text = minutes.ToString("D2") + ":" + seconds.ToString("D2");
     }
 
