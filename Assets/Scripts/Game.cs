@@ -49,10 +49,10 @@ public class Game : MonoBehaviour
 
         foreach (Item i in allItems)
         {
-            if (i.itemSpriteRenderer.isVisible)
+            if (i.itemSpriteRenderer.isVisible && !i.doNotReset)
             {
                 Destroy(Instantiate(warpEffect, i.transform.position, Quaternion.identity), 1f);
-                yield return new WaitForSeconds(0.1f);
+                yield return new WaitForSeconds(0.1f);                
                 i.ResetState();
                 yield return new WaitForSeconds(0.1f);
             }
@@ -83,15 +83,19 @@ public class Game : MonoBehaviour
 
         foreach (Machine c in machines)
         {
-            //Destroy(Instantiate(warpEffect, c.transform.position, Quaternion.identity), 1f);
+            Destroy(Instantiate(warpEffect, c.transform.position, Quaternion.identity), 1f);
             //yield return new WaitForSeconds(0.1f);
 
             c.ResetState();
-            //yield return new WaitForSeconds(0.1f);
+            yield return new WaitForSeconds(0.1f);
         }
 
-        character.ResetState();
+        Destroy(Instantiate(warpEffect, character.transform.position, Quaternion.identity), 1f);
+        yield return new WaitForSeconds(0.2f);
 
+        character.ResetState();
+        yield return new WaitForSeconds(0.2f);
+        Destroy(Instantiate(warpEffect, character.transform.position, Quaternion.identity), 1f);
         character.UnFreeze();
 
         pause = false;
