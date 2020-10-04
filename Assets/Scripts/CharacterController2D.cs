@@ -38,6 +38,9 @@ public class CharacterController2D : MonoBehaviour {
     private Text ui_interactLabel;
     public Text ui_heldLabel;
 
+    // Time Reset Stuff
+    private bool isFrozen;
+    private Vector3 startPosition;
 
     /** space to think
     
@@ -47,7 +50,9 @@ public class CharacterController2D : MonoBehaviour {
     void Start() {
         ui_interactDescription = GameObject.Find("UI_InteractDescription").GetComponent<Text>();
         ui_interactLabel = GameObject.Find("UI_InteractLabel").GetComponent<Text>();
+        startPosition = gameObject.transform.position;
         isBouncing = false;
+        isFrozen = false;
         enableBounce = true;
         bounceSpeed = (speed <= 0) ? 6 : speed + 1;
         bounceMaxHeight = .6f;
@@ -56,6 +61,8 @@ public class CharacterController2D : MonoBehaviour {
 
     // Update is called once per frame
     void Update() {
+        
+        if (!isFrozen) {
         characterSpriteRenderer.sortingOrder = (Mathf.RoundToInt(transform.position.y * 16f) * -1);
         if (heldItem != null) {
             heldItem.itemSpriteRenderer.sortingOrder = characterSpriteRenderer.sortingOrder + 1;
@@ -114,11 +121,11 @@ public class CharacterController2D : MonoBehaviour {
          */
 
         if (Input.GetKeyDown(KeyCode.Space) || Input.GetKeyDown(KeyCode.KeypadEnter)) {
-            if (targetItem != null) {
+            if (targetItem) {
                 Interact(targetItem);
             }
             else {
-                DropItem();
+                if (heldItem) DropItem();
             }
         }
 
@@ -170,6 +177,7 @@ public class CharacterController2D : MonoBehaviour {
             transform.position.x + moveVec2.x * Time.deltaTime * speed,
             transform.position.y + moveVec2.y * Time.deltaTime * speed);
     }
+}
 
     void Interact(Interactable target) {
         // do some stupid thing with things that are connected
@@ -223,5 +231,17 @@ public class CharacterController2D : MonoBehaviour {
         heldItem.transform.SetParent(hands.transform);
         heldItem.transform.localPosition = Vector3.zero;
         item.itemSpriteRenderer.sortingOrder = Mathf.RoundToInt(transform.position.y * 16f) * -1;
+    }
+
+    public void Freeze() {
+        this.isFrozen = true;
+    }
+
+    public void UnFreeze() {
+        this.isFrozen = false;
+    }
+    public void ResetState() {
+        if(heldItem) DropItem();
+        gameObject.transform.localPosition = startPosition;
     }
 }
