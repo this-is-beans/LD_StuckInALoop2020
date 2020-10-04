@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections;
 using System.Collections.Generic;
+using UnityEditor;
 using UnityEngine;
 using UnityEngine.UI;
 using Random = UnityEngine.Random;
@@ -26,7 +27,7 @@ public class CharacterController2D : MonoBehaviour {
 
     // player hands and interactions
 
-    [SerializeField] private Vector2 interactableArea;
+    [SerializeField] private float interactableAreaRadius;
     private Collider2D[] interactables;
 
     [SerializeField] private GameObject hands;
@@ -47,6 +48,10 @@ public class CharacterController2D : MonoBehaviour {
  smol space, to think of things
     
     ** end space to think **/
+    void OnDrawGizmosSelected() {
+        Handles.color = Color.cyan;
+        Handles.DrawWireDisc(gameObject.transform.position, gameObject.transform.forward, interactableAreaRadius);
+    }
     void Start() {
         ui_interactDescription = GameObject.Find("UI_InteractDescription").GetComponent<Text>();
         ui_interactLabel = GameObject.Find("UI_InteractLabel").GetComponent<Text>();
@@ -69,9 +74,9 @@ public class CharacterController2D : MonoBehaviour {
         }
 
         // get nearby interactables
-        interactables = Physics2D.OverlapBoxAll(
+        interactables = Physics2D.OverlapCircleAll(
             transform.position,
-            interactableArea, 0,
+            interactableAreaRadius, 
             LayerMask.GetMask("Interactable"));
 
         Interactable targetItem = null;
