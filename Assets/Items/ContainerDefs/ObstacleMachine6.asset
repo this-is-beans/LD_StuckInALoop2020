@@ -10,13 +10,13 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 9dbbed016a24e464b99bbeb1346f2c62, type: 3}
-  m_Name: Locker
+  m_Name: ObstacleMachine6
   m_EditorClassIdentifier: 
-  defaultSprite: {fileID: -7805655902021012329, guid: aa1146017606a064c986485c58506a5a, type: 3}
-  openedSprite: {fileID: -3874083704860503495, guid: aa1146017606a064c986485c58506a5a, type: 3}
+  defaultSprite: {fileID: 7029221768118296174, guid: aa1146017606a064c986485c58506a5a, type: 3}
+  openedSprite: {fileID: 0}
   lockType: 1
-  keyItem: {fileID: 11400000, guid: 28ada2c3c8ed58740be76d48255bff40, type: 2}
+  keyItem: {fileID: 11400000, guid: 40a275786231e9141b4d01091b7d3c87, type: 2}
   consumesItem: 0
   destroyItem: {fileID: 0}
-  maxHP: 3
+  maxHP: 5
   isInvincible: 0
