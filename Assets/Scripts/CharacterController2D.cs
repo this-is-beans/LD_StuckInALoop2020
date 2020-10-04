@@ -54,9 +54,9 @@ public class CharacterController2D : MonoBehaviour {
         isBouncing = false;
         isFrozen = false;
         enableBounce = true;
-        bounceSpeed = (speed <= 0) ? 6 : speed + 1;
-        bounceMaxHeight = .6f;
-        bounceMinHeight = .4f;
+        bounceSpeed = (speed <= 0) ? 5: speed/2;
+        bounceMaxHeight = .2f;
+        bounceMinHeight = .05f;
     }
 
     // Update is called once per frame
@@ -154,7 +154,7 @@ public class CharacterController2D : MonoBehaviour {
                 if (bounceUp) {
                     characterSpriteRenderer.transform.localPosition = new Vector3(
                         oldVector3.x,
-                        Math.Min(_bounceHeight + .3f, oldVector3.y + Time.deltaTime * (speed + 1)),
+                        Math.Min(_bounceHeight + .3f, oldVector3.y + Time.deltaTime * bounceSpeed),
                         0);
                     if (characterSpriteRenderer.transform.localPosition.y >= _bounceHeight)
                         bounceUp = false;
@@ -162,7 +162,7 @@ public class CharacterController2D : MonoBehaviour {
                 else {
                     characterSpriteRenderer.transform.localPosition = new Vector3(
                         oldVector3.x,
-                        Math.Max(0, oldVector3.y - Time.deltaTime * (speed + 1)),
+                        Math.Max(0, oldVector3.y - Time.deltaTime * bounceSpeed),
                         0);
                 }
             }
