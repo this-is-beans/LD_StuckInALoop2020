@@ -40,6 +40,12 @@ public class Game : MonoBehaviour
 
     IEnumerator ResetLoop()
     {
+
+        CharacterController2D character = FindObjectOfType<CharacterController2D>();
+        character.Freeze();
+        character.ResetState();
+        
+        
         Item[] allItems = FindObjectsOfType<Item>();
 
         foreach (Item i in allItems)
@@ -72,6 +78,8 @@ public class Game : MonoBehaviour
             c.ResetState();
             yield return new WaitForSeconds(0.1f);
         }
+
+        character.UnFreeze();
 
         pause = false;
     }
