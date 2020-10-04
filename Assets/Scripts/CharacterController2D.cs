@@ -241,7 +241,6 @@ public class CharacterController2D : MonoBehaviour {
         this.isFrozen = false;
     }
     public void ResetState() {
-        if(heldItem) DropItem();
         gameObject.transform.localPosition = startPosition;
     }
 }
