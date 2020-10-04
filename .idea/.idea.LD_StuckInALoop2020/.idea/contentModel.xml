@@ -30,7 +30,9 @@
         </e>
         <e p="ItemTesting.cs" t="Include" />
         <e p="Scripts" t="Include">
+          <e p="BlynxyCharacterController2D.cs" t="Include" />
           <e p="CharacterController2D.cs" t="Include" />
+          <e p="Game.cs" t="Include" />
         </e>
       </e>
       <e p="LD_StuckInALoop2020.sln" t="IncludeFlat" />
