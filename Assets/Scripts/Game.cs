@@ -43,41 +43,54 @@ public class Game : MonoBehaviour
 
         CharacterController2D character = FindObjectOfType<CharacterController2D>();
         character.Freeze();
-        character.ResetState();
         
         
         Item[] allItems = FindObjectsOfType<Item>();
 
         foreach (Item i in allItems)
         {
-            Destroy(Instantiate(warpEffect, i.transform.position, Quaternion.identity), 1f);
-            yield return new WaitForSeconds(0.1f);
-
-            i.ResetState();
-            yield return new WaitForSeconds(0.1f);
+            if (i.itemSpriteRenderer.isVisible)
+            {
+                Destroy(Instantiate(warpEffect, i.transform.position, Quaternion.identity), 1f);
+                yield return new WaitForSeconds(0.1f);
+                i.ResetState();
+                yield return new WaitForSeconds(0.1f);
+            }
+            else
+            {
+                i.ResetState();
+            }
         }
 
         Container[] allContainers = FindObjectsOfType<Container>();
 
         foreach (Container c in allContainers)
         {
-            Destroy(Instantiate(warpEffect, c.transform.position, Quaternion.identity), 1f);
-            yield return new WaitForSeconds(0.1f);
-
-            c.ResetState();
-            yield return new WaitForSeconds(0.1f);
+            if (c.spriteRenderer.isVisible)
+            {
+                Destroy(Instantiate(warpEffect, c.transform.position, Quaternion.identity), 1f);
+                //yield return new WaitForSeconds(0.1f);
+                c.ResetState();
+                yield return new WaitForSeconds(0.1f);
+            }
+            else
+            {
+                c.ResetState();
+            }
         }
 
         Machine[] machines = FindObjectsOfType<Machine>();
 
         foreach (Machine c in machines)
         {
-            Destroy(Instantiate(warpEffect, c.transform.position, Quaternion.identity), 1f);
-            yield return new WaitForSeconds(0.1f);
+            //Destroy(Instantiate(warpEffect, c.transform.position, Quaternion.identity), 1f);
+            //yield return new WaitForSeconds(0.1f);
 
             c.ResetState();
-            yield return new WaitForSeconds(0.1f);
+            //yield return new WaitForSeconds(0.1f);
         }
+
+        character.ResetState();
 
         character.UnFreeze();
 
