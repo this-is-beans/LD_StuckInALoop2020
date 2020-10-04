@@ -10,13 +10,13 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 67f3f8102317f2d44a8011daf3a1542b, type: 3}
-  m_Name: Wrench
+  m_Name: Screwdriver
   m_EditorClassIdentifier: 
   itemName: Wrench
-  defaultSprite: {fileID: 21300000, guid: c5644914bb8d2c444b576f036aab8182, type: 3}
-  damagedSprite: {fileID: 21300000, guid: 08f692f1e3a95ee4fb4d295812cb6a74, type: 3}
+  defaultSprite: {fileID: 21300000, guid: d06cd3bc28a2be544892ade212950426, type: 3}
+  damagedSprite: {fileID: 21300000, guid: 90e054e7090b7b745ac9b726e2b143a4, type: 3}
   itemTextColor: {r: 0, g: 0, b: 1, a: 0}
-  itemDescription: Turn up the tork!
+  itemDescription: Orange juice and vodka!
   toolType: 0
   maxUses: 3
   combinableList: []
