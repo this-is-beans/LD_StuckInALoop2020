@@ -53,3 +53,6 @@ TagManager:
   - name: Ceiling_Overlap
     uniqueID: 1857461127
     locked: 0
+  - name: Effect
+    uniqueID: 222719541
+    locked: 0
