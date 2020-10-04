@@ -72,8 +72,8 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 0
-  m_Sprite: {fileID: -3458675146260532585, guid: aa1146017606a064c986485c58506a5a, type: 3}
+  m_SortingOrder: -44
+  m_Sprite: {fileID: 21300000, guid: 2c77cbd74fb7c86459dd8dde80fbf3f9, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -98,7 +98,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   containerDef: {fileID: 11400000, guid: 25e660e7cd756af40b817b1863a511d9, type: 2}
   spriteRenderer: {fileID: 5519162463556030457}
-  interactable: {fileID: 0}
+  interactable: {fileID: 4608880304803550075}
   damageParticle: {fileID: 7061308224495887449}
   minThrowRange: {x: -1, y: -1}
   maxThrowRange: {x: 1, y: -1.5}

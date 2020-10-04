@@ -12,8 +12,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9dbbed016a24e464b99bbeb1346f2c62, type: 3}
   m_Name: Lever
   m_EditorClassIdentifier: 
-  defaultSprite: {fileID: 21300000, guid: 9deaf74d4898f8147829c4dc60bfdebd, type: 3}
-  openedSprite: {fileID: 21300000, guid: 2e854385d70a72d4c9e203611578de67, type: 3}
+  defaultSprite: {fileID: -2188385687950151515, guid: aa1146017606a064c986485c58506a5a, type: 3}
+  openedSprite: {fileID: -3431436219278494651, guid: aa1146017606a064c986485c58506a5a, type: 3}
   lockType: 0
   keyItem: {fileID: 0}
   consumesItem: 0

@@ -14,7 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   itemName: Charged Cell
   defaultSprite: {fileID: 21300000, guid: eda0a9ff9b2bbc043bbd786f7c1b7115, type: 3}
-  damagedSprite: {fileID: 21300000, guid: eda0a9ff9b2bbc043bbd786f7c1b7115, type: 3}
+  damagedSprite: {fileID: 21300000, guid: 1f1d840cdf75b2a40b105485b5ec5a82, type: 3}
   itemTextColor: {r: 0, g: 1, b: 0, a: 0}
   itemDescription: This battery is ready to go!
   toolType: 0
