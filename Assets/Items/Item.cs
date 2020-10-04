@@ -191,6 +191,7 @@ public class Item : Interactable
             currentUses = itemDef.maxUses;
             isBroken = false;
             itemSpriteRenderer.sprite = itemDef.defaultSprite;
+            itemSpriteRenderer.sortingOrder = Mathf.RoundToInt(transform.position.y * 16f) * -1;
         }
         else
         {

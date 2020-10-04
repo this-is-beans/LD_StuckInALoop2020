@@ -152,6 +152,9 @@ public class Machine : Interactable
         if (doNotReset)
         {
             storedItem.doNotReset = true;
+        } else
+        {
+            storedItem.doNotReset = false;
         }
     }
 
