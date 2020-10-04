@@ -13,7 +13,7 @@ public class Game : MonoBehaviour
 
     void Start()
     {
-        
+        timer = ResetTime;
     }
 
     void Update()
@@ -24,12 +24,12 @@ public class Game : MonoBehaviour
         }
 
 
-        timer += Time.deltaTime;
+        timer -= Time.deltaTime;
 
-        if (timer >= ResetTime)
+        if (timer <= 0)
         {
             ResetLoop();
-            timer = 0;
+            timer = ResetTime;
         }
 
         timeDisplayText.text = System.TimeSpan.FromSeconds(timer).ToString("mm\\:ss\\.ff");
