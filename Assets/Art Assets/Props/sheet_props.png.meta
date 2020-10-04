@@ -107,6 +107,27 @@ TextureImporter:
   - first:
       213: -3431436219278494651
     second: props_interactable_1
+  - first:
+      213: 8173725159927097591
+    second: props_interactable_2
+  - first:
+      213: -3176516222879823854
+    second: props_interactable_3
+  - first:
+      213: -3404929435381816037
+    second: props_interactable_4
+  - first:
+      213: 858839269789676961
+    second: props_interactable_5
+  - first:
+      213: 6520412641442537300
+    second: props_interactable_6
+  - first:
+      213: 7901374097392614128
+    second: props_interactable_7
+  - first:
+      213: 7657755235792873694
+    second: props_interactable_8
   externalObjects: {}
   serializedVersion: 11
   mipmaps:
@@ -206,7 +227,7 @@ TextureImporter:
       name: props_breakables_1
       rect:
         serializedVersion: 2
-        x: 84
+        x: 129
         y: 214
         width: 18
         height: 21
@@ -290,8 +311,8 @@ TextureImporter:
       name: props_breakables_5
       rect:
         serializedVersion: 2
-        x: 56
-        y: 170
+        x: 180
+        y: 178
         width: 18
         height: 34
       alignment: 9
@@ -311,7 +332,7 @@ TextureImporter:
       name: props_breakables_6
       rect:
         serializedVersion: 2
-        x: 103
+        x: 196
         y: 213
         width: 18
         height: 22
@@ -353,8 +374,8 @@ TextureImporter:
       name: props_containers_00
       rect:
         serializedVersion: 2
-        x: 187
-        y: 205
+        x: 65
+        y: 182
         width: 18
         height: 30
       alignment: 9
@@ -374,8 +395,8 @@ TextureImporter:
       name: props_containers_01
       rect:
         serializedVersion: 2
-        x: 206
-        y: 205
+        x: 84
+        y: 182
         width: 20
         height: 30
       alignment: 9
@@ -395,8 +416,8 @@ TextureImporter:
       name: props_containers_02
       rect:
         serializedVersion: 2
-        x: 227
-        y: 205
+        x: 105
+        y: 182
         width: 18
         height: 30
       alignment: 9
@@ -416,8 +437,8 @@ TextureImporter:
       name: props_containers_03
       rect:
         serializedVersion: 2
-        x: 75
-        y: 170
+        x: 199
+        y: 178
         width: 28
         height: 34
       alignment: 9
@@ -437,8 +458,8 @@ TextureImporter:
       name: props_containers_04
       rect:
         serializedVersion: 2
-        x: 104
-        y: 170
+        x: 228
+        y: 178
         width: 28
         height: 34
       alignment: 9
@@ -458,8 +479,8 @@ TextureImporter:
       name: props_containers_05
       rect:
         serializedVersion: 2
-        x: 191
-        y: 169
+        x: 58
+        y: 142
         width: 30
         height: 35
       alignment: 9
@@ -542,8 +563,8 @@ TextureImporter:
       name: props_containers_09
       rect:
         serializedVersion: 2
-        x: 133
-        y: 170
+        x: 0
+        y: 143
         width: 28
         height: 34
       alignment: 9
@@ -563,8 +584,8 @@ TextureImporter:
       name: props_containers_10
       rect:
         serializedVersion: 2
-        x: 162
-        y: 170
+        x: 29
+        y: 143
         width: 28
         height: 34
       alignment: 9
@@ -749,11 +770,158 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
+      name: props_interactable_2
+      rect:
+        serializedVersion: 2
+        x: 69
+        y: 215
+        width: 14
+        height: 20
+      alignment: 9
+      pivot: {x: 0.5, y: 0.35}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 7f8a0290ab7ee6170800000000000000
+      internalID: 8173725159927097591
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: props_interactable_3
+      rect:
+        serializedVersion: 2
+        x: 84
+        y: 215
+        width: 14
+        height: 20
+      alignment: 9
+      pivot: {x: 0.5, y: 0.35}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 2188bff335fbae3d0800000000000000
+      internalID: -3176516222879823854
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: props_interactable_4
+      rect:
+        serializedVersion: 2
+        x: 99
+        y: 215
+        width: 14
+        height: 20
+      alignment: 9
+      pivot: {x: 0.5, y: 0.35}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: b15abc6f7b24fb0d0800000000000000
+      internalID: -3404929435381816037
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: props_interactable_5
+      rect:
+        serializedVersion: 2
+        x: 114
+        y: 215
+        width: 14
+        height: 20
+      alignment: 9
+      pivot: {x: 0.5, y: 0.35}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 1a538faf3c53beb00800000000000000
+      internalID: 858839269789676961
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: props_interactable_6
+      rect:
+        serializedVersion: 2
+        x: 141
+        y: 128
+        width: 53
+        height: 49
+      alignment: 9
+      pivot: {x: 0.509434, y: 0.3469388}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 45f162230c82d7a50800000000000000
+      internalID: 6520412641442537300
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: props_interactable_7
+      rect:
+        serializedVersion: 2
+        x: 148
+        y: 214
+        width: 23
+        height: 21
+      alignment: 9
+      pivot: {x: 0.5217391, y: 0.47619048}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 0fa3f88d0e157ad60800000000000000
+      internalID: 7901374097392614128
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: props_interactable_8
+      rect:
+        serializedVersion: 2
+        x: 172
+        y: 214
+        width: 23
+        height: 21
+      alignment: 9
+      pivot: {x: 0.5217391, y: 0.47619048}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: ed8625e70dfc54a60800000000000000
+      internalID: 7657755235792873694
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
       name: props_static_0
       rect:
         serializedVersion: 2
-        x: 0
-        y: 174
+        x: 124
+        y: 182
         width: 19
         height: 30
       alignment: 9
@@ -773,8 +941,8 @@ TextureImporter:
       name: props_static_1
       rect:
         serializedVersion: 2
-        x: 222
-        y: 166
+        x: 89
+        y: 139
         width: 22
         height: 38
       alignment: 9
@@ -794,8 +962,8 @@ TextureImporter:
       name: props_static_2
       rect:
         serializedVersion: 2
-        x: 0
-        y: 125
+        x: 112
+        y: 137
         width: 28
         height: 40
       alignment: 9
@@ -815,7 +983,7 @@ TextureImporter:
       name: props_static_3
       rect:
         serializedVersion: 2
-        x: 69
+        x: 114
         y: 215
         width: 14
         height: 20
@@ -836,8 +1004,8 @@ TextureImporter:
       name: props_static_4
       rect:
         serializedVersion: 2
-        x: 20
-        y: 171
+        x: 144
+        y: 179
         width: 35
         height: 33
       alignment: 9
@@ -878,8 +1046,8 @@ TextureImporter:
       name: props_static_6
       rect:
         serializedVersion: 2
-        x: 29
-        y: 115
+        x: 195
+        y: 127
         width: 38
         height: 50
       alignment: 9
@@ -899,8 +1067,8 @@ TextureImporter:
       name: props_static_7
       rect:
         serializedVersion: 2
-        x: 122
-        y: 207
+        x: 0
+        y: 184
         width: 64
         height: 28
       alignment: 9
