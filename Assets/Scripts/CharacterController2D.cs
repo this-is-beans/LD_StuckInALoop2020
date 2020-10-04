@@ -17,11 +17,15 @@ public class CharacterController2D : MonoBehaviour {
     
     [SerializeField]
     private float speed;
+
+    [SerializeField] private bool enableBounce;
     [SerializeField]
     private float bounceSpeed;
-
+    [SerializeField]
     private float bounceHeight;
+    [SerializeField]
     private bool needBounce;
+    [SerializeField]
     private bool bounceUp;
 
 
@@ -55,13 +59,14 @@ public class CharacterController2D : MonoBehaviour {
 
     // Update is called once per frame
     void Update() {
+        characterSpriteRenderer.sortingOrder = (Mathf.RoundToInt(transform.position.y * 16f) * -1)-2;
         
         // get nearby interactables
         interactables = Physics2D.OverlapBoxAll(transform.position,
             interactableArea, 0,
             LayerMask.GetMask("Interactable"));
         Item targetItem = null;
-        if (interactables != null) {
+        if (interactables.Length>0) {
             // print(interactables[0].GetComponent<>());
             foreach (Collider2D iobj in interactables) {
                 Item item = iobj.GetComponent<Item>();
@@ -109,24 +114,32 @@ public class CharacterController2D : MonoBehaviour {
             }
         }
 
-        if (moveVec2 != Vector2.zero && needBounce) {
-            bounceHeight = Random.Range(0f, 1f);
-            needBounce = false;
-        }
-        
-        if (characterSpriteRenderer.transform.localPosition.y == 0) {
-            needBounce = true;
-        }
-        else {
-            if (bounceUp) {
-                characterSpriteRenderer.transform.localPosition = new Vector3(characterSpriteRenderer.transform.localPosition.x,Math.Min(1,
-                    characterSpriteRenderer.transform.localPosition.y + Time.deltaTime * bounceSpeed),0);
-            }
-            else {
-                characterSpriteRenderer.transform.localPosition = new Vector3(characterSpriteRenderer.transform.localPosition.x,Math.Max(0,
-                                characterSpriteRenderer.transform.localPosition.y - Time.deltaTime * bounceSpeed),0);
+        if (enableBounce) {
+            // check if moving and not currently bouncing
+            if (moveVec2 != Vector2.zero && needBounce) {
+                bounceHeight = Random.Range(.4f, 1f);
+                needBounce = false;
+                bounceUp = true;
             }
             
+           // bounce if bouncing
+            if(!needBounce) {
+                if (bounceUp) {
+                    characterSpriteRenderer.transform.localPosition = new Vector3(characterSpriteRenderer.transform.localPosition.x,Math.Min(bounceHeight,
+                        characterSpriteRenderer.transform.localPosition.y + Time.deltaTime * (speed+1)),0);
+                    if (characterSpriteRenderer.transform.localPosition.y == bounceHeight)
+                        bounceUp = false;
+                }
+                else {
+                    characterSpriteRenderer.transform.localPosition = new Vector3(characterSpriteRenderer.transform.localPosition.x,Math.Max(0,
+                                    characterSpriteRenderer.transform.localPosition.y - Time.deltaTime * (speed+1)),0);
+                }
+                
+            }
+            
+            if (characterSpriteRenderer.transform.localPosition.y == 0) {
+                needBounce = true;
+            }
         }
         
         
@@ -171,7 +184,6 @@ public class CharacterController2D : MonoBehaviour {
         heldItem = item;
         heldItem.transform.SetParent(hands.transform);
         heldItem.transform.localPosition = Vector3.zero;
-        characterSpriteRenderer.sortingOrder = Mathf.RoundToInt(transform.position.y * 16f) * -1;
         item.itemSpriteRenderer.sortingOrder = Mathf.RoundToInt(transform.position.y * 16f) * -1;
     }
     
