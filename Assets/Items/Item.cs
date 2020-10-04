@@ -111,6 +111,15 @@ public class Item : Interactable
         gameObject.layer = 2; //set layer to ignore raycast
         foreach(Transform t in transform)
         {
+            //t.gameObject.SetActive(false);
+        }
+    }
+
+    public void Hide()
+    {
+        gameObject.layer = 2; //set layer to ignore raycast
+        foreach (Transform t in transform)
+        {
             t.gameObject.SetActive(false);
         }
     }
@@ -148,7 +157,7 @@ public class Item : Interactable
         if (isOriginal)
         {
             doNotReset = false;
-            Stored();
+            Hide();
         }
         else
         {
