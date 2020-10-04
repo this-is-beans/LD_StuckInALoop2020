@@ -10,15 +10,15 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 67f3f8102317f2d44a8011daf3a1542b, type: 3}
-  m_Name: Screwdriver
+  m_Name: Crowbar
   m_EditorClassIdentifier: 
-  itemName: Wrench
-  defaultSprite: {fileID: 21300000, guid: d06cd3bc28a2be544892ade212950426, type: 3}
-  damagedSprite: {fileID: 21300000, guid: 90e054e7090b7b745ac9b726e2b143a4, type: 3}
+  itemName: Crowbar
+  defaultSprite: {fileID: 21300000, guid: e0094343e7a8b61429722c682bcdda7c, type: 3}
+  damagedSprite: {fileID: 21300000, guid: e9c50d11913cae24c9fb95e7183fc9b6, type: 3}
   itemTextColor: {r: 0, g: 0, b: 1, a: 0}
-  itemDescription: Orange juice and vodka!
-  toolType: 2
-  maxUses: 3
-  damageStrength: 1
+  itemDescription: Smashes open Containers!
+  toolType: 0
+  maxUses: 15
+  damageStrength: 2
   combinableList: []
   combinableListTarget: []

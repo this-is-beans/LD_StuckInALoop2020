@@ -19,5 +19,6 @@ MonoBehaviour:
   itemDescription: Turn up the tork!
   toolType: 0
   maxUses: 3
+  damageStrength: 1
   combinableList: []
   combinableListTarget: []
