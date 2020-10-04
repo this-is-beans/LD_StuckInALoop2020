@@ -140,7 +140,7 @@ public class Item : Interactable
     {
         isBroken = true;
         itemSpriteRenderer.sprite = itemDef.damagedSprite;
-        Drop(); //drop the item gives player feedback that it is broken
+        //Drop(); //drop the item gives player feedback that it is broken
     }
 
     public void Consume()

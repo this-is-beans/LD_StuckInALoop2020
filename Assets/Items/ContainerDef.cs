@@ -17,6 +17,7 @@ public class ContainerDef : ScriptableObject
     public LockType lockType;
     public ItemDef keyItem;
     public bool consumesItem;
+    public ItemDef destroyItem;
 
     public int maxHP;
     public bool isInvincible;
