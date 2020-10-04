@@ -3,8 +3,7 @@ using System.Collections.Generic;
 using UnityEditor.UI;
 using UnityEngine;
 
-public class Item : Interactable
-{
+public class Item : Interactable {
     public ItemDef itemDef;
 
     public SpriteRenderer itemSpriteRenderer;
@@ -19,191 +18,169 @@ public class Item : Interactable
     public Item(ItemDef itemDef) {
         this.itemDef = itemDef;
     }
+
     // Start is called before the first frame update
-    void Start()
-    {
+    void Start() {
         // interactable.OnInteract += Interact;
         originalPosition = transform.position;
     }
 
     // Update is called once per frame
-    void Update()
-    {
+    void Update() {
         //might move this out of update for optimzation
         itemSpriteRenderer.sortingOrder = Mathf.RoundToInt(transform.position.y * 16f) * -1;
     }
 
-    private void OnValidate()
-    {
-        if (itemDef != null)
-        {
+    private void OnValidate() {
+        if (itemDef != null) {
             currentUses = itemDef.maxUses;
             gameObject.name = itemDef.itemName;
 
-            if (itemSpriteRenderer != null)
-            {
+            if (itemSpriteRenderer != null) {
                 itemSpriteRenderer.sprite = itemDef.defaultSprite;
                 itemSpriteRenderer.sortingOrder = Mathf.RoundToInt(transform.position.y * 16f) * -1;
             }
         }
+
         //spriteRenderer = GetComponent<SpriteRenderer>();
-        if (gameObject.layer != 8)
-        {
+        if (gameObject.layer != 8) {
             gameObject.layer = 8; //set layer to interactable
         }
+
         isOriginal = true; //items placed in the world in the editor won't be destroyed on reset
     }
 
-    public void SetDef(ItemDef itemDef)
-    {
+    public void SetDef(ItemDef itemDef) {
         this.itemDef = itemDef;
         itemSpriteRenderer.sprite = itemDef.defaultSprite;
         gameObject.name = itemDef.itemName;
         currentUses = itemDef.maxUses;
     }
 
-    public override Item Interact(Item item)
-    {
+    public override Item Interact(Item item) {
         print("interacting with item: " + itemDef.itemName);
 
-        //check if items can be combined
-        int i = 0;
-        foreach (ItemDef combineItemDef in itemDef.combinableList) {
-            if (combineItemDef == item.itemDef ) {
-                // check if compatible
-                // in some sort of item map lookup
-                Item newItem = Instantiate(
-                    Resources.Load<Item>("Prefabs/Item Prefab"),
-                    transform.position, Quaternion.identity
-                );
-                newItem.SetDef(itemDef.combinableListTarget[i]);
-                item.GetComponent<BounceBehaviour>().Throw(new Vector2(0, 0));
 
-                return newItem;
+        //if player is holding item, check if combinable, else swap
+        if (item) {
+            //check if items can be combined
+            int i = 0;
+            foreach (ItemDef combineItemDef in itemDef.combinableList) {
+                if (combineItemDef == item.itemDef) {
+                    // check if compatible
+                    // in some sort of item map lookup
+                    Item newItem = Instantiate(
+                        Resources.Load<Item>("Prefabs/Item Prefab"),
+                        transform.position, Quaternion.identity
+                    );
+                    newItem.SetDef(itemDef.combinableListTarget[i]);
+                    item.GetComponent<BounceBehaviour>().Throw(new Vector2(0, 0));
+                    
+                    Destroy(item);
+                    Destroy(this);
+                    
+                    return newItem;
+                }
+
+                i++;
             }
 
-            i++;
-        }
-
-        //if player is holding item swap them
-        if (item != null)
-        {
             item.Drop();
         }
 
         return this;
     }
 
-    public void Drop()
-    {
+    public void Drop() {
         gameObject.layer = 8; //set layer to interactable        
         StartCoroutine(DropCoroutine());
     }
 
-    IEnumerator DropCoroutine()
-    {
+    IEnumerator DropCoroutine() {
         yield return new WaitForEndOfFrame();
-        GetComponent<BounceBehaviour>().Throw(new Vector2(UnityEngine.Random.Range(0f, 0f), UnityEngine.Random.Range(0f,0f)));
+        GetComponent<BounceBehaviour>()
+            .Throw(new Vector2(UnityEngine.Random.Range(0f, 0f), UnityEngine.Random.Range(0f, 0f)));
     }
 
-    public void Stored()
-    {
+    public void Stored() {
         gameObject.layer = 2; //set layer to ignore raycast
-        foreach(Transform t in transform)
-        {
+        foreach (Transform t in transform) {
             //t.gameObject.SetActive(false);
         }
     }
 
-    public void Hide()
-    {
+    public void Hide() {
         gameObject.layer = 2; //set layer to ignore raycast
-        foreach (Transform t in transform)
-        {
+        foreach (Transform t in transform) {
             t.gameObject.SetActive(false);
         }
     }
 
-    public void Retrieved()
-    {
+    public void Retrieved() {
         transform.SetParent(null);
         gameObject.layer = 8; //set layer to interactable        
-        foreach (Transform t in transform)
-        {
+        foreach (Transform t in transform) {
             t.gameObject.SetActive(true);
         }
     }
 
-    public void Deplete(int amt)
-    {
+    public void Deplete(int amt) {
         currentUses -= amt;
         currentUses = Mathf.Clamp(currentUses, 0, itemDef.maxUses);
 
-        if (currentUses <= 0)
-        {
+        if (currentUses <= 0) {
             Broken();
         }
     }
 
-    void Broken()
-    {
+    void Broken() {
         isBroken = true;
         itemSpriteRenderer.sprite = itemDef.damagedSprite;
         //Drop(); //drop the item gives player feedback that it is broken
     }
 
-    public void Consume()
-    {
-        if (isOriginal)
-        {
+    public void Consume() {
+        if (isOriginal) {
             doNotReset = false;
             Hide();
         }
-        else
-        {
+        else {
             Destroy(gameObject);
-        }        
+        }
     }
 
-    public void Charge(int amt)
-    {
+    public void Charge(int amt) {
         currentUses += amt;
         currentUses = Mathf.Clamp(currentUses, 0, itemDef.maxUses);
 
-        if (currentUses > 0)
-        {
+        if (currentUses > 0) {
             Fix();
         }
     }
 
-    void Fix()
-    {
+    void Fix() {
         isBroken = false;
         itemSpriteRenderer.sprite = itemDef.defaultSprite;
     }
 
-    public void ResetState()
-    {
-        if (doNotReset)
-        {
+    public void ResetState() {
+        if (doNotReset) {
             return;
-        }        
-        else if (isOriginal)
-        {
+        }
+        else if (isOriginal) {
             transform.SetParent(null);
             gameObject.layer = 8; //set layer to interactable        
-            foreach (Transform t in transform)
-            {
+            foreach (Transform t in transform) {
                 t.gameObject.SetActive(true);
             }
+
             transform.position = originalPosition;
             currentUses = itemDef.maxUses;
             isBroken = false;
             itemSpriteRenderer.sprite = itemDef.defaultSprite;
             itemSpriteRenderer.sortingOrder = Mathf.RoundToInt(transform.position.y * 16f) * -1;
         }
-        else
-        {
+        else {
             Destroy(gameObject);
         }
     }

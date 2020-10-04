@@ -55,6 +55,7 @@ public class CharacterController2D : MonoBehaviour {
     void Start() {
         ui_interactDescription = GameObject.Find("UI_InteractDescription").GetComponent<Text>();
         ui_interactLabel = GameObject.Find("UI_InteractLabel").GetComponent<Text>();
+        ui_heldLabel = GameObject.Find("UI_HeldLabel").GetComponent<Text>();
         startPosition = gameObject.transform.position;
         isBouncing = false;
         isFrozen = false;
@@ -92,6 +93,7 @@ public class CharacterController2D : MonoBehaviour {
 
                     break;
                 }
+                
             }
         }
         else {
@@ -189,7 +191,7 @@ public class CharacterController2D : MonoBehaviour {
 
         Item returnedItem = target.Interact(heldItem);
 
-        if (returnedItem == null) {
+        if (!returnedItem) {
             heldItem = null;
             //item was taken, nothing returned
             ui_heldLabel.text = "";
