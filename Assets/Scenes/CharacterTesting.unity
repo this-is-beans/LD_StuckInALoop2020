@@ -166,11 +166,13 @@ MonoBehaviour:
   speed: 5
   enableBounce: 0
   bounceSpeed: 1
-  bounceHeight: 0
-  needBounce: 1
+  bounceMaxHeight: 0.4
+  bounceMinHeight: 0.6
+  isBouncing: 0
   bounceUp: 0
   interactableArea: {x: 0.4, y: 0.4}
   hands: {fileID: 1535893500}
+  ui_heldLabel: {fileID: 0}
 --- !u!58 &585931260
 CircleCollider2D:
   m_ObjectHideFlags: 0
@@ -408,7 +410,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6339903713653007023, guid: dffbaaeed744bca4fa92cec6f12a4b96, type: 3}
       propertyPath: m_SortingOrder
-      value: -17
+      value: 11
+      objectReference: {fileID: 0}
+    - target: {fileID: 6339903713653007023, guid: dffbaaeed744bca4fa92cec6f12a4b96, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 6339903713653007023, guid: dffbaaeed744bca4fa92cec6f12a4b96, type: 3}
+      propertyPath: m_WasSpriteAssigned
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 7842336455983462737, guid: dffbaaeed744bca4fa92cec6f12a4b96, type: 3}
       propertyPath: m_Name
