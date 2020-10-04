@@ -57,7 +57,7 @@ MonoBehaviour:
   bounceMinHeight: 0
   isBouncing: 0
   bounceUp: 0
-  interactableAreaRadius: 0
+  interactableAreaRadius: 0.7
   hands: {fileID: 2269332389389089208}
   ui_heldLabel: {fileID: 0}
 --- !u!50 &7015266105828143260
