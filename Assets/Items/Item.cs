@@ -1,9 +1,10 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
+using UnityEditor.UI;
 using UnityEngine;
 
 [RequireComponent(typeof(Interactable))]
-public class Item : MonoBehaviour
+public class Item : Interactable
 {
     public ItemDef itemDef;
 
@@ -16,10 +17,14 @@ public class Item : MonoBehaviour
 
     Vector2 originalPosition;
     bool isOriginal;
+
+    public Item(ItemDef itemDef) {
+        this.itemDef = itemDef;
+    }
     // Start is called before the first frame update
     void Start()
     {
-        interactable.OnInteract += Interact;
+        // interactable.OnInteract += Interact;
         originalPosition = transform.position;
     }
 
@@ -60,15 +65,34 @@ public class Item : MonoBehaviour
         currentUses = itemDef.maxUses;
     }
 
-    void Interact(Item item)
+    public Item Interact(Item item)
     {
         //check if items can be combined
+        int i = 0;
+        foreach (ItemDef combineItemDef in itemDef.combinableList) {
+            if (combineItemDef == item.itemDef ) {
+                // check if compatible
+                // in some sort of item map lookup
+                Item newItem = Instantiate(
+                    Resources.Load<Item>("Prefabs/Item Prefab"),
+                    transform.position, Quaternion.identity
+                );
+                newItem.SetDef(itemDef.combinableListTarget[i]);
+                item.GetComponent<BounceBehaviour>().Throw(new Vector2(0, 0));
+
+                return newItem;
+            }
+
+            i++;
+        }
 
         //if player is holding item swap them
         if (item != null)
         {
             item.Drop();
         }
+
+        return this;
     }
 
     public void Drop()

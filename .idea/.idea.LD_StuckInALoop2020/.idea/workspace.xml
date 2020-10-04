@@ -1,5 +1,84 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
+  <component name="BranchesTreeState">
+    <expand>
+      <path>
+        <item name="ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="LOCAL_ROOT" type="e8cecc67:BranchNodeDescriptor" />
+      </path>
+      <path>
+        <item name="ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="REMOTE_ROOT" type="e8cecc67:BranchNodeDescriptor" />
+      </path>
+      <path>
+        <item name="ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="REMOTE_ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="GROUP_NODE:origin" type="e8cecc67:BranchNodeDescriptor" />
+      </path>
+    </expand>
+    <select />
+  </component>
+  <component name="ChangeListManager">
+    <list default="true" id="13863907-f4d6-4b09-a0dd-5bd21b3f76d9" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/.idea/.idea.LD_StuckInALoop2020/.idea/contentModel.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Art Assets/TilemapData/tilemap_laboratory.psd.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/.idea.LD_StuckInALoop2020/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.LD_StuckInALoop2020/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Art Assets/TimeTraveler/Actor_PlayerCharacter.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Art Assets/TimeTraveler/Actor_PlayerCharacter.prefab" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Items/Container.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Items/Container.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Items/Interactable.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Items/Interactable.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Items/Item.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Items/Item.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Items/ItemDef.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Items/ItemDef.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Items/ItemDefs/Charged Cell.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Items/ItemDefs/Charged Cell.asset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Items/ItemDefs/Empty Cell.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Items/ItemDefs/Empty Cell.asset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Items/ItemDefs/Wrench.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Items/ItemDefs/Wrench.asset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scenes/CharacterTesting.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/CharacterTesting.unity" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/CharacterController2D.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/CharacterController2D.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/SourceFiles/tilemap_laboratory.psd.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/SourceFiles/tilemap_laboratory.psd.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ProjectSettings/Physics2DSettings.asset" beforeDir="false" afterPath="$PROJECT_DIR$/ProjectSettings/Physics2DSettings.asset" afterDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="HighlightingSettingsPerFile">
+    <setting file="file://$PROJECT_DIR$/Assets/Items/ContainerDef.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Items/Item.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Items/BounceBehaviour.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Items/Machine.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Scripts/CharacterController2D.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Items/Interactable.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Items/ItemDef.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Items/Container.cs" root0="FORCE_HIGHLIGHTING" />
+  </component>
+  <component name="IdeDocumentHistory">
+    <option name="CHANGED_PATHS">
+      <list>
+        <option value="$PROJECT_DIR$/Assets/Scripts/Interactable.cs" />
+        <option value="$PROJECT_DIR$/Assets/Items/Container.cs" />
+        <option value="$PROJECT_DIR$/Assets/Items/ItemDef.cs" />
+        <option value="$PROJECT_DIR$/Assets/Items/Item.cs" />
+        <option value="$PROJECT_DIR$/Assets/Items/Interactable.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/CharacterController2D.cs" />
+      </list>
+    </option>
+  </component>
+  <component name="ProjectId" id="1iOMjs2JCf5Ci04JXOKfH9apMrR" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent">
+    <property name="Discover.Launch.Via.Unity" value="true" />
+    <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
+    <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
+    <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
+    <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="settings.editor.selected.configurable" value="preferences.sourceCode.C#" />
+  </component>
   <component name="RunManager" selected="Attach to Unity Editor.Attach to Unity Editor">
     <configuration name="Attach to Unity Editor &amp; Play" type="UNITY_DEBUG_RUN_CONFIGURATION" factoryName="UNITY_ATTACH_AND_PLAY" show_console_on_std_err="false" show_console_on_std_out="false" port="50000" address="localhost">
       <option name="allowRunningInParallel" value="false" />
@@ -13,5 +92,49 @@
       <option name="pid" />
       <method v="2" />
     </configuration>
+  </component>
+  <component name="SvnConfiguration">
+    <configuration />
+  </component>
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="13863907-f4d6-4b09-a0dd-5bd21b3f76d9" name="Default Changelist" comment="" />
+      <created>1601774323584</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1601774323584</updated>
+      <workItem from="1601774331924" duration="13617000" />
+    </task>
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="2" />
+  </component>
+  <component name="UnityProjectConfiguration" hasMinimizedUI="true" />
+  <component name="UnityUnitTestConfiguration" currentTestLauncher="EditMode" />
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
+  </component>
+  <component name="WindowStateProjectService">
+    <state x="1421" y="348" key="SettingsEditor" timestamp="1601774354018">
+      <screen x="0" y="0" width="2560" height="1400" />
+    </state>
+    <state x="1421" y="348" key="SettingsEditor/0.0.2560.1400@0.0.2560.1400" timestamp="1601774354018" />
+    <state x="866" y="148" width="1010" height="1386" key="dock-window-1" timestamp="1601782442630">
+      <screen x="0" y="0" width="2560" height="1400" />
+    </state>
+    <state x="866" y="148" width="1010" height="1386" key="dock-window-1/0.0.2560.1400@0.0.2560.1400" timestamp="1601782442630" />
+    <state x="1583" y="320" width="672" height="678" key="search.everywhere.popup" timestamp="1601781391787">
+      <screen x="0" y="0" width="2560" height="1400" />
+    </state>
+    <state x="1583" y="320" width="672" height="678" key="search.everywhere.popup/0.0.2560.1400@0.0.2560.1400" timestamp="1601781391787" />
   </component>
 </project>

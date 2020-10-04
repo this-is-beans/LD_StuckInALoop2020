@@ -6,7 +6,7 @@ using UnityEngine.Events;
 
 [RequireComponent(typeof(SpriteRenderer))]
 [RequireComponent(typeof(Interactable))]
-public class Container : MonoBehaviour
+public class Container : Interactable
 {
     public ContainerDef containerDef;
     public List<ItemDef> inventory;

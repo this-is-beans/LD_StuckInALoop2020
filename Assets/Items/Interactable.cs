@@ -7,7 +7,7 @@ using UnityEngine;
 public class Interactable : MonoBehaviour
 {
     public Action<Item> OnInteract; //container, item, levers can subscribe to this
-
+    
     // Start is called before the first frame update
     void Start()
     {
@@ -20,9 +20,10 @@ public class Interactable : MonoBehaviour
         
     }
 
-    public void Interact(Item item)
+    public Item Interact(Item item)
     {
-        OnInteract?.Invoke(item);
+        // OnInteract?.Invoke(item);
+        return null;
     }
 
     private void OnDestroy()
