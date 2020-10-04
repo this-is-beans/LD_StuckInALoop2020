@@ -12,8 +12,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9dbbed016a24e464b99bbeb1346f2c62, type: 3}
   m_Name: Temporal Toolbox
   m_EditorClassIdentifier: 
-  defaultSprite: {fileID: 21300000, guid: 49f90f96f57ad3642a8bd1ee96a73439, type: 3}
-  openedSprite: {fileID: 21300000, guid: 1a2897e786c2b574faf9f7394aa8f1d7, type: 3}
+  defaultSprite: {fileID: -3458675146260532585, guid: aa1146017606a064c986485c58506a5a, type: 3}
+  openedSprite: {fileID: -6264744058679792663, guid: aa1146017606a064c986485c58506a5a, type: 3}
   lockType: 0
   keyItem: {fileID: 0}
   consumesItem: 0
