@@ -165,50 +165,58 @@ public class CharacterController2D : MonoBehaviour {
         // do some stupid thing with things that are connected
 
         Item returnedItem = target.Interact(heldItem);
-        if (returnedItem == null || returnedItem != heldItem)
+        
+        if (returnedItem == null)
         {
             heldItem = null;
+            //item was taken, nothing returned
             ui_heldLabel.text = "";
         }
-        if (returnedItem != null)
+        else if (returnedItem == heldItem)
         {
-            AddItem(returnedItem);
+            //item was not taken
         }
-
-        //switch (target.GetType().Name) {
-        //    case "Machine":
-        //
-        //        break;
-        //    case "Container":
-        //        break;
-        //    case "Item":
-        //        //if holding an item
-        //        if (heldItem != null) {
-        //            target.Interact(heldItem);
-        //        }
-        //        else {
-        //            // pick it up
-        //            this.AddItem((Item)target);
-        //        }
-        //        break;
-        //    default:
-        //        print("you done messed up");
-        //        break;
-        //}
-
+        else if (returnedItem != heldItem)
+        {
+            //item was taken and new item given
+            if (heldItem != null)
+            {
+                if (heldItem.transform.parent != hands.transform)
+                { //someone else adopted the held item
+                    heldItem = null;
+                }
+                else
+                {
+                    //item was orphaned, in theory
+                    DropItem();
+                }
+            }
+            AddItem(returnedItem);
+        } 
         
+
+
+
     }
 
     void DropItem() {
         ui_heldLabel.text = "";
         heldItem.enabled = true;
+        heldItem.doNotReset = false;
         heldItem.transform.SetParent(null);
         heldItem.Drop();
         heldItem = null;
     }
     void AddItem(Item item) {
+
+        if (heldItem != null)
+        {
+            DropItem();
+        }
+
         heldItem = item;
         heldItem.enabled = false;
+        heldItem.doNotReset = true;
         ui_heldLabel.text = heldItem.itemDef.itemName;
         heldItem.gameObject.layer = 2; //set layer to ignore raycast
         heldItem.transform.SetParent(hands.transform);
