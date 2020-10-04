@@ -147,12 +147,15 @@ public class Machine : Interactable
         storedItem = item;
         storedItem.transform.SetParent(transform);
         storedItem.Stored();
+        storedItem.itemSpriteRenderer.sortingOrder = spriteRenderer.sortingOrder + 1;
+        storedItem.transform.localPosition = Vector2.zero;
         //TODO: item would be removed from player
 
         if (doNotReset)
         {
             storedItem.doNotReset = true;
-        } else
+        }
+        else
         {
             storedItem.doNotReset = false;
         }
@@ -185,7 +188,7 @@ public class Machine : Interactable
         if (storedItem != null)
         {
             storedItem.Retrieved();
-            yield return new WaitForEndOfFrame();
+            //yield return new WaitForEndOfFrame();
             storedItem.GetComponent<BounceBehaviour>().Throw(new Vector2(UnityEngine.Random.Range(minThrowRange.x, maxThrowRange.x), UnityEngine.Random.Range(minThrowRange.y, maxThrowRange.y)));
             storedItem = null;
         }
