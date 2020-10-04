@@ -14,7 +14,7 @@ TagManager:
   - 
   - 
   - Interactable
-  - 
+  - World Collider
   - 
   - 
   - 
@@ -38,6 +38,9 @@ TagManager:
   - 
   - 
   m_SortingLayers:
+  - name: World_Collision
+    uniqueID: 12485223
+    locked: 0
   - name: Background
     uniqueID: 2432165315
     locked: 0
@@ -47,6 +50,6 @@ TagManager:
   - name: Default
     uniqueID: 0
     locked: 0
-  - name: CeilingOverlap
+  - name: Ceiling_Overlap
     uniqueID: 1857461127
     locked: 0
