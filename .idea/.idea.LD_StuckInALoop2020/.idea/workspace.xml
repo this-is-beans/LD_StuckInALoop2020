@@ -21,9 +21,6 @@
   <component name="ChangeListManager">
     <list default="true" id="13863907-f4d6-4b09-a0dd-5bd21b3f76d9" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/.idea.LD_StuckInALoop2020/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.LD_StuckInALoop2020/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Resources/Prefabs/Item Prefab.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Resources/Prefabs/Item Prefab.prefab" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scenes/CharacterTesting.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/CharacterTesting.unity" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/CharacterController2D.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/CharacterController2D.cs" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
