@@ -5,15 +5,13 @@ using UnityEngine;
 using UnityEngine.Events;
 
 [RequireComponent(typeof(SpriteRenderer))]
-[RequireComponent(typeof(Interactable))]
-public class Machine : MonoBehaviour
+public class Machine : Interactable
 {
     public ContainerDef containerDef;
     public ItemDef transmutedItemDef;
     Item storedItem;
 
     public SpriteRenderer spriteRenderer;
-    public Interactable interactable;
     public ParticleSystem damageParticle;
 
     public Vector2 minThrowRange;
@@ -30,7 +28,6 @@ public class Machine : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        interactable.OnInteract += Interact;
     }
 
     // Update is called once per frame
@@ -42,7 +39,6 @@ public class Machine : MonoBehaviour
     private void OnValidate()
     {
         spriteRenderer = GetComponent<SpriteRenderer>();
-        interactable = GetComponent<Interactable>();
         if (containerDef != null)
         {
             spriteRenderer.sprite = containerDef.defaultSprite;
@@ -55,14 +51,29 @@ public class Machine : MonoBehaviour
         }
     }
 
-    void Interact(Item item)
+    public override Item Interact(Item item)
     {
+        print("interacting with: " + containerDef.name);
         if (item == null)
         {
+            if (containerDef.keyItem == null)
+            {
+                if (!isActive)
+                {
+                    TryActivate();
+                }
+                else
+                {
+                    TryDeactivate();
+                }
+            }
+
             if (storedItem != null)
             {
+                Item returnItem = storedItem;
                 RetrieveItem();
-                Deactivate();
+                TryDeactivate();
+                return returnItem;
             }
         }
         else
@@ -71,24 +82,29 @@ public class Machine : MonoBehaviour
             {
                 if (isActive)
                 {
-                    return;
+                    return item;
                 }
 
                 if (containerDef.consumesItem)
                 {
                     item.Consume();
+                    TryActivate();
+                    return null;
                 }
                 else
                 {
                     StoreItem(item);
+                    //TryActivate();
+                    return null;
                 }
-                Activate();
             }
         }
+        return item;
     }
 
-    public void Activate()
+    public void TryActivate()
     {
+        print("Activated: " + containerDef.name);
         if (!isActive)
         {
             isActive = true;
@@ -97,12 +113,14 @@ public class Machine : MonoBehaviour
         }
     }
 
-    public void Deactivate()
+    public void TryDeactivate()
     {
+        print("Deactivated: " + containerDef.name);
+
         if (isActive)
         {
             isActive = false;
-            spriteRenderer.sprite = containerDef.openedSprite;
+            spriteRenderer.sprite = containerDef.defaultSprite;
             OnDeactivate?.Invoke();
         }
     }
@@ -127,6 +145,7 @@ public class Machine : MonoBehaviour
         }
 
         storedItem = item;
+        storedItem.transform.SetParent(transform);
         storedItem.Stored();
         //TODO: item would be removed from player
 
@@ -165,6 +184,7 @@ public class Machine : MonoBehaviour
             storedItem.Retrieved();
             yield return new WaitForEndOfFrame();
             storedItem.GetComponent<BounceBehaviour>().Throw(new Vector2(UnityEngine.Random.Range(minThrowRange.x, maxThrowRange.x), UnityEngine.Random.Range(minThrowRange.y, maxThrowRange.y)));
+            storedItem = null;
         }
 
         yield return null;

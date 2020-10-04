@@ -71,7 +71,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 0}
+  m_Sprite: {fileID: 21300000, guid: 8b3544fabdb13c54caa4b5a00ca2f922, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -79,7 +79,7 @@ SpriteRenderer:
   m_Size: {x: 1, y: 1}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
-  m_WasSpriteAssigned: 0
+  m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
 --- !u!1 &3918495737037873670
@@ -107,7 +107,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 3918495737037873670}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalPosition: {x: 0.187, y: -0.25, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 3538704307158663235}
@@ -174,7 +174,6 @@ GameObject:
   m_Component:
   - component: {fileID: 3538704307158663235}
   - component: {fileID: 5285022742713725861}
-  - component: {fileID: 4036488422505539534}
   - component: {fileID: 817986971667139268}
   - component: {fileID: 6374125018610158064}
   m_Layer: 8
@@ -226,18 +225,6 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 1, y: 1}
   m_EdgeRadius: 0
---- !u!114 &4036488422505539534
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7842336455983462737}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 846e3b16def807246a9bd052d1487f8e, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!114 &817986971667139268
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -250,9 +237,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 682d5f641d190d84497935af3a3ebc51, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  itemDef: {fileID: 0}
+  itemDef: {fileID: 11400000, guid: 5e3175d2a2301e54fb76170193b3694a, type: 2}
   itemSpriteRenderer: {fileID: 6339903713653007023}
-  interactable: {fileID: 4036488422505539534}
   currentUses: 0
   doNotReset: 0
 --- !u!114 &6374125018610158064

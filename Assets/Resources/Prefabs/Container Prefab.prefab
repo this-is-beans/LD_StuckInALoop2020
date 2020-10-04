@@ -10,7 +10,6 @@ GameObject:
   m_Component:
   - component: {fileID: 5691805876393872916}
   - component: {fileID: 5524477725497565521}
-  - component: {fileID: 672163005828706081}
   - component: {fileID: 5925811356379236535}
   m_Layer: 8
   m_Name: Container Prefab
@@ -85,18 +84,6 @@ SpriteRenderer:
   m_WasSpriteAssigned: 0
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!114 &672163005828706081
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8759126418708828075}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 846e3b16def807246a9bd052d1487f8e, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!114 &5925811356379236535
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -112,7 +99,6 @@ MonoBehaviour:
   containerDef: {fileID: 0}
   inventory: []
   spriteRenderer: {fileID: 5524477725497565521}
-  interactable: {fileID: 672163005828706081}
   damageParticle: {fileID: 7047056267199990513}
   minThrowRange: {x: -1, y: -1}
   maxThrowRange: {x: 1, y: -1.5}

@@ -20,8 +20,122 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="13863907-f4d6-4b09-a0dd-5bd21b3f76d9" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/Assets/Art Assets/Items/items_1_15.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Art Assets/Items/items_1_15.png.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Art Assets/Items/items_broke_0.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Art Assets/Items/items_broke_0.png.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Art Assets/Items/items_broke_1.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Art Assets/Items/items_broke_1.png.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Art Assets/Items/items_broke_2.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Art Assets/Items/items_broke_2.png.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Art Assets/Items/items_broke_3.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Art Assets/Items/items_broke_3.png.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Audio/soundtrack_nopanic_game_ambient.mp3" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Audio/soundtrack_nopanic_game_ambient.mp3.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Items/ItemDefs/Blue Keycard.asset" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Items/ItemDefs/Blue Keycard.asset.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Items/ItemDefs/Fuel Crystal.asset" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Items/ItemDefs/Fuel Crystal.asset.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Items/ItemDefs/Green Keycard.asset" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Items/ItemDefs/Green Keycard.asset.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Items/ItemDefs/Hammer.asset" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Items/ItemDefs/Hammer.asset.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Items/ItemDefs/Intermediate Item Placeholder.asset" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Items/ItemDefs/Intermediate Item Placeholder.asset.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Items/ItemDefs/Radio.asset" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Items/ItemDefs/Radio.asset.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Items/ItemDefs/Red Keycard.asset" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Items/ItemDefs/Red Keycard.asset.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Items/ItemDefs/Screwdriver.asset" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Items/ItemDefs/Screwdriver.asset.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Items/ItemDefs/Snippers.asset" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Items/ItemDefs/Snippers.asset.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Items/ItemDefs/TimePod Part Placeholder.asset" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Items/ItemDefs/TimePod Part Placeholder.asset.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Resources/Prefabs/Items.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Resources/Prefabs/Items/BlueKeycard 1.prefab" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Resources/Prefabs/Items/BlueKeycard 1.prefab.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Resources/Prefabs/Items/Empty Cell.prefab" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Resources/Prefabs/Items/Empty Cell.prefab.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Resources/Prefabs/Items/FuelCrystal.prefab" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Resources/Prefabs/Items/FuelCrystal.prefab.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Resources/Prefabs/Items/GreenKeycard.prefab" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Resources/Prefabs/Items/GreenKeycard.prefab.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Resources/Prefabs/Items/Hammer.prefab" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Resources/Prefabs/Items/Hammer.prefab.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Resources/Prefabs/Items/Radio.prefab" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Resources/Prefabs/Items/Radio.prefab.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Resources/Prefabs/Items/RedKeycard.prefab" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Resources/Prefabs/Items/RedKeycard.prefab.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Resources/Prefabs/Items/Snippers.prefab" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Resources/Prefabs/Items/Snippers.prefab.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Resources/Prefabs/Items/Wrench.prefab" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Resources/Prefabs/Items/Wrench.prefab.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Scripts/BlynxyCharacterController2D.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Scripts/BlynxyCharacterController2D.cs.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Scripts/Game.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Scripts/Game.cs.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/SourceFiles/tilemap_laboratory_v3.psd" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/SourceFiles/tilemap_laboratory_v3.psd.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/.idea.LD_StuckInALoop2020/.idea/contentModel.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.LD_StuckInALoop2020/.idea/contentModel.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/.idea.LD_StuckInALoop2020/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.LD_StuckInALoop2020/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Art Assets/Items/items_1_00.png" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Art Assets/Items/items_1_00.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Art Assets/Items/items_1_01.png" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Art Assets/Items/items_1_01.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Art Assets/Items/items_1_02.png" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Art Assets/Items/items_1_02.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Art Assets/Items/items_1_03.png" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Art Assets/Items/items_1_03.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Art Assets/Items/items_1_04.png" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Art Assets/Items/items_1_04.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Art Assets/Items/items_1_05.png" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Art Assets/Items/items_1_05.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Art Assets/Items/items_1_06.png" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Art Assets/Items/items_1_06.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Art Assets/Items/items_1_07.png" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Art Assets/Items/items_1_07.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Art Assets/Items/items_1_08.png" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Art Assets/Items/items_1_08.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Art Assets/Items/items_1_09.png" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Art Assets/Items/items_1_09.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Art Assets/Items/items_1_10.png" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Art Assets/Items/items_1_10.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Art Assets/Items/items_1_11.png" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Art Assets/Items/items_1_11.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Art Assets/Items/items_1_12.png" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Art Assets/Items/items_1_12.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Art Assets/Items/items_1_13.png" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Art Assets/Items/items_1_13.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Art Assets/Items/items_1_14.png" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Art Assets/Items/items_1_14.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Art Assets/Props/sheet_props.png" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Art Assets/Props/sheet_props.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Art Assets/Props/sheet_props.png.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Art Assets/Props/sheet_props.png.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Art Assets/Props/sheet_props.tpsheet" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Art Assets/Props/sheet_props.tpsheet" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Art Assets/TilemapData/Laboratory_TIlemap.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Art Assets/TilemapData/Laboratory_TIlemap.prefab" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Art Assets/TilemapData/Tilemap_Assets/tilemap_laboratory.png" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Art Assets/TilemapData/Tilemap_Assets/tilemap_laboratory.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Art Assets/TimeTraveler/Actor_PlayerCharacter.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Art Assets/TimeTraveler/Actor_PlayerCharacter.prefab" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Art Assets/TimeTraveler/TimeTraveler_idle_0.png.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Art Assets/TimeTraveler/TimeTraveler_idle_0.png.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Art Assets/TimeTraveler/TimeTraveler_idle_1.png.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Art Assets/TimeTraveler/TimeTraveler_idle_1.png.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Art Assets/TimeTraveler/TimeTraveler_smash_0.png.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Art Assets/TimeTraveler/TimeTraveler_smash_0.png.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Art Assets/TimeTraveler/TimeTraveler_smash_1.png.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Art Assets/TimeTraveler/TimeTraveler_smash_1.png.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Art Assets/TimeTraveler/TimeTraveler_smash_2.png.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Art Assets/TimeTraveler/TimeTraveler_smash_2.png.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Art Assets/TimeTraveler/TimeTraveler_smash_3.png.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Art Assets/TimeTraveler/TimeTraveler_smash_3.png.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Art Assets/TimeTraveler/TimeTraveler_walk_0.png.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Art Assets/TimeTraveler/TimeTraveler_walk_0.png.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Art Assets/TimeTraveler/TimeTraveler_walk_1.png.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Art Assets/TimeTraveler/TimeTraveler_walk_1.png.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Art Assets/TimeTraveler/TimeTraveler_walk_2.png.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Art Assets/TimeTraveler/TimeTraveler_walk_2.png.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Art Assets/TimeTraveler/TimeTraveler_walk_3.png.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Art Assets/TimeTraveler/TimeTraveler_walk_3.png.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Art Assets/lever_off.png.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Art Assets/lever_off.png.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Art Assets/lever_on.png.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Art Assets/lever_on.png.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/ItemTesting.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/ItemTesting.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Items/Container.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Items/Container.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Items/ContainerDefs/Battery Charger.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Items/ContainerDefs/Battery Charger.asset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Items/ContainerDefs/Locker.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Items/ContainerDefs/Locker.asset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Items/ContainerDefs/Temporal Toolbox.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Items/ContainerDefs/Temporal Toolbox.asset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Items/Interactable.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Items/Interactable.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Items/Item.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Items/Item.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Items/ItemDefs/Charged Cell.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Items/ItemDefs/Charged Cell.asset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Items/ItemDefs/Wrench.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Items/ItemDefs/Wrench.asset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Items/Machine.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Items/Machine.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Items/TemporalToolbox.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Items/TemporalToolbox.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Resources/Prefabs/Container Prefab.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Resources/Prefabs/Container Prefab.prefab" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Resources/Prefabs/Item Prefab.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Resources/Prefabs/Item Prefab.prefab" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Resources/Prefabs/Machine Prefab.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Resources/Prefabs/Machine Prefab.prefab" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Resources/Prefabs/Temporal Toolbox.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Resources/Prefabs/Items/Temporal Toolbox.prefab" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Resources/Prefabs/Temporal Toolbox.prefab.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Resources/Prefabs/Items/Temporal Toolbox.prefab.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scenes/CharacterTesting.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/CharacterTesting.unity" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scenes/Game.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/Game.unity" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scenes/Item Testing.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/Item Testing.unity" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scripts/CharacterController2D.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/CharacterController2D.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/SourceFiles/Items.pyxel" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/SourceFiles/Items.pyxel" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/SourceFiles/props_TimeTravelGame.pyxel" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/SourceFiles/props_TimeTravelGame.pyxel" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/SourceFiles/tilemap_laboratory_v2.psd" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/SourceFiles/tilemap_laboratory_v2.psd" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ProjectSettings/TagManager.asset" beforeDir="false" afterPath="$PROJECT_DIR$/ProjectSettings/TagManager.asset" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -32,14 +146,16 @@
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
   <component name="HighlightingSettingsPerFile">
-    <setting file="file://$PROJECT_DIR$/Assets/Items/ContainerDef.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Assets/Items/Item.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Items/BounceBehaviour.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Items/Machine.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/CharacterController2D.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Items/Interactable.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Items/ItemDef.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Scripts/Game.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Items/Container.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Items/ContainerDef.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Items/Item.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Scripts/BlynxyCharacterController2D.cs" root0="FORCE_HIGHLIGHTING" />
   </component>
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
@@ -49,7 +165,9 @@
         <option value="$PROJECT_DIR$/Assets/Items/ItemDef.cs" />
         <option value="$PROJECT_DIR$/Assets/Items/Item.cs" />
         <option value="$PROJECT_DIR$/Assets/Items/Interactable.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/BlynxyCharacterController2D.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/CharacterController2D.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/TimeReset.cs" />
       </list>
     </option>
   </component>
@@ -90,7 +208,7 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1601774323584</updated>
-      <workItem from="1601774331924" duration="20827000" />
+      <workItem from="1601774331924" duration="23440000" />
     </task>
     <servers />
   </component>
@@ -111,6 +229,10 @@
     </option>
   </component>
   <component name="WindowStateProjectService">
+    <state x="1512" y="435" key="Rider.ProjectTemplateDialog.Size" timestamp="1601832309641">
+      <screen x="0" y="0" width="2560" height="1400" />
+    </state>
+    <state x="1512" y="435" key="Rider.ProjectTemplateDialog.Size/0.0.2560.1400@0.0.2560.1400" timestamp="1601832309641" />
     <state x="1421" y="348" key="SettingsEditor" timestamp="1601774354018">
       <screen x="0" y="0" width="2560" height="1400" />
     </state>
@@ -119,9 +241,9 @@
       <screen x="0" y="0" width="2560" height="1400" />
     </state>
     <state x="866" y="148" width="1010" height="1386" key="dock-window-1/0.0.2560.1400@0.0.2560.1400" timestamp="1601782442630" />
-    <state x="1583" y="320" width="672" height="678" key="search.everywhere.popup" timestamp="1601781391787">
+    <state x="1583" y="320" width="672" height="678" key="search.everywhere.popup" timestamp="1601832302063">
       <screen x="0" y="0" width="2560" height="1400" />
     </state>
-    <state x="1583" y="320" width="672" height="678" key="search.everywhere.popup/0.0.2560.1400@0.0.2560.1400" timestamp="1601781391787" />
+    <state x="1583" y="320" width="672" height="678" key="search.everywhere.popup/0.0.2560.1400@0.0.2560.1400" timestamp="1601832302063" />
   </component>
 </project>

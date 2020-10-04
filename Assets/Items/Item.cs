@@ -3,13 +3,11 @@ using System.Collections.Generic;
 using UnityEditor.UI;
 using UnityEngine;
 
-[RequireComponent(typeof(Interactable))]
 public class Item : Interactable
 {
     public ItemDef itemDef;
 
     public SpriteRenderer itemSpriteRenderer;
-    public Interactable interactable;
 
     public int currentUses;
     bool isBroken;
@@ -49,7 +47,6 @@ public class Item : Interactable
             }
         }
         //spriteRenderer = GetComponent<SpriteRenderer>();
-        interactable = GetComponent<Interactable>();
         if (gameObject.layer != 8)
         {
             gameObject.layer = 8; //set layer to interactable
@@ -65,8 +62,10 @@ public class Item : Interactable
         currentUses = itemDef.maxUses;
     }
 
-    public Item Interact(Item item)
+    public override Item Interact(Item item)
     {
+        print("interacting with item: " + itemDef.itemName);
+
         //check if items can be combined
         int i = 0;
         foreach (ItemDef combineItemDef in itemDef.combinableList) {
@@ -97,7 +96,14 @@ public class Item : Interactable
 
     public void Drop()
     {
+        gameObject.layer = 8; //set layer to interactable        
+        StartCoroutine(DropCoroutine());
+    }
 
+    IEnumerator DropCoroutine()
+    {
+        yield return new WaitForEndOfFrame();
+        GetComponent<BounceBehaviour>().Throw(new Vector2(UnityEngine.Random.Range(0f, 0f), UnityEngine.Random.Range(0f,0f)));
     }
 
     public void Stored()
@@ -175,6 +181,7 @@ public class Item : Interactable
         }        
         else if (isOriginal)
         {
+            transform.SetParent(null);
             gameObject.layer = 8; //set layer to interactable        
             foreach (Transform t in transform)
             {
