@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class TemporalToolbox : MonoBehaviour
+public class TemporalToolbox : Interactable
 {
     public ContainerDef containerDef;
     Item storedItem;
@@ -40,6 +40,11 @@ public class TemporalToolbox : MonoBehaviour
         }
     }
 
+    public override Item Interact(Item item)
+    {
+        print("TODO");
+        return null;
+    }
 
     public void StoreItem(Item item)
     {

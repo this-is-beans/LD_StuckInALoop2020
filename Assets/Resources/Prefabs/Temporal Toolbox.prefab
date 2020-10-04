@@ -10,7 +10,6 @@ GameObject:
   m_Component:
   - component: {fileID: 5678961570467176636}
   - component: {fileID: 5519162463556030457}
-  - component: {fileID: 677477890084716937}
   - component: {fileID: 4608880304803550075}
   m_Layer: 8
   m_Name: Temporal Toolbox
@@ -85,18 +84,6 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!114 &677477890084716937
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8771966634347421955}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 846e3b16def807246a9bd052d1487f8e, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!114 &4608880304803550075
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -111,7 +98,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   containerDef: {fileID: 11400000, guid: 25e660e7cd756af40b817b1863a511d9, type: 2}
   spriteRenderer: {fileID: 5519162463556030457}
-  interactable: {fileID: 677477890084716937}
+  interactable: {fileID: 0}
   damageParticle: {fileID: 7061308224495887449}
   minThrowRange: {x: -1, y: -1}
   maxThrowRange: {x: 1, y: -1.5}

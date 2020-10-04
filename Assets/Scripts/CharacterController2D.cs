@@ -43,14 +43,15 @@ public class CharacterController2D : MonoBehaviour {
     // UI junk
     private GameObject ui_interactDescription;
     private GameObject ui_interactLabel;
-    
-    
+    public Text ui_heldLabel;
+
+
     /** space to think
     
  smol space, to think of things
     
     ** end space to think **/
-    
+
     void Start() {
         ui_interactDescription = GameObject.Find("UI_InteractDescription");
         ui_interactLabel = GameObject.Find("UI_InteractLabel");
@@ -59,30 +60,41 @@ public class CharacterController2D : MonoBehaviour {
 
     // Update is called once per frame
     void Update() {
-        characterSpriteRenderer.sortingOrder = (Mathf.RoundToInt(transform.position.y * 16f) * -1)-2;
-        
+        characterSpriteRenderer.sortingOrder = (Mathf.RoundToInt(transform.position.y * 16f) * -1);
+        if (heldItem != null)
+        {
+            heldItem.itemSpriteRenderer.sortingOrder = characterSpriteRenderer.sortingOrder + 1;
+        }
+
         // get nearby interactables
         interactables = Physics2D.OverlapBoxAll(transform.position,
             interactableArea, 0,
             LayerMask.GetMask("Interactable"));
-        Item targetItem = null;
-        if (interactables.Length>0) {
-            // print(interactables[0].GetComponent<>());
-            foreach (Collider2D iobj in interactables) {
-                Item item = iobj.GetComponent<Item>();
-                if (item != null) {
-                    print(item.itemDef.itemName);
-                    ui_interactDescription.GetComponent<Text>().text = item.itemDef.itemDescription;
-                    ui_interactLabel.GetComponent<Text>().text = item.itemDef.itemName;
-                    targetItem = item;
+
+        Interactable targetItem = null;
+        if (interactables.Length > 0)
+        {
+            foreach (BoxCollider2D i in interactables)
+            {                
+                if (i.TryGetComponent(out Interactable interactable))
+                {
+                    //print(interactables[0].name);
+
+                    targetItem = interactable;
+
+                    if (targetItem.TryGetComponent(out Item item))
+                    {
+                        ui_interactDescription.GetComponent<Text>().text = item.itemDef.itemDescription;
+                        ui_interactLabel.GetComponent<Text>().text = item.itemDef.itemName;
+                    }
+                    break;
                 }
             }
-            
         }
-        else {
+        else
+        {
             ui_interactDescription.GetComponent<Text>().text = "";
             ui_interactLabel.GetComponent<Text>().text = "";
-            
         }
 
         moveVec2 = new Vector2();
@@ -102,12 +114,12 @@ public class CharacterController2D : MonoBehaviour {
         
         // action key
         
-        if (Input.GetKey(KeyCode.Space) || Input.GetKey(KeyCode.KeypadEnter)) {
+        if (Input.GetKeyDown(KeyCode.Space) || Input.GetKeyDown(KeyCode.KeypadEnter)) {
             // do action maybe
             if(targetItem != null) Interact(targetItem);
         }
         
-        if (Input.GetKey(KeyCode.Q) || Input.GetKey(KeyCode.Alpha0)) {
+        if (Input.GetKeyDown(KeyCode.Q) || Input.GetKeyDown(KeyCode.Alpha0)) {
             // do action maybe
             if (heldItem) {
                 DropItem();
@@ -151,38 +163,54 @@ public class CharacterController2D : MonoBehaviour {
 
     void Interact(Interactable target) {
         // do some stupid thing with things that are connected
-        switch (target.GetType().Name) {
-            case "Machine":
 
-                break;
-            case "Container":
-
-                break;
-            case "Item":
-                //if holding an item
-                if (heldItem != null) {
-                    target.Interact(heldItem);
-                }
-                else {
-                    // pick it up
-                    this.AddItem((Item)target);
-                }
-                break;
-            default:
-                print("you done messed up");
-                break;
+        Item returnedItem = target.Interact(heldItem);
+        if (returnedItem == null || returnedItem != heldItem)
+        {
+            heldItem = null;
+            ui_heldLabel.text = "";
         }
+        if (returnedItem != null)
+        {
+            AddItem(returnedItem);
+        }
+
+        //switch (target.GetType().Name) {
+        //    case "Machine":
+        //
+        //        break;
+        //    case "Container":
+        //        break;
+        //    case "Item":
+        //        //if holding an item
+        //        if (heldItem != null) {
+        //            target.Interact(heldItem);
+        //        }
+        //        else {
+        //            // pick it up
+        //            this.AddItem((Item)target);
+        //        }
+        //        break;
+        //    default:
+        //        print("you done messed up");
+        //        break;
+        //}
 
         
     }
 
     void DropItem() {
+        ui_heldLabel.text = "";
+        heldItem.enabled = true;
         heldItem.transform.SetParent(null);
         heldItem.Drop();
         heldItem = null;
     }
     void AddItem(Item item) {
         heldItem = item;
+        heldItem.enabled = false;
+        ui_heldLabel.text = heldItem.itemDef.itemName;
+        heldItem.gameObject.layer = 2; //set layer to ignore raycast
         heldItem.transform.SetParent(hands.transform);
         heldItem.transform.localPosition = Vector3.zero;
         item.itemSpriteRenderer.sortingOrder = Mathf.RoundToInt(transform.position.y * 16f) * -1;

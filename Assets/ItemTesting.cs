@@ -27,12 +27,12 @@ public class ItemTesting : MonoBehaviour
 
     public void AddBattery()
     {
-        batteryCharger.interactable.Interact(emptyBattery);
+        batteryCharger.Interact(emptyBattery);
     }
 
     public void ChargeBattery()
     {
-        powerLever.Activate();
+        powerLever.TryActivate();
     }
 
     public void BreakAllItems()
@@ -82,7 +82,7 @@ public class ItemTesting : MonoBehaviour
 
         foreach (Machine c in allContainers)
         {
-            c.Activate();
+            c.TryActivate();
         }
     }
 

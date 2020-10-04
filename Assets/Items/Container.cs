@@ -5,14 +5,12 @@ using UnityEngine;
 using UnityEngine.Events;
 
 [RequireComponent(typeof(SpriteRenderer))]
-[RequireComponent(typeof(Interactable))]
 public class Container : Interactable
 {
     public ContainerDef containerDef;
     public List<ItemDef> inventory;
 
     public SpriteRenderer spriteRenderer;
-    public Interactable interactable;
     public ParticleSystem damageParticle;
 
     public Vector2 minThrowRange;
@@ -27,7 +25,6 @@ public class Container : Interactable
     // Start is called before the first frame update
     void Start()
     {
-        interactable.OnInteract += Interact;
     }
 
     // Update is called once per frame
@@ -39,7 +36,6 @@ public class Container : Interactable
     private void OnValidate()
     {
         spriteRenderer = GetComponent<SpriteRenderer>();
-        interactable = GetComponent<Interactable>();
         if (containerDef != null)
         {
             spriteRenderer.sprite = containerDef.defaultSprite;
@@ -52,11 +48,11 @@ public class Container : Interactable
         }
     }
 
-    void Interact(Item item)
+    public override Item Interact(Item item)
     {
         if (isOpen)
         {
-            return;
+            return null;
         }
 
         if (hasLock)
@@ -71,13 +67,15 @@ public class Container : Interactable
             }
             else
             {
-                return;
+                return null;
             }
         }
         else //no lock
         {
             Open();
         }
+
+        return null;
     }
 
     bool CheckItemKey(ItemDef itemDef)
