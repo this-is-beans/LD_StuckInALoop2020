@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 1504987461711715039}
   - component: {fileID: 5106655465958903603}
   m_Layer: 8
-  m_Name: PlantPot
+  m_Name: PlantPot_Empty1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -74,7 +74,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 140
-  m_Sprite: {fileID: -2658115467873888437, guid: aa1146017606a064c986485c58506a5a, type: 3}
+  m_Sprite: {fileID: -2546265436793406158, guid: aa1146017606a064c986485c58506a5a, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -97,7 +97,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bce77519af6155d4fa91806436c9088e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  containerDef: {fileID: 11400000, guid: 3d2d516f83f180c4f9653be3ae0e80a0, type: 2}
+  containerDef: {fileID: 11400000, guid: 4d125cbe2d731fa448c8298ce0f26528, type: 2}
   inventory: []
   spriteRenderer: {fileID: 753402064265851705}
   damageParticle: {fileID: 2815400960097966233}
@@ -122,8 +122,8 @@ BoxCollider2D:
   m_Offset: {x: 0, y: 0.14}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
-    pivot: {x: 0.5, y: 0.2}
-    oldSize: {x: 1.25, y: 1.5625}
+    pivot: {x: 0.53846157, y: 0.23809524}
+    oldSize: {x: 0.8125, y: 1.3125}
     newSize: {x: 1.125, y: 1.875}
     adaptiveTilingThreshold: 0.5
     drawMode: 0
@@ -190,10 +190,6 @@ PrefabInstance:
     - target: {fileID: 2327517852666669342, guid: ab79524a23691cc40a0d632a836d9c02, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 2944478916032381178, guid: ab79524a23691cc40a0d632a836d9c02, type: 3}
-      propertyPath: m_LocalPosition.y
-      value: 0.37
       objectReference: {fileID: 0}
     - target: {fileID: 3764901877110389319, guid: ab79524a23691cc40a0d632a836d9c02, type: 3}
       propertyPath: m_Name

@@ -167,6 +167,63 @@ TextureImporter:
   - first:
       213: 7898018552032410189
     second: props_interactable_12
+  - first:
+      213: 2307647460377627292
+    second: props_breakables_00
+  - first:
+      213: 8617373319216870104
+    second: props_breakables_01
+  - first:
+      213: -6917644788039308465
+    second: props_breakables_02
+  - first:
+      213: 1347105420604720383
+    second: props_breakables_03
+  - first:
+      213: 4827440228108309309
+    second: props_breakables_04
+  - first:
+      213: -1158150967827203440
+    second: props_breakables_05
+  - first:
+      213: 4005393978389725605
+    second: props_breakables_06
+  - first:
+      213: -8472027096540166101
+    second: props_breakables_07
+  - first:
+      213: -2658115467873888437
+    second: props_breakables_08
+  - first:
+      213: -2546265436793406158
+    second: props_breakables_09
+  - first:
+      213: 2120447859855611558
+    second: props_breakables_10
+  - first:
+      213: 1909764271688562081
+    second: props_interactable_13
+  - first:
+      213: -5233094815540895547
+    second: props_breakables_11
+  - first:
+      213: 5385221012534463408
+    second: props_breakables_12
+  - first:
+      213: 2699567887507636758
+    second: props_interactable_14
+  - first:
+      213: 2760429795273398444
+    second: props_interactable_15
+  - first:
+      213: -3940703031246699078
+    second: props_interactable_16
+  - first:
+      213: -4466221149383954103
+    second: props_interactable_17
+  - first:
+      213: 3022846857266626705
+    second: props_interactable_18
   externalObjects: {}
   serializedVersion: 11
   mipmaps:
@@ -245,7 +302,7 @@ TextureImporter:
       name: props_breakables_0
       rect:
         serializedVersion: 2
-        x: 170
+        x: 188
         y: 237
         width: 18
         height: 19
@@ -263,11 +320,53 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
+      name: props_breakables_00
+      rect:
+        serializedVersion: 2
+        x: 188
+        y: 237
+        width: 18
+        height: 19
+      alignment: 9
+      pivot: {x: 0.5, y: 0.2631579}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: c9a04a68329660020800000000000000
+      internalID: 2307647460377627292
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: props_breakables_01
+      rect:
+        serializedVersion: 2
+        x: 152
+        y: 215
+        width: 18
+        height: 21
+      alignment: 9
+      pivot: {x: 0.5, y: 0.23809524}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 8d2b9d4806f079770800000000000000
+      internalID: 8617373319216870104
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
       name: props_breakables_1
       rect:
         serializedVersion: 2
-        x: 129
-        y: 214
+        x: 152
+        y: 215
         width: 18
         height: 21
       alignment: 9
@@ -284,10 +383,31 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
+      name: props_breakables_02
+      rect:
+        serializedVersion: 2
+        x: 114
+        y: 238
+        width: 22
+        height: 18
+      alignment: 9
+      pivot: {x: 0.5, y: 0.2777778}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: f4ba59e67b69fff90800000000000000
+      internalID: -6917644788039308465
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
       name: props_breakables_2
       rect:
         serializedVersion: 2
-        x: 96
+        x: 114
         y: 238
         width: 22
         height: 18
@@ -305,10 +425,31 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
+      name: props_breakables_03
+      rect:
+        serializedVersion: 2
+        x: 82
+        y: 239
+        width: 14
+        height: 17
+      alignment: 9
+      pivot: {x: 0.5, y: 0.29411766}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: ff4c5262e31e1b210800000000000000
+      internalID: 1347105420604720383
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
       name: props_breakables_3
       rect:
         serializedVersion: 2
-        x: 64
+        x: 82
         y: 239
         width: 14
         height: 17
@@ -326,10 +467,31 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
+      name: props_breakables_04
+      rect:
+        serializedVersion: 2
+        x: 207
+        y: 237
+        width: 18
+        height: 19
+      alignment: 9
+      pivot: {x: 0.5, y: 0.2631579}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: d3393d28f438ef240800000000000000
+      internalID: 4827440228108309309
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
       name: props_breakables_4
       rect:
         serializedVersion: 2
-        x: 189
+        x: 207
         y: 237
         width: 18
         height: 19
@@ -347,11 +509,32 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
+      name: props_breakables_05
+      rect:
+        serializedVersion: 2
+        x: 36
+        y: 149
+        width: 18
+        height: 34
+      alignment: 9
+      pivot: {x: 0.5, y: 0.1764706}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 09a7266b4db6defe0800000000000000
+      internalID: -1158150967827203440
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
       name: props_breakables_5
       rect:
         serializedVersion: 2
-        x: 199
-        y: 179
+        x: 36
+        y: 149
         width: 18
         height: 34
       alignment: 9
@@ -368,11 +551,32 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
+      name: props_breakables_06
+      rect:
+        serializedVersion: 2
+        x: 32
+        y: 192
+        width: 18
+        height: 22
+      alignment: 9
+      pivot: {x: 0.44444445, y: 0.22727273}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 5a188631a94069730800000000000000
+      internalID: 4005393978389725605
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
       name: props_breakables_6
       rect:
         serializedVersion: 2
-        x: 0
-        y: 191
+        x: 32
+        y: 192
         width: 18
         height: 22
       alignment: 9
@@ -389,10 +593,31 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
+      name: props_breakables_07
+      rect:
+        serializedVersion: 2
+        x: 226
+        y: 237
+        width: 16
+        height: 19
+      alignment: 9
+      pivot: {x: 0.5, y: 0.2631579}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: b284d3f0e305d6a80800000000000000
+      internalID: -8472027096540166101
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
       name: props_breakables_7
       rect:
         serializedVersion: 2
-        x: 208
+        x: 226
         y: 237
         width: 16
         height: 19
@@ -410,11 +635,116 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
+      name: props_breakables_08
+      rect:
+        serializedVersion: 2
+        x: 67
+        y: 189
+        width: 20
+        height: 25
+      alignment: 9
+      pivot: {x: 0.5, y: 0.2}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: b47d765b01a7c1bd0800000000000000
+      internalID: -2658115467873888437
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: props_breakables_09
+      rect:
+        serializedVersion: 2
+        x: 171
+        y: 215
+        width: 13
+        height: 21
+      alignment: 9
+      pivot: {x: 0.53846157, y: 0.23809524}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 23df2107319d9acd0800000000000000
+      internalID: -2546265436793406158
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: props_breakables_10
+      rect:
+        serializedVersion: 2
+        x: 51
+        y: 190
+        width: 15
+        height: 24
+      alignment: 9
+      pivot: {x: 0.6, y: 0.20833333}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 6a65e6b08185d6d10800000000000000
+      internalID: 2120447859855611558
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: props_breakables_11
+      rect:
+        serializedVersion: 2
+        x: 51
+        y: 241
+        width: 13
+        height: 15
+      alignment: 9
+      pivot: {x: 0.53846157, y: 0.33333334}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 5c02fbbcdff4067b0800000000000000
+      internalID: -5233094815540895547
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: props_breakables_12
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 253
+        width: 3
+        height: 3
+      alignment: 9
+      pivot: {x: 10.666667, y: -9.666667}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 0bb06119af52cba40800000000000000
+      internalID: 5385221012534463408
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
       name: props_containers_00
       rect:
         serializedVersion: 2
-        x: 84
-        y: 183
+        x: 153
+        y: 184
         width: 18
         height: 30
       alignment: 9
@@ -434,8 +764,8 @@ TextureImporter:
       name: props_containers_01
       rect:
         serializedVersion: 2
-        x: 103
-        y: 183
+        x: 172
+        y: 184
         width: 20
         height: 30
       alignment: 9
@@ -455,8 +785,8 @@ TextureImporter:
       name: props_containers_02
       rect:
         serializedVersion: 2
-        x: 124
-        y: 183
+        x: 193
+        y: 184
         width: 18
         height: 30
       alignment: 9
@@ -476,8 +806,8 @@ TextureImporter:
       name: props_containers_03
       rect:
         serializedVersion: 2
-        x: 218
-        y: 179
+        x: 55
+        y: 149
         width: 28
         height: 34
       alignment: 9
@@ -497,8 +827,8 @@ TextureImporter:
       name: props_containers_04
       rect:
         serializedVersion: 2
-        x: 0
-        y: 144
+        x: 84
+        y: 149
         width: 28
         height: 34
       alignment: 9
@@ -518,8 +848,8 @@ TextureImporter:
       name: props_containers_05
       rect:
         serializedVersion: 2
-        x: 87
-        y: 143
+        x: 171
+        y: 148
         width: 30
         height: 35
       alignment: 9
@@ -539,7 +869,7 @@ TextureImporter:
       name: props_containers_06
       rect:
         serializedVersion: 2
-        x: 47
+        x: 65
         y: 241
         width: 16
         height: 15
@@ -560,7 +890,7 @@ TextureImporter:
       name: props_containers_07
       rect:
         serializedVersion: 2
-        x: 119
+        x: 137
         y: 238
         width: 16
         height: 18
@@ -581,7 +911,7 @@ TextureImporter:
       name: props_containers_08
       rect:
         serializedVersion: 2
-        x: 79
+        x: 97
         y: 239
         width: 16
         height: 17
@@ -602,8 +932,8 @@ TextureImporter:
       name: props_containers_09
       rect:
         serializedVersion: 2
-        x: 29
-        y: 144
+        x: 113
+        y: 149
         width: 28
         height: 34
       alignment: 9
@@ -623,8 +953,8 @@ TextureImporter:
       name: props_containers_10
       rect:
         serializedVersion: 2
-        x: 58
-        y: 144
+        x: 142
+        y: 149
         width: 28
         height: 34
       alignment: 9
@@ -644,7 +974,7 @@ TextureImporter:
       name: props_containers_11
       rect:
         serializedVersion: 2
-        x: 0
+        x: 4
         y: 249
         width: 13
         height: 7
@@ -665,7 +995,7 @@ TextureImporter:
       name: props_containers_12
       rect:
         serializedVersion: 2
-        x: 14
+        x: 18
         y: 244
         width: 13
         height: 12
@@ -686,8 +1016,8 @@ TextureImporter:
       name: props_door_0
       rect:
         serializedVersion: 2
-        x: 225
-        y: 236
+        x: 0
+        y: 216
         width: 22
         height: 20
       alignment: 9
@@ -707,8 +1037,8 @@ TextureImporter:
       name: props_door_1
       rect:
         serializedVersion: 2
-        x: 0
-        y: 215
+        x: 23
+        y: 216
         width: 22
         height: 20
       alignment: 9
@@ -728,8 +1058,8 @@ TextureImporter:
       name: props_door_2
       rect:
         serializedVersion: 2
-        x: 23
-        y: 215
+        x: 46
+        y: 216
         width: 22
         height: 20
       alignment: 9
@@ -749,8 +1079,8 @@ TextureImporter:
       name: props_door_3
       rect:
         serializedVersion: 2
-        x: 46
-        y: 215
+        x: 69
+        y: 216
         width: 22
         height: 20
       alignment: 9
@@ -770,7 +1100,7 @@ TextureImporter:
       name: props_interactable_0
       rect:
         serializedVersion: 2
-        x: 136
+        x: 154
         y: 238
         width: 16
         height: 18
@@ -791,7 +1121,7 @@ TextureImporter:
       name: props_interactable_00
       rect:
         serializedVersion: 2
-        x: 136
+        x: 154
         y: 238
         width: 16
         height: 18
@@ -812,7 +1142,7 @@ TextureImporter:
       name: props_interactable_01
       rect:
         serializedVersion: 2
-        x: 153
+        x: 171
         y: 238
         width: 16
         height: 18
@@ -833,7 +1163,7 @@ TextureImporter:
       name: props_interactable_1
       rect:
         serializedVersion: 2
-        x: 153
+        x: 171
         y: 238
         width: 16
         height: 18
@@ -851,32 +1181,11 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: props_interactable_02
-      rect:
-        serializedVersion: 2
-        x: 69
-        y: 215
-        width: 14
-        height: 20
-      alignment: 9
-      pivot: {x: 0.5, y: 0.35}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: 68066c292177e6440800000000000000
-      internalID: 4931009563672862854
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
       name: props_interactable_2
       rect:
         serializedVersion: 2
-        x: 69
-        y: 215
+        x: 137
+        y: 216
         width: 14
         height: 20
       alignment: 9
@@ -893,11 +1202,32 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
+      name: props_interactable_02
+      rect:
+        serializedVersion: 2
+        x: 202
+        y: 148
+        width: 14
+        height: 35
+      alignment: 9
+      pivot: {x: 0.5, y: 0.42857143}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 68066c292177e6440800000000000000
+      internalID: 4931009563672862854
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
       name: props_interactable_03
       rect:
         serializedVersion: 2
-        x: 84
-        y: 215
+        x: 92
+        y: 216
         width: 14
         height: 20
       alignment: 9
@@ -917,8 +1247,8 @@ TextureImporter:
       name: props_interactable_3
       rect:
         serializedVersion: 2
-        x: 84
-        y: 215
+        x: 92
+        y: 216
         width: 14
         height: 20
       alignment: 9
@@ -938,8 +1268,8 @@ TextureImporter:
       name: props_interactable_04
       rect:
         serializedVersion: 2
-        x: 99
-        y: 215
+        x: 107
+        y: 216
         width: 14
         height: 20
       alignment: 9
@@ -959,8 +1289,8 @@ TextureImporter:
       name: props_interactable_4
       rect:
         serializedVersion: 2
-        x: 99
-        y: 215
+        x: 107
+        y: 216
         width: 14
         height: 20
       alignment: 9
@@ -980,8 +1310,8 @@ TextureImporter:
       name: props_interactable_05
       rect:
         serializedVersion: 2
-        x: 114
-        y: 215
+        x: 122
+        y: 216
         width: 14
         height: 20
       alignment: 9
@@ -1001,8 +1331,8 @@ TextureImporter:
       name: props_interactable_5
       rect:
         serializedVersion: 2
-        x: 114
-        y: 215
+        x: 122
+        y: 216
         width: 14
         height: 20
       alignment: 9
@@ -1022,8 +1352,8 @@ TextureImporter:
       name: props_interactable_06
       rect:
         serializedVersion: 2
-        x: 170
-        y: 129
+        x: 97
+        y: 98
         width: 53
         height: 49
       alignment: 9
@@ -1043,8 +1373,8 @@ TextureImporter:
       name: props_interactable_6
       rect:
         serializedVersion: 2
-        x: 170
-        y: 129
+        x: 97
+        y: 98
         width: 53
         height: 49
       alignment: 9
@@ -1064,8 +1394,8 @@ TextureImporter:
       name: props_interactable_07
       rect:
         serializedVersion: 2
-        x: 148
-        y: 214
+        x: 185
+        y: 215
         width: 23
         height: 21
       alignment: 9
@@ -1085,8 +1415,8 @@ TextureImporter:
       name: props_interactable_7
       rect:
         serializedVersion: 2
-        x: 148
-        y: 214
+        x: 185
+        y: 215
         width: 23
         height: 21
       alignment: 9
@@ -1106,8 +1436,8 @@ TextureImporter:
       name: props_interactable_08
       rect:
         serializedVersion: 2
-        x: 172
-        y: 214
+        x: 209
+        y: 215
         width: 23
         height: 21
       alignment: 9
@@ -1127,8 +1457,8 @@ TextureImporter:
       name: props_interactable_8
       rect:
         serializedVersion: 2
-        x: 172
-        y: 214
+        x: 209
+        y: 215
         width: 23
         height: 21
       alignment: 9
@@ -1148,8 +1478,8 @@ TextureImporter:
       name: props_interactable_09
       rect:
         serializedVersion: 2
-        x: 196
-        y: 214
+        x: 233
+        y: 215
         width: 15
         height: 21
       alignment: 9
@@ -1169,8 +1499,8 @@ TextureImporter:
       name: props_interactable_10
       rect:
         serializedVersion: 2
-        x: 212
-        y: 214
+        x: 0
+        y: 193
         width: 15
         height: 21
       alignment: 9
@@ -1190,8 +1520,8 @@ TextureImporter:
       name: props_interactable_11
       rect:
         serializedVersion: 2
-        x: 228
-        y: 214
+        x: 16
+        y: 193
         width: 15
         height: 21
       alignment: 9
@@ -1211,8 +1541,8 @@ TextureImporter:
       name: props_interactable_12
       rect:
         serializedVersion: 2
-        x: 0
-        y: 79
+        x: 151
+        y: 98
         width: 53
         height: 49
       alignment: 9
@@ -1229,11 +1559,137 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
+      name: props_interactable_13
+      rect:
+        serializedVersion: 2
+        x: 97
+        y: 98
+        width: 53
+        height: 49
+      alignment: 9
+      pivot: {x: 0.509434, y: 0.3469388}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 1a5baba9c78d08a10800000000000000
+      internalID: 1909764271688562081
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: props_interactable_14
+      rect:
+        serializedVersion: 2
+        x: 217
+        y: 148
+        width: 14
+        height: 35
+      alignment: 9
+      pivot: {x: 0.5, y: 0.42857143}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 612c1f5d0bac67520800000000000000
+      internalID: 2699567887507636758
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: props_interactable_15
+      rect:
+        serializedVersion: 2
+        x: 232
+        y: 148
+        width: 14
+        height: 35
+      alignment: 9
+      pivot: {x: 0.5, y: 0.42857143}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: ca8dcaef5440f4620800000000000000
+      internalID: 2760429795273398444
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: props_interactable_16
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 112
+        width: 14
+        height: 35
+      alignment: 9
+      pivot: {x: 0.5, y: 0.42857143}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: ab54c39c87fcf49c0800000000000000
+      internalID: -3940703031246699078
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: props_interactable_17
+      rect:
+        serializedVersion: 2
+        x: 15
+        y: 112
+        width: 14
+        height: 35
+      alignment: 9
+      pivot: {x: 0.5, y: 0.42857143}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 941f1a6178bc402c0800000000000000
+      internalID: -4466221149383954103
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: props_interactable_18
+      rect:
+        serializedVersion: 2
+        x: 30
+        y: 112
+        width: 14
+        height: 35
+      alignment: 9
+      pivot: {x: 0.5, y: 0.42857143}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 19088c1733f43f920800000000000000
+      internalID: 3022846857266626705
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
       name: props_static_0
       rect:
         serializedVersion: 2
-        x: 143
-        y: 183
+        x: 212
+        y: 184
         width: 19
         height: 30
       alignment: 9
@@ -1253,8 +1709,8 @@ TextureImporter:
       name: props_static_1
       rect:
         serializedVersion: 2
-        x: 118
-        y: 140
+        x: 45
+        y: 109
         width: 22
         height: 38
       alignment: 9
@@ -1274,8 +1730,8 @@ TextureImporter:
       name: props_static_2
       rect:
         serializedVersion: 2
-        x: 141
-        y: 138
+        x: 68
+        y: 107
         width: 28
         height: 40
       alignment: 9
@@ -1295,8 +1751,8 @@ TextureImporter:
       name: props_static_3
       rect:
         serializedVersion: 2
-        x: 114
-        y: 215
+        x: 122
+        y: 216
         width: 14
         height: 20
       alignment: 9
@@ -1316,8 +1772,8 @@ TextureImporter:
       name: props_static_4
       rect:
         serializedVersion: 2
-        x: 163
-        y: 180
+        x: 0
+        y: 150
         width: 35
         height: 33
       alignment: 9
@@ -1337,7 +1793,7 @@ TextureImporter:
       name: props_static_5
       rect:
         serializedVersion: 2
-        x: 28
+        x: 32
         y: 243
         width: 18
         height: 13
@@ -1358,8 +1814,8 @@ TextureImporter:
       name: props_static_6
       rect:
         serializedVersion: 2
-        x: 54
-        y: 78
+        x: 205
+        y: 97
         width: 38
         height: 50
       alignment: 9
@@ -1379,8 +1835,8 @@ TextureImporter:
       name: props_static_7
       rect:
         serializedVersion: 2
-        x: 19
-        y: 185
+        x: 88
+        y: 186
         width: 64
         height: 28
       alignment: 9
