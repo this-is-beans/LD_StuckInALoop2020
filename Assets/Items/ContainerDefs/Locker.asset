@@ -17,5 +17,6 @@ MonoBehaviour:
   lockType: 1
   keyItem: {fileID: 11400000, guid: c2f648e4d63eb724ca281ccd6eb51ed3, type: 2}
   consumesItem: 0
-  maxHP: 5
+  destroyItem: {fileID: 0}
+  maxHP: 3
   isInvincible: 0

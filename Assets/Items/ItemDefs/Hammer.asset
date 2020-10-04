@@ -19,6 +19,6 @@ MonoBehaviour:
   itemDescription: Smash obstructing machines!
   toolType: 0
   maxUses: 3
-  damageStrength: 0
+  damageStrength: 3
   combinableList: []
   combinableListTarget: []

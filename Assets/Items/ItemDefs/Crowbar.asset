@@ -19,6 +19,6 @@ MonoBehaviour:
   itemDescription: Smashes open Containers!
   toolType: 0
   maxUses: 15
-  damageStrength: 1
+  damageStrength: 2
   combinableList: []
   combinableListTarget: []

@@ -19,5 +19,6 @@ MonoBehaviour:
   itemDescription: Orange juice and vodka!
   toolType: 2
   maxUses: 3
+  damageStrength: 1
   combinableList: []
   combinableListTarget: []
