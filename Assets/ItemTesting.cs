@@ -4,6 +4,10 @@ using UnityEngine;
 
 public class ItemTesting : MonoBehaviour
 {
+    public Item emptyBattery;
+    public Machine batteryCharger;
+    public Machine powerLever;
+
     private void Awake()
     {
         QualitySettings.vSyncCount = 0;
@@ -19,6 +23,16 @@ public class ItemTesting : MonoBehaviour
     void Update()
     {
         
+    }
+
+    public void AddBattery()
+    {
+        batteryCharger.interactable.Interact(emptyBattery);
+    }
+
+    public void ChargeBattery()
+    {
+        powerLever.Activate();
     }
 
     public void BreakAllItems()
@@ -62,6 +76,16 @@ public class ItemTesting : MonoBehaviour
         }
     }
 
+    public void ActivateMachines()
+    {
+        Machine[] allContainers = FindObjectsOfType<Machine>();
+
+        foreach (Machine c in allContainers)
+        {
+            c.Activate();
+        }
+    }
+
     public void ResetLoop()
     {
         Container[] allContainers = FindObjectsOfType<Container>();
@@ -76,6 +100,13 @@ public class ItemTesting : MonoBehaviour
         foreach (Item i in allItems)
         {
             i.ResetState();
+        }
+
+        Machine[] machines = FindObjectsOfType<Machine>();
+
+        foreach (Machine c in machines)
+        {
+            c.ResetState();
         }
     }
 }
