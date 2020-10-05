@@ -31,7 +31,7 @@ public class CharacterController2D : MonoBehaviour {
     private Collider2D[] interactables;
 
     [SerializeField] private GameObject hands;
-    private Item heldItem;
+    public Item heldItem;
 
 
     // UI junk
@@ -209,49 +209,48 @@ public class CharacterController2D : MonoBehaviour {
         Item returnedItem = target.Interact(heldItem);
 
         if (!returnedItem) {
+            RemoveItem();
             heldItem = null;
             //item was taken, nothing returned
-            ui_heldLabel.text = "";
         }
         else if (returnedItem == heldItem) {
             //item was not taken
         }
         else if (returnedItem != heldItem) {
             //item was taken and new item given
-            if (heldItem != null) {
-                if (heldItem.transform.parent != hands.transform) {
-                    //someone else adopted the held item
-                    heldItem = null;
-                }
-                else {
-                    //item was orphaned, in theory
-                    DropItem();
-                }
+            
+            if (heldItem) {
+                RemoveItem();
+                heldItem = null;
             }
 
             AddItem(returnedItem);
         }
     }
 
-    void DropItem() {
-        heldItem.EnableBoxCollider2D();
+    void RemoveItem() {
         ui_heldLabel.text = "";
         heldItem.enabled = true;
         heldItem.doNotReset = false;
         heldItem.transform.SetParent(null);
+        heldItem.EnableBoxCollider2D();
+    }
+
+    void DropItem() {
+        RemoveItem();
         heldItem.Drop();
         heldItem = null;
     }
 
     void AddItem(Item item) {
-        if (heldItem != null) {
+        if (heldItem) {
             DropItem();
         }
         
         heldItem = item;
-        heldItem.DisableBoxCollider2D();
         heldItem.enabled = false;
         heldItem.doNotReset = true;
+        heldItem.DisableBoxCollider2D();
         ui_heldLabel.text = heldItem.itemDef.itemName;
         heldItem.gameObject.layer = 2; //set layer to ignore raycast
         heldItem.transform.SetParent(hands.transform);
