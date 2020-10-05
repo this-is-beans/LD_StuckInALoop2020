@@ -75,10 +75,8 @@ public class Item : Interactable {
                     );
                     newItem.SetDef(itemDef.combinableListTarget[i]);
                     item.GetComponent<BounceBehaviour>().Throw(new Vector2(0, 0));
-                    
-                    Destroy(item);
-                    Destroy(this);
-                    
+                    Destroy(gameObject);
+                    Destroy(item.gameObject);
                     return newItem;
                 }
 

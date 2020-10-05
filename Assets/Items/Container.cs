@@ -5,8 +5,7 @@ using UnityEngine;
 using UnityEngine.Events;
 
 [RequireComponent(typeof(SpriteRenderer))]
-public class Container : Interactable
-{
+public class Container : Interactable {
     public ContainerDef containerDef;
     public List<ItemDef> inventory;
 
@@ -23,61 +22,48 @@ public class Container : Interactable
     public Action OnOpen;
 
     // Start is called before the first frame update
-    void Start()
-    {
+    void Start() {
     }
 
     // Update is called once per frame
-    void Update()
-    {
-        
+    void Update() {
     }
 
-    private void OnValidate()
-    {
+    private void OnValidate() {
         spriteRenderer = GetComponent<SpriteRenderer>();
-        if (containerDef != null)
-        {
+        if (containerDef != null) {
             spriteRenderer.sprite = containerDef.defaultSprite;
             currentHP = containerDef.maxHP;
         }
+
         spriteRenderer.sortingOrder = Mathf.RoundToInt(transform.position.y * 16f) * -1;
-        if (gameObject.layer != 8)
-        {
+        if (gameObject.layer != 8) {
             gameObject.layer = 8; //set layer to interactable
         }
     }
 
-    public override Item Interact(Item item)
-    {
-        if (isOpen)
-        {
+    public override Item Interact(Item item) {
+        if (isOpen) {
             return item;
         }
 
-        if (hasLock)
-        {
-            if (item == null)
-            {
+        if (hasLock) {
+            if (item == null) {
                 return null;
             }
 
-            if (CheckItemKey(item.itemDef))
-            {
+            if (CheckItemKey(item.itemDef)) {
                 Open();
-                if (containerDef.consumesItem)
-                {
+                if (containerDef.consumesItem) {
                     item.Consume();
                 }
             }
-            else if (item.itemDef == containerDef.destroyItem)
-            {
+            else if (item.itemDef == containerDef.destroyItem) {
                 Bash(item.itemDef.damageStrength);
                 item.Deplete(1);
                 return item;
             }
-            else
-            {
+            else {
                 return item;
             }
         }
@@ -89,22 +75,17 @@ public class Container : Interactable
         return item;
     }
 
-    bool CheckItemKey(ItemDef itemDef)
-    {
-        if (containerDef.keyItem == itemDef)
-        {
+    bool CheckItemKey(ItemDef itemDef) {
+        if (containerDef.keyItem == itemDef) {
             return true;
         }
-        else
-        {
+        else {
             return false;
         }
     }
 
-    public void Bash(int dmg)
-    {
-        if (isOpen || containerDef.isInvincible)
-        {
+    public void Bash(int dmg) {
+        if (isOpen || containerDef.isInvincible) {
             return;
         }
 
@@ -112,24 +93,20 @@ public class Container : Interactable
 
         currentHP = Mathf.Clamp(currentHP, 0, containerDef.maxHP);
 
-        if (currentHP <= 0)
-        {
+        if (currentHP <= 0) {
             ForceOpen();
         }
-        else
-        {
-            if (dmg > 0)
-            {
+        else {
+            if (dmg > 0) {
                 StartCoroutine(Jiggle());
             }
+
             //other effects
         }
     }
 
-    public void ForceOpen()
-    {
-        if (isOpen)
-        {
+    public void ForceOpen() {
+        if (isOpen) {
             return;
         }
 
@@ -137,16 +114,14 @@ public class Container : Interactable
         Open();
     }
 
-    void Open()
-    {
+    void Open() {
         isOpen = true;
         spriteRenderer.sprite = containerDef.openedSprite;
         gameObject.layer = 2;
         StartCoroutine(ThrowInventory());
     }
 
-    IEnumerator Jiggle()
-    {
+    IEnumerator Jiggle() {
         transform.Translate(new Vector3(0.1f, 0.1f));
         yield return new WaitForSeconds(0.1f);
         transform.Translate(new Vector3(-0.2f, -0.2f));
@@ -154,22 +129,22 @@ public class Container : Interactable
         transform.Translate(new Vector3(0.1f, 0.1f));
     }
 
-    IEnumerator ThrowInventory()
-    {
-        if (damageParticle != null)
-        {
-            if (!damageParticle.isPlaying)
-            {
+    IEnumerator ThrowInventory() {
+        if (damageParticle != null) {
+            if (!damageParticle.isPlaying) {
                 damageParticle.Play();
             }
         }
-        foreach (ItemDef i in inventory)
-        {
-            Item item = Instantiate(Resources.Load<Item>("Prefabs/Item Prefab"), transform.position, Quaternion.identity);
+
+        foreach (ItemDef i in inventory) {
+            Item item = Instantiate(Resources.Load<Item>("Prefabs/Item Prefab"), transform.position,
+                Quaternion.identity);
             yield return new WaitForEndOfFrame();
 
             item.SetDef(i);
-            item.GetComponent<BounceBehaviour>().Throw(new Vector2(UnityEngine.Random.Range(minThrowRange.x, maxThrowRange.x), UnityEngine.Random.Range(minThrowRange.y, maxThrowRange.y)));
+            item.GetComponent<BounceBehaviour>().Throw(new Vector2(
+                UnityEngine.Random.Range(minThrowRange.x, maxThrowRange.x),
+                UnityEngine.Random.Range(minThrowRange.y, maxThrowRange.y)));
             yield return new WaitForSeconds(0.15f);
         }
 
@@ -178,8 +153,7 @@ public class Container : Interactable
         yield return null;
     }
 
-    public void ResetState()
-    {
+    public void ResetState() {
         isOpen = false;
         currentHP = containerDef.maxHP;
         spriteRenderer.sprite = containerDef.defaultSprite;
