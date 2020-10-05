@@ -224,6 +224,15 @@ TextureImporter:
   - first:
       213: 3022846857266626705
     second: props_interactable_18
+  - first:
+      213: -2448165425370032805
+    second: props_interactable_19
+  - first:
+      213: -7674396180010162614
+    second: props_interactable_20
+  - first:
+      213: 4311717631345251028
+    second: props_interactable_21
   externalObjects: {}
   serializedVersion: 11
   mipmaps:
@@ -1352,7 +1361,7 @@ TextureImporter:
       name: props_interactable_06
       rect:
         serializedVersion: 2
-        x: 97
+        x: 154
         y: 98
         width: 53
         height: 49
@@ -1373,7 +1382,7 @@ TextureImporter:
       name: props_interactable_6
       rect:
         serializedVersion: 2
-        x: 97
+        x: 154
         y: 98
         width: 53
         height: 49
@@ -1541,8 +1550,8 @@ TextureImporter:
       name: props_interactable_12
       rect:
         serializedVersion: 2
-        x: 151
-        y: 98
+        x: 0
+        y: 48
         width: 53
         height: 49
       alignment: 9
@@ -1562,7 +1571,7 @@ TextureImporter:
       name: props_interactable_13
       rect:
         serializedVersion: 2
-        x: 97
+        x: 154
         y: 98
         width: 53
         height: 49
@@ -1680,6 +1689,69 @@ TextureImporter:
       bones: []
       spriteID: 19088c1733f43f920800000000000000
       internalID: 3022846857266626705
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: props_interactable_19
+      rect:
+        serializedVersion: 2
+        x: 54
+        y: 48
+        width: 47
+        height: 49
+      alignment: 9
+      pivot: {x: 0.5744681, y: 0.3469388}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: b551d6d348e560ed0800000000000000
+      internalID: -2448165425370032805
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: props_interactable_20
+      rect:
+        serializedVersion: 2
+        x: 97
+        y: 101
+        width: 56
+        height: 46
+      alignment: 9
+      pivot: {x: 0.53571427, y: 0.36956522}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: a4621e0c5511f7590800000000000000
+      internalID: -7674396180010162614
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: props_interactable_21
+      rect:
+        serializedVersion: 2
+        x: 102
+        y: 48
+        width: 46
+        height: 49
+      alignment: 9
+      pivot: {x: 0.5, y: 0.3469388}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 4d25f1c575c46db30800000000000000
+      internalID: 4311717631345251028
       vertices: []
       indices: 
       edges: []
@@ -1814,8 +1886,8 @@ TextureImporter:
       name: props_static_6
       rect:
         serializedVersion: 2
-        x: 205
-        y: 97
+        x: 149
+        y: 47
         width: 38
         height: 50
       alignment: 9

@@ -12,8 +12,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9dbbed016a24e464b99bbeb1346f2c62, type: 3}
   m_Name: Fuel Crystalizer
   m_EditorClassIdentifier: 
-  defaultSprite: {fileID: 6520412641442537300, guid: aa1146017606a064c986485c58506a5a, type: 3}
-  openedSprite: {fileID: 6520412641442537300, guid: aa1146017606a064c986485c58506a5a, type: 3}
+  defaultSprite: {fileID: -7674396180010162614, guid: aa1146017606a064c986485c58506a5a, type: 3}
+  openedSprite: {fileID: -7674396180010162614, guid: aa1146017606a064c986485c58506a5a, type: 3}
   lockType: 0
   keyItem: {fileID: 11400000, guid: 1637f022570a5be448629f913dfa06a6, type: 2}
   consumesItem: 0
