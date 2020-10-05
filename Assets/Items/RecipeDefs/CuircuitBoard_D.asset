@@ -12,7 +12,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: cdb1be981cae4e1ebbc058002fd01921, type: 3}
   m_Name: CuircuitBoard_D
   m_EditorClassIdentifier: 
-  recipeName: 
+  recipeName: CircuitBoard D
   recipeDescription: 
-  requiredItems: []
-  returnedItems: []
+  requiredItems:
+  - {fileID: 11400000, guid: 9a357970c3eb2054dabf8cb97750a2f6, type: 2}
+  - {fileID: 11400000, guid: f2cf7d8fa75b78444ad4bbf48369749a, type: 2}
+  returnedItems:
+  - {fileID: 11400000, guid: 9417b2a0fc242f247bf5ab0a318b8fcc, type: 2}

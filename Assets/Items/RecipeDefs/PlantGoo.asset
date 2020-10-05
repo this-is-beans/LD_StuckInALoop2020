@@ -10,11 +10,12 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: cdb1be981cae4e1ebbc058002fd01921, type: 3}
-  m_Name: CurcuitBoard_B
+  m_Name: PlantGoo
   m_EditorClassIdentifier: 
-  recipeName: CircuitBoard B
+  recipeName: Plant Goo
   recipeDescription: 
   requiredItems:
-  - {fileID: 11400000, guid: 9417b2a0fc242f247bf5ab0a318b8fcc, type: 2}
+  - {fileID: 11400000, guid: 9a402c224f9cbf140aa81c6a1d8f3681, type: 2}
+  - {fileID: 11400000, guid: 2343937dbbfe88744abda83c60ae7129, type: 2}
   returnedItems:
-  - {fileID: 11400000, guid: 70057ff20de77e041a0375dd432264b6, type: 2}
+  - {fileID: 11400000, guid: 1637f022570a5be448629f913dfa06a6, type: 2}

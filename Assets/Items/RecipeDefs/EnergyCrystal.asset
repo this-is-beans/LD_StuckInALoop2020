@@ -10,11 +10,13 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: cdb1be981cae4e1ebbc058002fd01921, type: 3}
-  m_Name: CurcuitBoard_B
+  m_Name: EnergyCrystal
   m_EditorClassIdentifier: 
-  recipeName: CircuitBoard B
-  recipeDescription: 
+  recipeName: Energy Crystal
+  recipeDescription: Make an uncharged Energy Crystal
   requiredItems:
-  - {fileID: 11400000, guid: 9417b2a0fc242f247bf5ab0a318b8fcc, type: 2}
+  - {fileID: 11400000, guid: d0fbee7f76133f744884a5d6c6f4f686, type: 2}
+  - {fileID: 11400000, guid: 84b2f7778401c2241b5111048a27c036, type: 2}
+  - {fileID: 11400000, guid: 1637f022570a5be448629f913dfa06a6, type: 2}
   returnedItems:
-  - {fileID: 11400000, guid: 70057ff20de77e041a0375dd432264b6, type: 2}
+  - {fileID: 11400000, guid: e4c1edd1f2bb74f93bc17370ea240386, type: 2}
