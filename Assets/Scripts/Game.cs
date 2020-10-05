@@ -92,14 +92,20 @@ public class Game : MonoBehaviour
 
         foreach (Machine c in machines)
         {
-            Destroy(Instantiate(warpEffect, c.transform.position, Quaternion.identity), 1f);
-            //yield return new WaitForSeconds(0.1f);
-
-            c.ResetState();
-            yield return new WaitForSeconds(0.1f);
+            if (c.spriteRenderer.isVisible)
+            {
+                Destroy(Instantiate(warpEffect, c.transform.position, Quaternion.identity), 1f);
+                //yield return new WaitForSeconds(0.1f);
+                c.ResetState();
+                yield return new WaitForSeconds(0.1f);
+            }
+            else
+            {
+                c.ResetState();
+            }
         }
 
-        Destroy(Instantiate(warpEffect, character.transform.position, Quaternion.identity), 1f);
+        Destroy(Instantiate(warpEffect, character.transform.position, Quaternion.identity), 0.5f);
         yield return new WaitForSeconds(0.2f);
 
         character.ResetState();
