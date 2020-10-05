@@ -53,10 +53,10 @@ public class CharacterController2D : MonoBehaviour {
  smol space, to think of things
     
     ** end space to think **/
-    void OnDrawGizmosSelected() {
-        Handles.color = Color.cyan;
-        Handles.DrawWireDisc(gameObject.transform.position, gameObject.transform.forward, interactableAreaRadius);
-    }
+    // void OnDrawGizmosSelected() {
+    //     Handles.color = Color.cyan;
+    //     Handles.DrawWireDisc(gameObject.transform.position, gameObject.transform.forward, interactableAreaRadius);
+    // }
 
     void Start() {
         animator = gameObject.GetComponent<Animator>();

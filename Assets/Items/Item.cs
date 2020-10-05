@@ -1,6 +1,5 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
-using UnityEditor.UI;
 using UnityEngine;
 
 public class Item : Interactable {
@@ -84,8 +83,10 @@ public class Item : Interactable {
                         transform.position, Quaternion.identity
                     );
                     newItem.SetDef(itemDef.combinableListTarget[i]);
-                    Destroy(gameObject);
-                    Destroy(item.gameObject);
+                    gameObject.SetActive(false);
+                    this.Drop();
+                    item.gameObject.SetActive(false);
+                    item.Drop();
                     newItem.Drop();
                     return null;
                 }

@@ -22,5 +22,7 @@ MonoBehaviour:
   damageStrength: 0
   combinableList:
   - {fileID: 11400000, guid: cb51d5990322a594da6d356d5410115f, type: 2}
+  - {fileID: 11400000, guid: e39e584318b1b1b45a9d9e835dfefaa3, type: 2}
   combinableListTarget:
   - {fileID: 11400000, guid: 45135d2bc26b9374b8b6f9ca3f6f531c, type: 2}
+  - {fileID: 11400000, guid: 1dbf18347de38474e89e350fa014ae84, type: 2}

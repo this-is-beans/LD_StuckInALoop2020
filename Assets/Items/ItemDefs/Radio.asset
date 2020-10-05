@@ -19,5 +19,8 @@ MonoBehaviour:
   itemDescription: Funny radio description here.
   toolType: 0
   maxUses: 3
-  combinableList: []
-  combinableListTarget: []
+  damageStrength: 0
+  combinableList:
+  - {fileID: 11400000, guid: 3e254bf98dd4003488ce8db621462d16, type: 2}
+  combinableListTarget:
+  - {fileID: 11400000, guid: 1dbf18347de38474e89e350fa014ae84, type: 2}
