@@ -12,9 +12,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 67f3f8102317f2d44a8011daf3a1542b, type: 3}
   m_Name: Timepod Part 2
   m_EditorClassIdentifier: 
-  itemName: Timepod Part
-  defaultSprite: {fileID: 21300000, guid: 81e1f393a936aee40afeafb58aa308a1, type: 3}
-  damagedSprite: {fileID: 21300000, guid: 81e1f393a936aee40afeafb58aa308a1, type: 3}
+  itemName: Quantium Stabilizers
+  defaultSprite: {fileID: 21300000, guid: 6d06a011ae9520a4b9bc6e55ae085beb, type: 3}
+  damagedSprite: {fileID: 21300000, guid: 6d06a011ae9520a4b9bc6e55ae085beb, type: 3}
   itemTextColor: {r: 0.6156863, g: 0, b: 1, a: 0}
   itemDescription: Install it in the Time Pod!
   toolType: 0

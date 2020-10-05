@@ -10,13 +10,13 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 67f3f8102317f2d44a8011daf3a1542b, type: 3}
-  m_Name: Timepod Part 4
+  m_Name: Part Item 4
   m_EditorClassIdentifier: 
-  itemName: Paradox Compensator
-  defaultSprite: {fileID: 21300000, guid: 78e7886f9d5d50a4b8a2d95835141839, type: 3}
-  damagedSprite: {fileID: 21300000, guid: 78e7886f9d5d50a4b8a2d95835141839, type: 3}
-  itemTextColor: {r: 0.6156863, g: 0, b: 1, a: 0}
-  itemDescription: Install it in the Time Pod!
+  itemName: Circuit Board B
+  defaultSprite: {fileID: 21300000, guid: 12c7beea8887f9b498316576ea4e7154, type: 3}
+  damagedSprite: {fileID: 21300000, guid: 12c7beea8887f9b498316576ea4e7154, type: 3}
+  itemTextColor: {r: 1, g: 0.54481244, b: 0, a: 0}
+  itemDescription: Combine with three other boards!
   toolType: 0
   maxUses: 0
   damageStrength: 0
