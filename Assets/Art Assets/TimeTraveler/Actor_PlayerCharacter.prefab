@@ -49,6 +49,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   characterSpriteRenderer: {fileID: 8743238218939821890}
+  rbody: {fileID: 0}
   moveVec2: {x: 0, y: 0}
   speed: 5
   enableBounce: 0
@@ -60,6 +61,7 @@ MonoBehaviour:
   interactableAreaRadius: 0.7
   hands: {fileID: 2269332389389089208}
   ui_heldLabel: {fileID: 0}
+  animator: {fileID: 0}
 --- !u!50 &7015266105828143260
 Rigidbody2D:
   serializedVersion: 4
@@ -77,7 +79,7 @@ Rigidbody2D:
   m_AngularDrag: 0.05
   m_GravityScale: 1
   m_Material: {fileID: 0}
-  m_Interpolate: 0
+  m_Interpolate: 1
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 4

@@ -9,7 +9,7 @@ using Random = UnityEngine.Random;
 public class CharacterController2D : MonoBehaviour {
     // blynxy just copied catboy, cause wtf is this unity stuff
     public SpriteRenderer characterSpriteRenderer;
-
+    public Rigidbody2D rbody;
 
     // movement
     [SerializeField] private Vector2 moveVec2;
@@ -59,6 +59,7 @@ public class CharacterController2D : MonoBehaviour {
     }
     void Start() {
         animator = gameObject.GetComponent<Animator>();
+        rbody = gameObject.GetComponent<Rigidbody2D>();
         ui_interactDescription = GameObject.Find("UI_InteractDescription").GetComponent<Text>();
         ui_interactLabel = GameObject.Find("UI_InteractLabel").GetComponent<Text>();
         ui_heldLabel = GameObject.Find("UI_HeldLabel").GetComponent<Text>();
@@ -72,125 +73,160 @@ public class CharacterController2D : MonoBehaviour {
     }
 
     // Update is called once per frame
-    void Update() {
-        
-        if (!isFrozen) {
-        characterSpriteRenderer.sortingOrder = (Mathf.RoundToInt(transform.position.y * 16f) * -1);
-        if (heldItem != null) {
-            heldItem.itemSpriteRenderer.sortingOrder = characterSpriteRenderer.sortingOrder + 1;
-        }
+    void Update()
+    {
 
-        // get nearby interactables
-        interactables = Physics2D.OverlapCircleAll(
-            transform.position,
-            interactableAreaRadius, 
-            LayerMask.GetMask("Interactable"));
+        if (!isFrozen)
+        {
+            characterSpriteRenderer.sortingOrder = (Mathf.RoundToInt(transform.position.y * 16f) * -1);
+            if (heldItem != null)
+            {
+                heldItem.itemSpriteRenderer.sortingOrder = characterSpriteRenderer.sortingOrder + 1;
+            }
 
-        Interactable targetItem = null;
-        if (interactables.Length > 0) {
-            foreach (Collider2D i in interactables) {
-                if (i.TryGetComponent(out Interactable interactable)) {
-                    targetItem = interactable;
+            // get nearby interactables
+            interactables = Physics2D.OverlapCircleAll(
+                transform.position,
+                interactableAreaRadius,
+                LayerMask.GetMask("Interactable"));
 
-                    if (targetItem.TryGetComponent(out Item item)) {
-                        ui_interactDescription.text = item.itemDef.itemDescription;
-                        ui_interactLabel.text = item.itemDef.itemName;
+            Interactable targetItem = null;
+            if (interactables.Length > 0)
+            {
+                foreach (Collider2D i in interactables)
+                {
+                    if (i.TryGetComponent(out Interactable interactable))
+                    {
+                        targetItem = interactable;
+
+                        if (targetItem.TryGetComponent(out Item item))
+                        {
+                            ui_interactDescription.text = item.itemDef.itemDescription;
+                            ui_interactLabel.text = item.itemDef.itemName;
+                        }
+
+                        break;
                     }
 
-                    break;
                 }
-                
             }
-        }
-        else {
-            ui_interactDescription.text = "";
-            ui_interactLabel.text = "";
-        }
-
-
-        /***
-         * MOVEMENT SECTION
-         */
-        moveVec2 = new Vector2();
-        // movement: left right up down
-        if (Input.GetKey(KeyCode.A) || Input.GetKey(KeyCode.LeftArrow)) {
-            moveVec2 += Vector2.left;
-        }
-
-        if (Input.GetKey(KeyCode.D) || Input.GetKey(KeyCode.RightArrow)) {
-            moveVec2 += Vector2.right;
-        }
-
-        if (Input.GetKey(KeyCode.W) || Input.GetKey(KeyCode.UpArrow)) {
-            moveVec2 += Vector2.up;
-        }
-
-        if (Input.GetKey(KeyCode.S) || Input.GetKey(KeyCode.DownArrow)) {
-            moveVec2 += Vector2.down;
-        }
-
-        /***
-         * INTERACTION SECTION
-         */
-
-        if (Input.GetKeyDown(KeyCode.Space) || Input.GetKeyDown(KeyCode.KeypadEnter)) {
-            if (targetItem) {
-                Interact(targetItem);
-            }
-            else {
-                if (heldItem) DropItem();
-            }
-        }
-
-        if (Input.GetKeyDown(KeyCode.Q) || Input.GetKeyDown(KeyCode.Alpha0)) {
-            // do action maybe
-            if (heldItem) {
-                DropItem();
-            }
-        }
-
-        /***
-         * ANIMATION SECTION
-         */
-        if (enableBounce) {
-            // if moving & not already bouncing, initiate a random bounce
-            if (moveVec2 != Vector2.zero && !isBouncing) {
-                _bounceHeight = Random.Range(bounceMinHeight, bounceMaxHeight);
-                isBouncing = true;
-                bounceUp = true;
+            else
+            {
+                ui_interactDescription.text = "";
+                ui_interactLabel.text = "";
             }
 
-            // if bounce initiated, process this frame's bounce
-            if (isBouncing) {
-                Vector3 oldVector3 = characterSpriteRenderer.transform.localPosition;
-                // bounce direction up
-                if (bounceUp) {
-                    characterSpriteRenderer.transform.localPosition = new Vector3(
-                        oldVector3.x,
-                        Math.Min(_bounceHeight + .3f, oldVector3.y + Time.deltaTime * bounceSpeed),
-                        0);
-                    if (characterSpriteRenderer.transform.localPosition.y >= _bounceHeight)
-                        bounceUp = false;
-                } // else bounce direction down
-                else {
-                    characterSpriteRenderer.transform.localPosition = new Vector3(
-                        oldVector3.x,
-                        Math.Max(0, oldVector3.y - Time.deltaTime * bounceSpeed),
-                        0);
+
+            /***
+             * MOVEMENT SECTION
+             */
+            moveVec2 = new Vector2();
+            // movement: left right up down
+            if (Input.GetKey(KeyCode.A) || Input.GetKey(KeyCode.LeftArrow))
+            {
+                moveVec2 += Vector2.left;
+            }
+
+            if (Input.GetKey(KeyCode.D) || Input.GetKey(KeyCode.RightArrow))
+            {
+                moveVec2 += Vector2.right;
+            }
+
+            if (Input.GetKey(KeyCode.W) || Input.GetKey(KeyCode.UpArrow))
+            {
+                moveVec2 += Vector2.up;
+            }
+
+            if (Input.GetKey(KeyCode.S) || Input.GetKey(KeyCode.DownArrow))
+            {
+                moveVec2 += Vector2.down;
+            }
+
+            /***
+             * INTERACTION SECTION
+             */
+
+            if (Input.GetKeyDown(KeyCode.Space) || Input.GetKeyDown(KeyCode.KeypadEnter))
+            {
+                if (targetItem)
+                {
+                    Interact(targetItem);
+                }
+                else
+                {
+                    if (heldItem) DropItem();
                 }
             }
 
-            if (characterSpriteRenderer.transform.localPosition.y == 0) {
-                isBouncing = false;
+            if (Input.GetKeyDown(KeyCode.Q) || Input.GetKeyDown(KeyCode.Alpha0))
+            {
+                // do action maybe
+                if (heldItem)
+                {
+                    DropItem();
+                }
             }
+
+            /***
+             * ANIMATION SECTION
+             */
+            if (enableBounce)
+            {
+                // if moving & not already bouncing, initiate a random bounce
+                if (moveVec2 != Vector2.zero && !isBouncing)
+                {
+                    _bounceHeight = Random.Range(bounceMinHeight, bounceMaxHeight);
+                    isBouncing = true;
+                    bounceUp = true;
+                }
+
+                // if bounce initiated, process this frame's bounce
+                if (isBouncing)
+                {
+                    Vector3 oldVector3 = characterSpriteRenderer.transform.localPosition;
+                    // bounce direction up
+                    if (bounceUp)
+                    {
+                        characterSpriteRenderer.transform.localPosition = new Vector3(
+                            oldVector3.x,
+                            Math.Min(_bounceHeight + .3f, oldVector3.y + Time.deltaTime * bounceSpeed),
+                            0);
+                        if (characterSpriteRenderer.transform.localPosition.y >= _bounceHeight)
+                            bounceUp = false;
+                    } // else bounce direction down
+                    else
+                    {
+                        characterSpriteRenderer.transform.localPosition = new Vector3(
+                            oldVector3.x,
+                            Math.Max(0, oldVector3.y - Time.deltaTime * bounceSpeed),
+                            0);
+                    }
+                }
+
+                if (characterSpriteRenderer.transform.localPosition.y == 0)
+                {
+                    isBouncing = false;
+                }
+            }
+
+
+            //transform.position = new Vector3(
+            //transform.position.x + moveVec2.x * Time.deltaTime * speed,
+            //transform.position.y + moveVec2.y * Time.deltaTime * speed);
         }
-
-
-        transform.position = new Vector3(
-            transform.position.x + moveVec2.x * Time.deltaTime * speed,
-            transform.position.y + moveVec2.y * Time.deltaTime * speed);
     }
-}
+
+    private void FixedUpdate()
+    {
+        if (isFrozen)
+        {
+            rbody.velocity = Vector2.zero;
+        }
+        else
+        {
+            rbody.MovePosition(rbody.position + moveVec2 * speed * Time.deltaTime);
+        }
+    }
 
     void Interact(Interactable target) {
         // do some stupid thing with things that are connected
