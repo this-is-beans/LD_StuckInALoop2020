@@ -3213,7 +3213,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 05da0b92a645c544fb4803fe2a7fd7fe, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  containerDef: {fileID: 11400000, guid: 8d3743ad7b13a4046b3b97a85b575a37, type: 2}
+  containerDef: {fileID: 11400000, guid: 87339e8f9bca2e841a344166d7176892, type: 2}
   transmutedItemDef: {fileID: 0}
   recipeDefs:
   - {fileID: 11400000, guid: 8a4f4122579b64e7c9c8e1d72340b544, type: 2}
@@ -3224,7 +3224,7 @@ MonoBehaviour:
   minThrowRange: 0
   maxThrowRange: 0
   doNotReset: 0
-  currentHP: 0
+  currentHP: 5
   isBroken: 0
   fixingRecipe: {fileID: 0}
   OnActivate:
@@ -4774,11 +4774,27 @@ PrefabInstance:
       value: -166
       objectReference: {fileID: 0}
     - target: {fileID: 5305737756509337921, guid: 24803b97cd003c04d82b4148f6d77d13, type: 3}
+      propertyPath: recipeDefs.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5305737756509337921, guid: 24803b97cd003c04d82b4148f6d77d13, type: 3}
+      propertyPath: OnActivate.m_PersistentCalls.m_Calls.Array.size
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5305737756509337921, guid: 24803b97cd003c04d82b4148f6d77d13, type: 3}
       propertyPath: containerDef
       value: 
-      objectReference: {fileID: 11400000, guid: 469141dfdd582014cac5017ee2e1bc8a, type: 2}
+      objectReference: {fileID: 11400000, guid: 8d3743ad7b13a4046b3b97a85b575a37, type: 2}
     - target: {fileID: 5305737756509337921, guid: 24803b97cd003c04d82b4148f6d77d13, type: 3}
       propertyPath: transmutedItemDef
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 5305737756509337921, guid: 24803b97cd003c04d82b4148f6d77d13, type: 3}
+      propertyPath: recipeDefs.Array.data[0]
+      value: 
+      objectReference: {fileID: 11400000, guid: 8a4f4122579b64e7c9c8e1d72340b544, type: 2}
+    - target: {fileID: 5305737756509337921, guid: 24803b97cd003c04d82b4148f6d77d13, type: 3}
+      propertyPath: damageParticle
       value: 
       objectReference: {fileID: 0}
     - target: {fileID: 8271990743670076614, guid: 24803b97cd003c04d82b4148f6d77d13, type: 3}
@@ -10169,7 +10185,7 @@ PrefabInstance:
     - target: {fileID: 753402064265851705, guid: 29ba0f49a909ea3459ad1202919b9e20, type: 3}
       propertyPath: m_Sprite
       value: 
-      objectReference: {fileID: -1158150967827203440, guid: aa1146017606a064c986485c58506a5a, type: 3}
+      objectReference: {fileID: 7029221768118296174, guid: aa1146017606a064c986485c58506a5a, type: 3}
     - target: {fileID: 1504987461711715039, guid: 29ba0f49a909ea3459ad1202919b9e20, type: 3}
       propertyPath: currentHP
       value: 5
