@@ -12,15 +12,22 @@ public class Game : MonoBehaviour
     private int resetCounter;
     public Text resetCounterText;
     public bool pause;
+    public GameObject timeMachineGameObject;
+    public Machine timeMachine;
 
-    void Start()
-    {
+    void Start() {
+        timeMachine = timeMachineGameObject.GetComponent<Machine>();
         timer = ResetTime;
         resetCounter = 0;
     }
 
     void Update()
     {
+        if (!timeMachine.isBroken) {
+            // WIN CONDITION
+            pause = true;
+            
+        }
        if (pause)
         {
             return;
