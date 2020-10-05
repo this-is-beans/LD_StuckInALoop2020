@@ -10,7 +10,7 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 9dbbed016a24e464b99bbeb1346f2c62, type: 3}
-  m_Name: ItemBlender
+  m_Name: MultipurposeItemBlender
   m_EditorClassIdentifier: 
   defaultSprite: {fileID: 0}
   openedSprite: {fileID: 0}
