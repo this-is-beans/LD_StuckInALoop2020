@@ -20,24 +20,8 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="13863907-f4d6-4b09-a0dd-5bd21b3f76d9" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/Assets/Scripts/WobbleBehaviour.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Scripts/WobbleBehaviour.cs.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/.idea.LD_StuckInALoop2020/.idea/contentModel.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.LD_StuckInALoop2020/.idea/contentModel.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/.idea.LD_StuckInALoop2020/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.LD_StuckInALoop2020/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Art Assets/TimeTraveler/TimeTraveler_Controller.controller" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Art Assets/TimeTraveler/TimeTraveler_Controller.controller" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Items/ContainerDefs/MultipurposeItemBlender.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Items/ContainerDefs/MultipurposeItemBlender.asset" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Items/Machine.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Items/Machine.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Resources/Prefabs/Items/BlueKeycard 1.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Resources/Prefabs/Items/BlueKeycard 1.prefab" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Resources/Prefabs/Items/Empty Cell.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Resources/Prefabs/Items/Empty Cell.prefab" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Resources/Prefabs/Items/FuelCrystal.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Resources/Prefabs/Items/FuelCrystal.prefab" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Resources/Prefabs/Items/GlassBeaker.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Resources/Prefabs/Items/GlassBeaker.prefab" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Resources/Prefabs/Items/GreenKeycard.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Resources/Prefabs/Items/GreenKeycard.prefab" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Resources/Prefabs/Items/RedKeycard.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Resources/Prefabs/Items/RedKeycard.prefab" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Resources/Prefabs/Items/Wrench.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Resources/Prefabs/Items/Wrench.prefab" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scenes/BlynxyTestLevel.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/BlynxyTestLevel.unity" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scenes/Game.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/Game.unity" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/CharacterController2D.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/CharacterController2D.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Game.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Game.cs" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -77,8 +61,8 @@
         <option value="$PROJECT_DIR$/Assets/Items/RecipeDef.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/CharacterController2D.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/WobbleBehaviour.cs" />
-        <option value="$PROJECT_DIR$/Assets/Items/Machine.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/Game.cs" />
+        <option value="$PROJECT_DIR$/Assets/Items/Machine.cs" />
       </list>
     </option>
   </component>

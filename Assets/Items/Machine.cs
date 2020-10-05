@@ -213,6 +213,7 @@ public class Machine : Interactable {
         }
 
         if (storedItem != null) {
+            storedItem.doNotReset = false;
             storedItem.Retrieved();
             //yield return new WaitForEndOfFrame();
             storedItem.GetComponent<BounceBehaviour>().Throw( targetThrowLocation.transform.position *
