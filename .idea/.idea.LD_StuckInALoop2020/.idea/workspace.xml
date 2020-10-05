@@ -20,8 +20,13 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="13863907-f4d6-4b09-a0dd-5bd21b3f76d9" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/.idea/.idea.LD_StuckInALoop2020/.idea/codeStyles/codeStyleConfig.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/.idea.LD_StuckInALoop2020/.idea/contentModel.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.LD_StuckInALoop2020/.idea/contentModel.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/.idea.LD_StuckInALoop2020/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.LD_StuckInALoop2020/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Items/Machine.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Items/Machine.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Items/Item.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Items/Item.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/CharacterController2D.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/CharacterController2D.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Game.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Game.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/TeleportPad.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/TeleportPad.cs" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -32,20 +37,20 @@
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
   <component name="HighlightingSettingsPerFile">
-    <setting file="file://$PROJECT_DIR$/Assets/Items/BounceBehaviour.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Items/RecipeDef.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Items/Item.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/TeleportPad.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Assets/Items/TemporalToolbox.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Assets/Items/Machine.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Assets/Scripts/CharacterController2D.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Assets/Items/Interactable.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/WobbleBehaviour.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Items/ItemDef.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Assets/Scripts/Game.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Scripts/CharacterController2D.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Items/Container.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Assets/Items/ContainerDef.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Assets/Items/Item.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/BlynxyCharacterController2D.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Assets/Items/RecipeDef.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Items/Machine.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Scripts/Game.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Items/Interactable.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Items/BounceBehaviour.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Items/TemporalToolbox.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Items/ContainerDef.cs" root0="FORCE_HIGHLIGHTING" />
   </component>
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
@@ -53,16 +58,16 @@
         <option value="$PROJECT_DIR$/Assets/Scripts/Interactable.cs" />
         <option value="$PROJECT_DIR$/Assets/Items/Container.cs" />
         <option value="$PROJECT_DIR$/Assets/Items/ItemDef.cs" />
-        <option value="$PROJECT_DIR$/Assets/Items/Item.cs" />
         <option value="$PROJECT_DIR$/Assets/Items/Interactable.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/BlynxyCharacterController2D.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/TimeReset.cs" />
-        <option value="$PROJECT_DIR$/Assets/Scripts/TeleportPad.cs" />
         <option value="$PROJECT_DIR$/Assets/Items/RecipeDef.cs" />
-        <option value="$PROJECT_DIR$/Assets/Scripts/CharacterController2D.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/WobbleBehaviour.cs" />
-        <option value="$PROJECT_DIR$/Assets/Scripts/Game.cs" />
         <option value="$PROJECT_DIR$/Assets/Items/Machine.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/Game.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/TeleportPad.cs" />
+        <option value="$PROJECT_DIR$/Assets/Items/Item.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/CharacterController2D.cs" />
       </list>
     </option>
   </component>
@@ -78,21 +83,29 @@
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="settings.editor.selected.configurable" value="preferences.sourceCode.C#" />
+    <property name="vue.rearranger.settings.migration" value="true" />
   </component>
   <component name="RunManager" selected="Attach to Unity Editor.Attach to Unity Editor">
     <configuration name="Attach to Unity Editor &amp; Play" type="UNITY_DEBUG_RUN_CONFIGURATION" factoryName="UNITY_ATTACH_AND_PLAY" show_console_on_std_err="false" show_console_on_std_out="false" port="50000" address="localhost">
       <option name="allowRunningInParallel" value="false" />
       <option name="listenPortForConnections" value="false" />
       <option name="pid" />
+      <option name="selectedOptions">
+        <set />
+      </option>
       <method v="2" />
     </configuration>
     <configuration name="Attach to Unity Editor" type="UNITY_DEBUG_RUN_CONFIGURATION" factoryName="Unity Debug" show_console_on_std_err="false" show_console_on_std_out="false" port="50000" address="localhost">
       <option name="allowRunningInParallel" value="false" />
       <option name="listenPortForConnections" value="false" />
       <option name="pid" />
+      <option name="selectedOptions">
+        <set />
+      </option>
       <method v="2" />
     </configuration>
   </component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="SvnConfiguration">
     <configuration />
   </component>
@@ -104,11 +117,12 @@
       <option name="presentableId" value="Default" />
       <updated>1601774323584</updated>
       <workItem from="1601774331924" duration="28471000" />
+      <workItem from="1601912543942" duration="1868000" />
     </task>
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
-    <option name="version" value="2" />
+    <option name="version" value="3" />
   </component>
   <component name="UnityProjectConfiguration" hasMinimizedUI="true" />
   <component name="UnityUnitTestConfiguration" currentTestLauncher="EditMode" />
@@ -122,16 +136,18 @@
         </entry>
       </map>
     </option>
+    <option name="oldMeFiltersMigrated" value="true" />
   </component>
   <component name="WindowStateProjectService">
     <state x="1512" y="435" key="Rider.ProjectTemplateDialog.Size" timestamp="1601832309641">
       <screen x="0" y="0" width="2560" height="1400" />
     </state>
     <state x="1512" y="435" key="Rider.ProjectTemplateDialog.Size/0.0.2560.1400@0.0.2560.1400" timestamp="1601832309641" />
-    <state x="1421" y="348" key="SettingsEditor" timestamp="1601774354018">
-      <screen x="0" y="0" width="2560" height="1400" />
+    <state x="256" y="232" key="SettingsEditor" timestamp="1601912646083">
+      <screen x="0" y="23" width="2048" height="1226" />
     </state>
     <state x="1421" y="348" key="SettingsEditor/0.0.2560.1400@0.0.2560.1400" timestamp="1601774354018" />
+    <state x="256" y="232" key="SettingsEditor/0.23.2048.1226@0.23.2048.1226" timestamp="1601912646083" />
     <state x="866" y="148" width="1010" height="1386" key="dock-window-1" timestamp="1601782442630">
       <screen x="0" y="0" width="2560" height="1400" />
     </state>

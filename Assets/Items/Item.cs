@@ -14,6 +14,7 @@ public class Item : Interactable {
 
     Vector2 originalPosition;
     bool isOriginal;
+    private BoxCollider2D boxCollider;
 
     public Item(ItemDef itemDef) {
         this.itemDef = itemDef;
@@ -23,6 +24,7 @@ public class Item : Interactable {
     void Start() {
         // interactable.OnInteract += Interact;
         originalPosition = transform.position;
+        boxCollider = gameObject.GetComponent<BoxCollider2D>();
     }
 
     // Update is called once per frame
@@ -56,6 +58,14 @@ public class Item : Interactable {
         gameObject.name = itemDef.itemName;
         currentUses = itemDef.maxUses;
     }
+
+    public void EnableBoxCollider2D() {
+        boxCollider.enabled = true;
+    }
+    public void DisableBoxCollider2D() {
+        boxCollider.enabled = false;
+    }
+    
 
     public override Item Interact(Item item) {
         print("interacting with item: " + itemDef.itemName);

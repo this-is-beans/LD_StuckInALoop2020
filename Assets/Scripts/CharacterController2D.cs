@@ -42,8 +42,8 @@ public class CharacterController2D : MonoBehaviour {
     // Time Reset Stuff
     private bool isFrozen;
     private Vector3 startPosition;
-    
-    
+
+
     // ANIMATION
 
     public Animator animator;
@@ -57,6 +57,7 @@ public class CharacterController2D : MonoBehaviour {
         Handles.color = Color.cyan;
         Handles.DrawWireDisc(gameObject.transform.position, gameObject.transform.forward, interactableAreaRadius);
     }
+
     void Start() {
         animator = gameObject.GetComponent<Animator>();
         rbody = gameObject.GetComponent<Rigidbody2D>();
@@ -68,20 +69,17 @@ public class CharacterController2D : MonoBehaviour {
         isBouncing = false;
         isFrozen = false;
         enableBounce = true;
-        bounceSpeed = (speed <= 0) ? 5: speed/2;
+        speed = 5;
+        bounceSpeed = (speed <= 0) ? 5 : speed / 2;
         bounceMaxHeight = .2f;
         bounceMinHeight = .05f;
     }
 
     // Update is called once per frame
-    void Update()
-    {
-
-        if (!isFrozen)
-        {
+    void Update() {
+        if (!isFrozen) {
             characterSpriteRenderer.sortingOrder = (Mathf.RoundToInt(transform.position.y * 16f) * -1);
-            if (heldItem != null)
-            {
+            if (heldItem != null) {
                 heldItem.itemSpriteRenderer.sortingOrder = characterSpriteRenderer.sortingOrder + 1;
             }
 
@@ -92,27 +90,21 @@ public class CharacterController2D : MonoBehaviour {
                 LayerMask.GetMask("Interactable"));
 
             Interactable targetItem = null;
-            if (interactables.Length > 0)
-            {
-                foreach (Collider2D i in interactables)
-                {
-                    if (i.TryGetComponent(out Interactable interactable))
-                    {
+            if (interactables.Length > 0) {
+                foreach (Collider2D i in interactables) {
+                    if (i.TryGetComponent(out Interactable interactable)) {
                         targetItem = interactable;
 
-                        if (targetItem.TryGetComponent(out Item item))
-                        {
+                        if (targetItem.TryGetComponent(out Item item)) {
                             ui_interactDescription.text = item.itemDef.itemDescription;
                             ui_interactLabel.text = item.itemDef.itemName;
                         }
 
                         break;
                     }
-
                 }
             }
-            else
-            {
+            else {
                 ui_interactDescription.text = "";
                 ui_interactLabel.text = "";
             }
@@ -123,23 +115,19 @@ public class CharacterController2D : MonoBehaviour {
              */
             moveVec2 = new Vector2();
             // movement: left right up down
-            if (Input.GetKey(KeyCode.A) || Input.GetKey(KeyCode.LeftArrow))
-            {
+            if (Input.GetKey(KeyCode.A) || Input.GetKey(KeyCode.LeftArrow)) {
                 moveVec2 += Vector2.left;
             }
 
-            if (Input.GetKey(KeyCode.D) || Input.GetKey(KeyCode.RightArrow))
-            {
+            if (Input.GetKey(KeyCode.D) || Input.GetKey(KeyCode.RightArrow)) {
                 moveVec2 += Vector2.right;
             }
 
-            if (Input.GetKey(KeyCode.W) || Input.GetKey(KeyCode.UpArrow))
-            {
+            if (Input.GetKey(KeyCode.W) || Input.GetKey(KeyCode.UpArrow)) {
                 moveVec2 += Vector2.up;
             }
 
-            if (Input.GetKey(KeyCode.S) || Input.GetKey(KeyCode.DownArrow))
-            {
+            if (Input.GetKey(KeyCode.S) || Input.GetKey(KeyCode.DownArrow)) {
                 moveVec2 += Vector2.down;
             }
 
@@ -147,23 +135,18 @@ public class CharacterController2D : MonoBehaviour {
              * INTERACTION SECTION
              */
 
-            if (Input.GetKeyDown(KeyCode.Space) || Input.GetKeyDown(KeyCode.KeypadEnter))
-            {
-                if (targetItem)
-                {
+            if (Input.GetKeyDown(KeyCode.Space) || Input.GetKeyDown(KeyCode.KeypadEnter)) {
+                if (targetItem) {
                     Interact(targetItem);
                 }
-                else
-                {
+                else {
                     if (heldItem) DropItem();
                 }
             }
 
-            if (Input.GetKeyDown(KeyCode.Q) || Input.GetKeyDown(KeyCode.Alpha0))
-            {
+            if (Input.GetKeyDown(KeyCode.Q) || Input.GetKeyDown(KeyCode.Alpha0)) {
                 // do action maybe
-                if (heldItem)
-                {
+                if (heldItem) {
                     DropItem();
                 }
             }
@@ -171,23 +154,19 @@ public class CharacterController2D : MonoBehaviour {
             /***
              * ANIMATION SECTION
              */
-            if (enableBounce)
-            {
+            if (enableBounce) {
                 // if moving & not already bouncing, initiate a random bounce
-                if (moveVec2 != Vector2.zero && !isBouncing)
-                {
+                if (moveVec2 != Vector2.zero && !isBouncing) {
                     _bounceHeight = Random.Range(bounceMinHeight, bounceMaxHeight);
                     isBouncing = true;
                     bounceUp = true;
                 }
 
                 // if bounce initiated, process this frame's bounce
-                if (isBouncing)
-                {
+                if (isBouncing) {
                     Vector3 oldVector3 = characterSpriteRenderer.transform.localPosition;
                     // bounce direction up
-                    if (bounceUp)
-                    {
+                    if (bounceUp) {
                         characterSpriteRenderer.transform.localPosition = new Vector3(
                             oldVector3.x,
                             Math.Min(_bounceHeight + .3f, oldVector3.y + Time.deltaTime * bounceSpeed),
@@ -195,8 +174,7 @@ public class CharacterController2D : MonoBehaviour {
                         if (characterSpriteRenderer.transform.localPosition.y >= _bounceHeight)
                             bounceUp = false;
                     } // else bounce direction down
-                    else
-                    {
+                    else {
                         characterSpriteRenderer.transform.localPosition = new Vector3(
                             oldVector3.x,
                             Math.Max(0, oldVector3.y - Time.deltaTime * bounceSpeed),
@@ -204,8 +182,7 @@ public class CharacterController2D : MonoBehaviour {
                     }
                 }
 
-                if (characterSpriteRenderer.transform.localPosition.y == 0)
-                {
+                if (characterSpriteRenderer.transform.localPosition.y == 0) {
                     isBouncing = false;
                 }
             }
@@ -217,14 +194,11 @@ public class CharacterController2D : MonoBehaviour {
         }
     }
 
-    private void FixedUpdate()
-    {
-        if (isFrozen)
-        {
+    private void FixedUpdate() {
+        if (isFrozen) {
             rbody.velocity = Vector2.zero;
         }
-        else
-        {
+        else {
             rbody.MovePosition(rbody.position + moveVec2 * speed * Time.deltaTime);
         }
     }
@@ -260,6 +234,7 @@ public class CharacterController2D : MonoBehaviour {
     }
 
     void DropItem() {
+        heldItem.EnableBoxCollider2D();
         ui_heldLabel.text = "";
         heldItem.enabled = true;
         heldItem.doNotReset = false;
@@ -272,8 +247,9 @@ public class CharacterController2D : MonoBehaviour {
         if (heldItem != null) {
             DropItem();
         }
-
+        
         heldItem = item;
+        heldItem.DisableBoxCollider2D();
         heldItem.enabled = false;
         heldItem.doNotReset = true;
         ui_heldLabel.text = heldItem.itemDef.itemName;
@@ -290,6 +266,7 @@ public class CharacterController2D : MonoBehaviour {
     public void UnFreeze() {
         this.isFrozen = false;
     }
+
     public void ResetState() {
         gameObject.transform.localPosition = startPosition;
     }

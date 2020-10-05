@@ -19,6 +19,7 @@ public class Game : MonoBehaviour
         timeMachine = timeMachineGameObject.GetComponent<Machine>();
         timer = ResetTime;
         resetCounter = 0;
+        resetCounterText.text = "" + resetCounter + " Resets";
     }
 
     void Update()
@@ -115,6 +116,6 @@ public class Game : MonoBehaviour
 
         pause = false;
         resetCounter++;
-        resetCounterText.text = "Resets: {resetCounter}";
+        resetCounterText.text = "" + resetCounter + " Resets";
     }
 }
