@@ -10352,7 +10352,7 @@ PrefabInstance:
       objectReference: {fileID: 196001120}
     - target: {fileID: 4585761087915352806, guid: 6cd8a7c42c6fd8346aee171ba9f4ab09, type: 3}
       propertyPath: ResetTime
-      value: 20
+      value: 60
       objectReference: {fileID: 0}
     - target: {fileID: 4585761087915352807, guid: 6cd8a7c42c6fd8346aee171ba9f4ab09, type: 3}
       propertyPath: m_Name
