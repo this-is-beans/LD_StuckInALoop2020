@@ -12,11 +12,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 67f3f8102317f2d44a8011daf3a1542b, type: 3}
   m_Name: PetRockFoo
   m_EditorClassIdentifier: 
-  itemName: Foo
-  defaultSprite: {fileID: 10905, guid: 0000000000000000f000000000000000, type: 0}
-  damagedSprite: {fileID: 0}
+  itemName: Foo, your Pet Rock
+  defaultSprite: {fileID: 21300000, guid: c7f4b3b65c1aa4148a8a8447d6ed2b3b, type: 3}
+  damagedSprite: {fileID: 21300000, guid: c7f4b3b65c1aa4148a8a8447d6ed2b3b, type: 3}
   itemTextColor: {r: 0.50472736, g: 0, b: 1, a: 0}
-  itemDescription: Your long lost pet rock!
+  itemDescription: THAT'S where it got to. Congratulations, a winner is you!
   toolType: 0
   maxUses: 0
   damageStrength: 0
