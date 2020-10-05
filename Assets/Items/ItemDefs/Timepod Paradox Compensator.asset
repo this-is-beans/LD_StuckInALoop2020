@@ -10,7 +10,7 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 67f3f8102317f2d44a8011daf3a1542b, type: 3}
-  m_Name: Timepod Part 4
+  m_Name: Timepod Paradox Compensator
   m_EditorClassIdentifier: 
   itemName: Paradox Compensator
   defaultSprite: {fileID: 21300000, guid: 78e7886f9d5d50a4b8a2d95835141839, type: 3}
