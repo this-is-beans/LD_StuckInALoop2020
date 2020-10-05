@@ -84,10 +84,10 @@ public class Item : Interactable {
                         transform.position, Quaternion.identity
                     );
                     newItem.SetDef(itemDef.combinableListTarget[i]);
-                    item.GetComponent<BounceBehaviour>().Throw(new Vector2(0, 0));
                     Destroy(gameObject);
                     Destroy(item.gameObject);
-                    return newItem;
+                    newItem.Drop();
+                    return null;
                 }
 
                 i++;
