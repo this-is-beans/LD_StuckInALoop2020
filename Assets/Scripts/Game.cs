@@ -19,7 +19,7 @@ public class Game : MonoBehaviour
         timeMachine = timeMachineGameObject.GetComponent<Machine>();
         timer = ResetTime;
         resetCounter = 0;
-        //resetCounterText.text = "" + resetCounter + " Resets";
+        resetCounterText.text = "" + resetCounter + " Resets";
 
         SpriteRenderer[] spriteRenderers = FindObjectsOfType<SpriteRenderer>();
 
