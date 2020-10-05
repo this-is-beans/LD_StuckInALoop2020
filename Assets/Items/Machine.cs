@@ -79,6 +79,11 @@ public class Machine : Interactable {
                 if (isActive) {
                     return item;
                 }
+                else {
+                    StoreItem(item);
+                    TryActivate();
+                    return null;
+                }
             }
             else if (containerDef.consumesItem) {
                 print("feeding " + containerDef.name + item.itemDef.name);
@@ -88,7 +93,7 @@ public class Machine : Interactable {
             }
             else {
                 StoreItem(item);
-                //TryActivate();
+                TryActivate();
                 return null;
             }
         }
