@@ -63,6 +63,7 @@ public class CharacterController2D : MonoBehaviour {
         ui_interactDescription = GameObject.Find("UI_InteractDescription").GetComponent<Text>();
         ui_interactLabel = GameObject.Find("UI_InteractLabel").GetComponent<Text>();
         ui_heldLabel = GameObject.Find("UI_HeldLabel").GetComponent<Text>();
+        ui_heldLabel.text = "";
         startPosition = gameObject.transform.position;
         isBouncing = false;
         isFrozen = false;
