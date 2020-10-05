@@ -9,12 +9,14 @@ public class Game : MonoBehaviour
     public float ResetTime;
     float timer;
     public GameObject warpEffect;
-
+    private int resetCounter;
+    public Text resetCounterText;
     public bool pause;
 
     void Start()
     {
         timer = ResetTime;
+        resetCounter = 0;
     }
 
     void Update()
@@ -99,5 +101,7 @@ public class Game : MonoBehaviour
         character.UnFreeze();
 
         pause = false;
+        resetCounter++;
+        resetCounterText.text = "Resets: {resetCounter}";
     }
 }

@@ -26,6 +26,7 @@
           <e p="Item.cs" t="Include" />
           <e p="ItemDef.cs" t="Include" />
           <e p="Machine.cs" t="Include" />
+          <e p="RecipeDef.cs" t="Include" />
           <e p="TemporalToolbox.cs" t="Include" />
         </e>
         <e p="ItemTesting.cs" t="Include" />
@@ -33,6 +34,7 @@
           <e p="BlynxyCharacterController2D.cs" t="Include" />
           <e p="CharacterController2D.cs" t="Include" />
           <e p="Game.cs" t="Include" />
+          <e p="TeleportPad.cs" t="Include" />
         </e>
       </e>
       <e p="LD_StuckInALoop2020.sln" t="IncludeFlat" />
