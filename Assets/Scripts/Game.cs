@@ -7,7 +7,7 @@ public class Game : MonoBehaviour
 {
     public Text timeDisplayText;
     public float ResetTime;
-    float timer;
+    public float timer;
     public GameObject warpEffect;
     private int resetCounter;
     public Text resetCounterText;
@@ -19,6 +19,7 @@ public class Game : MonoBehaviour
         timeMachine = timeMachineGameObject.GetComponent<Machine>();
         timer = ResetTime;
         resetCounter = 0;
+        resetCounterText.text = "" + resetCounter + " Resets";
     }
 
     void Update()
@@ -39,7 +40,6 @@ public class Game : MonoBehaviour
         if (timer <= 0)
         {
             StartCoroutine (ResetLoop());
-            timer = ResetTime;
             pause = true;
         }
 
@@ -51,7 +51,7 @@ public class Game : MonoBehaviour
     {
 
         CharacterController2D character = FindObjectOfType<CharacterController2D>();
-        character.Freeze();
+        //character.Freeze();
         
         
         Item[] allItems = FindObjectsOfType<Item>();
@@ -112,9 +112,10 @@ public class Game : MonoBehaviour
         yield return new WaitForSeconds(0.2f);
         Destroy(Instantiate(warpEffect, character.transform.position, Quaternion.identity), 1f);
         character.UnFreeze();
+        timer = ResetTime;
 
         pause = false;
         resetCounter++;
-        resetCounterText.text = "Resets: {resetCounter}";
+        resetCounterText.text = "" + resetCounter + " Resets";
     }
 }
