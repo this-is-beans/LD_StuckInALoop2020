@@ -42,6 +42,11 @@ public class CharacterController2D : MonoBehaviour {
     // Time Reset Stuff
     private bool isFrozen;
     private Vector3 startPosition;
+    
+    
+    // ANIMATION
+
+    public Animator animator;
 
     /** space to think
     
@@ -53,6 +58,7 @@ public class CharacterController2D : MonoBehaviour {
         Handles.DrawWireDisc(gameObject.transform.position, gameObject.transform.forward, interactableAreaRadius);
     }
     void Start() {
+        animator = gameObject.GetComponent<Animator>();
         ui_interactDescription = GameObject.Find("UI_InteractDescription").GetComponent<Text>();
         ui_interactLabel = GameObject.Find("UI_InteractLabel").GetComponent<Text>();
         ui_heldLabel = GameObject.Find("UI_HeldLabel").GetComponent<Text>();

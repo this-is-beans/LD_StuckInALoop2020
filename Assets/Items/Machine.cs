@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using Items;
 using UnityEngine;
 using UnityEngine.Events;
+using Random = UnityEngine.Random;
 
 [RequireComponent(typeof(SpriteRenderer))]
 public class Machine : Interactable {
@@ -16,13 +17,18 @@ public class Machine : Interactable {
     public SpriteRenderer spriteRenderer;
     public ParticleSystem damageParticle;
 
-    public Vector2 minThrowRange;
-    public Vector2 maxThrowRange;
+    public GameObject targetThrowLocation;
+    public float minThrowRange;
+    public float maxThrowRange;
 
     public bool doNotReset;
     public int currentHP;
 
     bool isActive;
+    
+    // used in win game
+    public bool isBroken;
+    public RecipeDef fixingRecipe;
 
     public UnityEvent OnActivate;
     public UnityEvent OnDeactivate;
@@ -97,6 +103,20 @@ public class Machine : Interactable {
 
     public void TryActivate() {
         print("Activated: " + containerDef.name);
+        if (isBroken) {
+            if (fixingRecipe) {
+                bool consumedAllFixingItems = true;
+                foreach (ItemDef requiredItem in fixingRecipe.requiredItems) {
+                    if (!consumedItems.Contains(requiredItem)) {
+                        consumedAllFixingItems = false;
+                        break;
+                    }
+                }
+
+                if (consumedAllFixingItems) isBroken = false;
+            }
+        }
+        
         foreach (RecipeDef recipeDef in recipeDefs) {
             bool consumedAllRequiredItems = true;
             foreach (ItemDef requiredItem in recipeDef.requiredItems) {
@@ -137,9 +157,7 @@ public class Machine : Interactable {
             yield return new WaitForEndOfFrame();
 
             item.SetDef(itemDef);
-            item.GetComponent<BounceBehaviour>().Throw(new Vector2(
-                UnityEngine.Random.Range(minThrowRange.x, maxThrowRange.x),
-                UnityEngine.Random.Range(minThrowRange.y, maxThrowRange.y)));
+            item.GetComponent<BounceBehaviour>().Throw(targetThrowLocation.transform.position * Random.Range(minThrowRange, maxThrowRange));
             yield return new WaitForSeconds(0.15f);
         }
     }
@@ -197,9 +215,8 @@ public class Machine : Interactable {
         if (storedItem != null) {
             storedItem.Retrieved();
             //yield return new WaitForEndOfFrame();
-            storedItem.GetComponent<BounceBehaviour>().Throw(new Vector2(
-                UnityEngine.Random.Range(minThrowRange.x, maxThrowRange.x),
-                UnityEngine.Random.Range(minThrowRange.y, maxThrowRange.y)));
+            storedItem.GetComponent<BounceBehaviour>().Throw( targetThrowLocation.transform.position *
+                UnityEngine.Random.Range(minThrowRange, maxThrowRange));
             storedItem = null;
         }
 
@@ -214,6 +231,7 @@ public class Machine : Interactable {
             isActive = false;
             currentHP = containerDef.maxHP;
             spriteRenderer.sprite = containerDef.defaultSprite;
+            consumedItems = new List<ItemDef>();
             if (storedItem != null) {
                 storedItem.Retrieved();
                 storedItem = null;

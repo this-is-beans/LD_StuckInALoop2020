@@ -35,6 +35,7 @@
           <e p="CharacterController2D.cs" t="Include" />
           <e p="Game.cs" t="Include" />
           <e p="TeleportPad.cs" t="Include" />
+          <e p="WobbleBehaviour.cs" t="Include" />
         </e>
       </e>
       <e p="LD_StuckInALoop2020.sln" t="IncludeFlat" />
