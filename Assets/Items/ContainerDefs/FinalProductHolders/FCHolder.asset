@@ -16,7 +16,7 @@ MonoBehaviour:
   openedSprite: {fileID: 2760429795273398444, guid: aa1146017606a064c986485c58506a5a, type: 3}
   lockType: 0
   keyItem: {fileID: 11400000, guid: 4d02c05b3a2474643b936658104b2da6, type: 2}
-  consumesItem: 0
+  consumesItem: 1
   destroyItem: {fileID: 0}
   maxHP: 0
   isInvincible: 1

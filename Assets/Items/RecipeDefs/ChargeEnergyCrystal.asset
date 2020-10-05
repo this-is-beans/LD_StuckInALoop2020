@@ -15,6 +15,6 @@ MonoBehaviour:
   recipeName: ChargedEnergyCrystal
   recipeDescription: Charge an energy crystal
   requiredItems:
-  - {fileID: 11400000, guid: e4c1edd1f2bb74f93bc17370ea240386, type: 2}
+  - {fileID: 11400000, guid: ff61875a11c985544a0749a1375f0aea, type: 2}
   returnedItems:
   - {fileID: 11400000, guid: 4d02c05b3a2474643b936658104b2da6, type: 2}

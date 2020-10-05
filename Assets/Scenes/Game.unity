@@ -9506,6 +9506,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 387663327}
     m_Modifications:
+    - target: {fileID: 817986971667139268, guid: 1eaa4bee515265a4b8c78104e20bb674, type: 3}
+      propertyPath: itemDef
+      value: 
+      objectReference: {fileID: 11400000, guid: ff61875a11c985544a0749a1375f0aea, type: 2}
     - target: {fileID: 3538704307158663235, guid: 1eaa4bee515265a4b8c78104e20bb674, type: 3}
       propertyPath: m_LocalPosition.x
       value: -3.3859005
@@ -9554,9 +9558,13 @@ PrefabInstance:
       propertyPath: m_SortingOrder
       value: 41
       objectReference: {fileID: 0}
+    - target: {fileID: 6339903713653007023, guid: 1eaa4bee515265a4b8c78104e20bb674, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: 98787da88548d2c428f19b89bf49652b, type: 3}
     - target: {fileID: 7842336455983462737, guid: 1eaa4bee515265a4b8c78104e20bb674, type: 3}
       propertyPath: m_Name
-      value: Fuel Crystal
+      value: Uncharged Crystal
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 1eaa4bee515265a4b8c78104e20bb674, type: 3}
