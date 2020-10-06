@@ -7,25 +7,26 @@ using UnityEngine.Events;
 using Random = UnityEngine.Random;
 
 [RequireComponent(typeof(SpriteRenderer))]
-public class Machine : Interactable {
+public class Machine : Interactable
+{
     public ContainerDef containerDef;
     public ItemDef transmutedItemDef;
     Item storedItem;
     public List<RecipeDef> recipeDefs;
-    public List<ItemDef> consumedItems;
+    List<ItemDef> consumedItems;
 
     public SpriteRenderer spriteRenderer;
     public ParticleSystem damageParticle;
 
-    public GameObject targetThrowLocation;
-    public float minThrowRange;
-    public float maxThrowRange;
+    //public GameObject targetThrowLocation; //this is redundant you could have set throw position with the vector2s I had before
+    public Vector2 minThrowRange;
+    public Vector2 maxThrowRange;
 
     public bool doNotReset;
     public int currentHP;
 
     bool isActive;
-    
+
     // used in win game
     public bool isBroken;
     public RecipeDef fixingRecipe;
@@ -34,85 +35,172 @@ public class Machine : Interactable {
     public UnityEvent OnDeactivate;
 
     // Start is called before the first frame update
-    void Start() {
+    void Start()
+    {
+        if (containerDef == null)
+        {
+            Debug.LogError("Machine has no def: " + name);
+        }
+
+        consumedItems = new List<ItemDef>();
     }
 
     // Update is called once per frame
-    void Update() {
+    void Update()
+    {
     }
 
-    private void OnValidate() {
+    private void OnValidate()
+    {
         spriteRenderer = GetComponent<SpriteRenderer>();
-        if (containerDef != null) {
+        if (containerDef != null)
+        {
             spriteRenderer.sprite = containerDef.defaultSprite;
             currentHP = containerDef.maxHP;
         }
 
         spriteRenderer.sortingOrder = Mathf.RoundToInt(transform.position.y * 16f) * -1;
-        if (gameObject.layer != 8) {
+        if (gameObject.layer != 8)
+        {
             gameObject.layer = 8; //set layer to interactable
         }
     }
 
-    public override Item Interact(Item item) {
-        print("interacting with: " + containerDef.name);
-        if (!item) {
-            print("no item given");
-            if (!containerDef.keyItem) {
-                if (!isActive) {
-                    TryActivate();
+    bool CheckIfAcceptedItem(Item item)
+    {
+        if (recipeDefs != null && recipeDefs.Count > 0)
+        {
+            foreach (RecipeDef recipe in recipeDefs)
+            {
+                if (recipe.requiredItems.Contains(item.itemDef))
+                {
+                    return true;
                 }
-                else {
-                    TryDeactivate();
+            }
+        }
+
+        if (containerDef.acceptedItem == item.itemDef || containerDef.acceptedItems.Contains(item.itemDef))
+        {
+            return true;
+        }
+        else
+        {
+            return false;
+        }
+    }
+
+    bool CheckIfDestructiveItem(Item item)
+    {
+        if (containerDef.destructiveItem == item.itemDef || containerDef.destructiveItems.Contains(item.itemDef))
+        {
+            return true;
+        }
+        else
+        {
+            return false;
+        }
+    }
+
+    public override Item Interact(Item item)
+    {
+        print("interacting with: " + containerDef.name);
+        if (!item)
+        {
+            print("no item given");
+            if (!containerDef.acceptedItem && containerDef.acceptedItems.Count == 0)
+            {
+                if (!isActive)
+                {
+                    Activate();
+                }
+                else
+                {
+                    Deactivate();
                 }
             }
 
-            if (storedItem) {
+            if (storedItem)
+            {
                 Item returnItem = storedItem;
                 RetrieveItem();
-                TryDeactivate();
+                Deactivate();
                 return returnItem;
             }
         }
-        else {
-            if (item.itemDef == containerDef.keyItem) {
-                if (isActive) {
+        else
+        {
+            if (CheckIfAcceptedItem(item))
+            {
+                if (consumedItems.Contains(item.itemDef))
+                {
+                    print("I have already consumed: " + item.itemDef.itemName);
                     return item;
                 }
-                else {
+                else if (containerDef.consumesItem)
+                {
+                    print("feeding " + containerDef.name + item.itemDef.name);
+                    Consume(item);
+                    if (!containerDef.requiresOutsideActivation)
+                    {
+                        Activate();
+                    }
+                    return null;
+                }
+                else
+                {
                     StoreItem(item);
-                    TryActivate();
+                    if (!containerDef.requiresOutsideActivation)
+                    {
+                        Activate();
+                    }
                     return null;
                 }
             }
-            else if (containerDef.consumesItem) {
-                print("feeding " + containerDef.name + item.itemDef.name);
-                Consume(item);
-                TryActivate();
-                return null;
+            else if (CheckIfDestructiveItem(item))
+            {
+                //Bash(item.itemDef.damageStrength);
+                //item.Deplete(1);
+                return item;
             }
-            else {
-                StoreItem(item);
-                TryActivate();
-                return null;
+            else
+            {
+                print("You tried to give me an incompatible item, if you wanted to store any item use a Storage object instead.");
+                return item;
             }
         }
 
         return item;
     }
 
-    public void Consume(Item item) {
+    void Consume(Item item)
+    {
         consumedItems.Add(item.itemDef);
         item.Consume();
     }
 
-    public void TryActivate() {
+    public void Activate()
+    {
         print("Activated: " + containerDef.name);
-        if (isBroken) {
-            if (fixingRecipe) {
+
+        // not sure what this does --blynxy
+
+        isActive = true;
+        spriteRenderer.sprite = containerDef.openedSprite;
+        OnActivate?.Invoke();
+
+    }
+
+    public void TryRepair()
+    {
+        if (isBroken)
+        {
+            if (fixingRecipe)
+            {
                 bool consumedAllFixingItems = true;
-                foreach (ItemDef requiredItem in fixingRecipe.requiredItems) {
-                    if (!consumedItems.Contains(requiredItem)) {
+                foreach (ItemDef requiredItem in fixingRecipe.requiredItems)
+                {
+                    if (!consumedItems.Contains(requiredItem))
+                    {
                         consumedAllFixingItems = false;
                         break;
                     }
@@ -121,54 +209,61 @@ public class Machine : Interactable {
                 if (consumedAllFixingItems) isBroken = false;
             }
         }
-        
-        foreach (RecipeDef recipeDef in recipeDefs) {
+    }
+
+    public void TryCrafting()
+    {
+        foreach (RecipeDef recipeDef in recipeDefs)
+        {
             bool consumedAllRequiredItems = true;
-            foreach (ItemDef requiredItem in recipeDef.requiredItems) {
-                if (!consumedItems.Contains(requiredItem)) {
+            foreach (ItemDef requiredItem in recipeDef.requiredItems)
+            {
+                if (!consumedItems.Contains(requiredItem))
+                {
+                    print("missing: " + requiredItem.itemName);
                     consumedAllRequiredItems = false;
                     break;
                 }
             }
 
-            if (consumedAllRequiredItems) {
+            if (consumedAllRequiredItems)
+            {
                 StartCoroutine(MakeItems(recipeDef));
             }
         }
-
-        // not sure what this does --blynxy
-        if (!isActive) {
-            isActive = true;
-            spriteRenderer.sprite = containerDef.openedSprite;
-            OnActivate?.Invoke();
-        }
     }
 
-    public void TryDeactivate() {
+    public void Deactivate()
+    {
         print("Deactivated: " + containerDef.name);
 
-        if (isActive) {
+        if (isActive)
+        {
             isActive = false;
             spriteRenderer.sprite = containerDef.defaultSprite;
             OnDeactivate?.Invoke();
         }
     }
 
-    IEnumerator MakeItems(RecipeDef recipeDef) {
-        foreach (ItemDef itemDef in recipeDef.returnedItems) {
+    IEnumerator MakeItems(RecipeDef recipeDef)
+    {
+        foreach (ItemDef itemDef in recipeDef.returnedItems)
+        {
             print("Making item: " + itemDef.name);
             Item item = Instantiate(Resources.Load<Item>("Prefabs/Item Prefab"), transform.position,
                 Quaternion.identity);
             yield return new WaitForEndOfFrame();
 
             item.SetDef(itemDef);
-            item.GetComponent<BounceBehaviour>().Throw(targetThrowLocation.transform.position * Random.Range(minThrowRange, maxThrowRange));
+            item.GetComponent<BounceBehaviour>().Throw(new Vector2(Random.Range(minThrowRange.x, maxThrowRange.x), Random.Range(minThrowRange.y, maxThrowRange.y)));
             yield return new WaitForSeconds(0.15f);
         }
     }
 
-    public void Transmute() {
-        if (storedItem != null) {
+    public void Transmute()
+    {
+        if (storedItem != null)
+        {
             storedItem.Consume();
             //storedItem.SetDef(transmutedItemDef);
             storedItem = Instantiate(Resources.Load<Item>("Prefabs/Item Prefab"), transform.position,
@@ -178,8 +273,10 @@ public class Machine : Interactable {
         }
     }
 
-    public void StoreItem(Item item) {
-        if (storedItem != null) {
+    public void StoreItem(Item item)
+    {
+        if (storedItem != null)
+        {
             StartCoroutine(ThrowInventory());
         }
 
@@ -188,60 +285,71 @@ public class Machine : Interactable {
         storedItem.Stored();
         storedItem.itemSpriteRenderer.sortingOrder = spriteRenderer.sortingOrder + 1;
         storedItem.transform.localPosition = Vector2.zero;
-        //TODO: item would be removed from player
 
-        if (doNotReset) {
+        if (doNotReset)
+        {
             storedItem.doNotReset = true;
         }
-        else {
+        else
+        {
             storedItem.doNotReset = false;
         }
     }
 
-    public void RetrieveItem() {
+    public void RetrieveItem()
+    {
         storedItem.Retrieved();
         storedItem.doNotReset = false;
-
-        //TODO: item would be handed to player
         storedItem = null;
     }
 
-    public void DropInventory() {
-        StartCoroutine(ThrowInventory());
-    }
-
-    IEnumerator ThrowInventory() {
-        if (damageParticle != null) {
-            if (!damageParticle.isPlaying) {
+    IEnumerator ThrowInventory()
+    {
+        if (damageParticle != null)
+        {
+            if (!damageParticle.isPlaying)
+            {
                 damageParticle.Play();
             }
         }
 
-        if (storedItem != null) {
+        if (storedItem != null)
+        {
             storedItem.doNotReset = false;
             storedItem.Retrieved();
             //yield return new WaitForEndOfFrame();
-            storedItem.GetComponent<BounceBehaviour>().Throw( targetThrowLocation.transform.position *
-                UnityEngine.Random.Range(minThrowRange, maxThrowRange));
+            storedItem.GetComponent<BounceBehaviour>().Throw(new Vector2(Random.Range(minThrowRange.x, maxThrowRange.x), Random.Range(minThrowRange.y, maxThrowRange.y)));
             storedItem = null;
         }
 
         yield return null;
     }
 
-    public void ResetState() {
-        if (doNotReset) {
+    public void ResetState()
+    {
+        if (doNotReset)
+        {
             return;
         }
-        else {
+        else
+        {
             isActive = false;
             currentHP = containerDef.maxHP;
             spriteRenderer.sprite = containerDef.defaultSprite;
             consumedItems = new List<ItemDef>();
-            if (storedItem != null) {
+            if (storedItem != null)
+            {
                 storedItem.Retrieved();
                 storedItem = null;
             }
         }
+    }
+
+    private void OnDrawGizmos()
+    {
+        Vector2 size = maxThrowRange - minThrowRange;
+        size.x = Mathf.Abs(size.x);
+        size.y = Mathf.Abs(size.y);
+        Gizmos.DrawCube(((Vector2)transform.position + (minThrowRange + maxThrowRange * 0.5f)), size);
     }
 }

@@ -12,11 +12,15 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9dbbed016a24e464b99bbeb1346f2c62, type: 3}
   m_Name: Battery Charger
   m_EditorClassIdentifier: 
-  defaultSprite: {fileID: 6520412641442537300, guid: aa1146017606a064c986485c58506a5a, type: 3}
-  openedSprite: {fileID: 6520412641442537300, guid: aa1146017606a064c986485c58506a5a, type: 3}
-  lockType: 0
-  keyItem: {fileID: 11400000, guid: 5e3175d2a2301e54fb76170193b3694a, type: 2}
+  containerName: Battery Charger
+  description: 
+  defaultSprite: {fileID: -4466221149383954103, guid: aa1146017606a064c986485c58506a5a, type: 3}
+  openedSprite: {fileID: -4466221149383954103, guid: aa1146017606a064c986485c58506a5a, type: 3}
+  acceptedItem: {fileID: 11400000, guid: 5e3175d2a2301e54fb76170193b3694a, type: 2}
+  acceptedItems: []
+  destructiveItem: {fileID: 0}
+  destructiveItems: []
   consumesItem: 0
-  destroyItem: {fileID: 0}
+  requiresOutsideActivation: 1
   maxHP: 0
   isInvincible: 1

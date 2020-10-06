@@ -15,18 +15,22 @@ public class Game : MonoBehaviour
     public GameObject timeMachineGameObject;
     public Machine timeMachine;
 
-    void Start() {
-        timeMachine = timeMachineGameObject.GetComponent<Machine>();
-        timer = ResetTime;
-        resetCounter = 0;
-        resetCounterText.text = "" + resetCounter + " Resets";
-
+    [ContextMenu("Resort All Sprites")]
+    public void SortSprites()
+    {
         SpriteRenderer[] spriteRenderers = FindObjectsOfType<SpriteRenderer>();
 
         foreach (SpriteRenderer sr in spriteRenderers)
         {
             sr.sortingOrder = Mathf.RoundToInt(sr.gameObject.transform.position.y * 16f) * -1;
         }
+    }
+
+    void Start() {
+        timeMachine = timeMachineGameObject.GetComponent<Machine>();
+        timer = ResetTime;
+        resetCounter = 0;
+        resetCounterText.text = "" + resetCounter + " Resets";
     }
 
     void Update()

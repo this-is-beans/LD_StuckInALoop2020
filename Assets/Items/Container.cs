@@ -42,6 +42,30 @@ public class Container : Interactable {
         }
     }
 
+    bool CheckIfAcceptedItem(Item item)
+    {
+        if (containerDef.acceptedItem == item.itemDef || containerDef.acceptedItems.Contains(item.itemDef))
+        {
+            return true;
+        }
+        else
+        {
+            return false;
+        }
+    }
+
+    bool CheckIfDestructiveItem(Item item)
+    {
+        if (containerDef.destructiveItem == item.itemDef || containerDef.destructiveItems.Contains(item.itemDef))
+        {
+            return true;
+        }
+        else
+        {
+            return false;
+        }
+    }
+
     public override Item Interact(Item item) {
         if (isOpen) {
             return item;
@@ -52,13 +76,14 @@ public class Container : Interactable {
                 return null;
             }
 
-            if (CheckItemKey(item.itemDef)) {
+            if (CheckIfAcceptedItem(item)) {
                 Open();
                 if (containerDef.consumesItem) {
                     item.Consume();
+                    return null;
                 }
             }
-            else if (item.itemDef == containerDef.destroyItem) {
+            else if (CheckIfDestructiveItem(item)) {
                 Bash(item.itemDef.damageStrength);
                 item.Deplete(1);
                 return item;
@@ -73,15 +98,6 @@ public class Container : Interactable {
         }
 
         return item;
-    }
-
-    bool CheckItemKey(ItemDef itemDef) {
-        if (containerDef.keyItem == itemDef) {
-            return true;
-        }
-        else {
-            return false;
-        }
     }
 
     public void Bash(int dmg) {

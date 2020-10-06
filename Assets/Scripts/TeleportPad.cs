@@ -9,7 +9,7 @@ namespace DefaultNamespace {
         public bool isHorizontal;
 
         private void OnTriggerEnter2D(Collider2D obj) {
-            // if (obj.gameObject.transform.parent.GetComponent<CharacterController2D>())
+            if (obj.gameObject.GetComponent<CharacterController2D>())
                 obj.transform.position = TargetLocation.transform.position +
                                          (obj.transform.position - gameObject.transform.position);
 
