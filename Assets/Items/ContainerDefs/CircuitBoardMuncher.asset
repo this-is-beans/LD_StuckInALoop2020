@@ -13,12 +13,14 @@ MonoBehaviour:
   m_Name: CircuitBoardMuncher
   m_EditorClassIdentifier: 
   containerName: Circuit Board Muncher
-  description: 
+  description: Combine Circuit Boards A and C to get D, Optionally convert D to B
   defaultSprite: {fileID: 8617373319216870104, guid: aa1146017606a064c986485c58506a5a, type: 3}
   openedSprite: {fileID: 8617373319216870104, guid: aa1146017606a064c986485c58506a5a, type: 3}
-  lockType: 0
-  keyItem: {fileID: 0}
+  acceptedItem: {fileID: 0}
+  acceptedItems: []
+  destructiveItem: {fileID: 0}
+  destructiveItems: []
   consumesItem: 1
-  destroyItem: {fileID: 0}
+  requiresOutsideActivation: 0
   maxHP: 0
   isInvincible: 1

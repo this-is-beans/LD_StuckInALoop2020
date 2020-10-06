@@ -418,11 +418,6 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 79d6ba90c579449478c8d8774ae9bbd4, type: 3}
---- !u!4 &14289907 stripped
-Transform:
-  m_CorrespondingSourceObject: {fileID: 3538704307158663235, guid: 2a4290f82a165d44ca7a9f6a02b0525c, type: 3}
-  m_PrefabInstance: {fileID: 1321005570}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &14880467
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -3464,7 +3459,6 @@ Transform:
   - {fileID: 1706997039}
   - {fileID: 124557764}
   - {fileID: 891402171}
-  - {fileID: 14289907}
   m_Father: {fileID: 0}
   m_RootOrder: 9
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -9079,79 +9073,6 @@ GameObject:
   m_CorrespondingSourceObject: {fileID: 5629016335852147649, guid: f7cf437a21ebbae45b4433a15024e376, type: 3}
   m_PrefabInstance: {fileID: 1410733103}
   m_PrefabAsset: {fileID: 0}
---- !u!1001 &1321005570
-PrefabInstance:
-  m_ObjectHideFlags: 0
-  serializedVersion: 2
-  m_Modification:
-    m_TransformParent: {fileID: 387663327}
-    m_Modifications:
-    - target: {fileID: 817986971667139268, guid: 2a4290f82a165d44ca7a9f6a02b0525c, type: 3}
-      propertyPath: itemDef
-      value: 
-      objectReference: {fileID: 11400000, guid: 45135d2bc26b9374b8b6f9ca3f6f531c, type: 2}
-    - target: {fileID: 3538704307158663235, guid: 2a4290f82a165d44ca7a9f6a02b0525c, type: 3}
-      propertyPath: m_LocalPosition.x
-      value: 14.55
-      objectReference: {fileID: 0}
-    - target: {fileID: 3538704307158663235, guid: 2a4290f82a165d44ca7a9f6a02b0525c, type: 3}
-      propertyPath: m_LocalPosition.y
-      value: -20.68
-      objectReference: {fileID: 0}
-    - target: {fileID: 3538704307158663235, guid: 2a4290f82a165d44ca7a9f6a02b0525c, type: 3}
-      propertyPath: m_LocalPosition.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 3538704307158663235, guid: 2a4290f82a165d44ca7a9f6a02b0525c, type: 3}
-      propertyPath: m_LocalRotation.x
-      value: -0
-      objectReference: {fileID: 0}
-    - target: {fileID: 3538704307158663235, guid: 2a4290f82a165d44ca7a9f6a02b0525c, type: 3}
-      propertyPath: m_LocalRotation.y
-      value: -0
-      objectReference: {fileID: 0}
-    - target: {fileID: 3538704307158663235, guid: 2a4290f82a165d44ca7a9f6a02b0525c, type: 3}
-      propertyPath: m_LocalRotation.z
-      value: -0
-      objectReference: {fileID: 0}
-    - target: {fileID: 3538704307158663235, guid: 2a4290f82a165d44ca7a9f6a02b0525c, type: 3}
-      propertyPath: m_LocalRotation.w
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 3538704307158663235, guid: 2a4290f82a165d44ca7a9f6a02b0525c, type: 3}
-      propertyPath: m_RootOrder
-      value: 14
-      objectReference: {fileID: 0}
-    - target: {fileID: 3538704307158663235, guid: 2a4290f82a165d44ca7a9f6a02b0525c, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 3538704307158663235, guid: 2a4290f82a165d44ca7a9f6a02b0525c, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 3538704307158663235, guid: 2a4290f82a165d44ca7a9f6a02b0525c, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 5661647119093300104, guid: 2a4290f82a165d44ca7a9f6a02b0525c, type: 3}
-      propertyPath: m_SortingOrder
-      value: 334
-      objectReference: {fileID: 0}
-    - target: {fileID: 6339903713653007023, guid: 2a4290f82a165d44ca7a9f6a02b0525c, type: 3}
-      propertyPath: m_SortingOrder
-      value: 331
-      objectReference: {fileID: 0}
-    - target: {fileID: 6339903713653007023, guid: 2a4290f82a165d44ca7a9f6a02b0525c, type: 3}
-      propertyPath: m_Sprite
-      value: 
-      objectReference: {fileID: 21300000, guid: f93510991c1ea224c994e44f3445a16f, type: 3}
-    - target: {fileID: 7842336455983462737, guid: 2a4290f82a165d44ca7a9f6a02b0525c, type: 3}
-      propertyPath: m_Name
-      value: Flux Capacitor
-      objectReference: {fileID: 0}
-    m_RemovedComponents: []
-  m_SourcePrefab: {fileID: 100100000, guid: 2a4290f82a165d44ca7a9f6a02b0525c, type: 3}
 --- !u!1 &1327871354 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 4562382846679489987, guid: 79d6ba90c579449478c8d8774ae9bbd4, type: 3}
@@ -9184,7 +9105,19 @@ MonoBehaviour:
   fixingRecipe: {fileID: 0}
   OnActivate:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 1327871356}
+        m_TargetAssemblyTypeName: Machine, Assembly-CSharp
+        m_MethodName: TryCrafting
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
   OnDeactivate:
     m_PersistentCalls:
       m_Calls: []
