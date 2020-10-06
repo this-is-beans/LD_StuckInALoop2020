@@ -17,13 +17,13 @@ public class CharacterController2D : MonoBehaviour
 
     [SerializeField] private float speed;
 
-    [SerializeField] private bool enableBounce;
-    [SerializeField] private float bounceSpeed;
-    private float _bounceHeight;
-    [SerializeField] private float bounceMaxHeight;
-    [SerializeField] private float bounceMinHeight;
-    [SerializeField] private bool isBouncing;
-    [SerializeField] private bool bounceUp;
+    //[SerializeField] private bool enableBounce;
+    //[SerializeField] private float bounceSpeed;
+    //private float _bounceHeight;
+    //[SerializeField] private float bounceMaxHeight;
+    //[SerializeField] private float bounceMinHeight;
+    //[SerializeField] private bool isBouncing;
+    //[SerializeField] private bool bounceUp;
 
 
     // player hands and interactions
@@ -65,13 +65,13 @@ public class CharacterController2D : MonoBehaviour
         rbody = gameObject.GetComponent<Rigidbody2D>();
 
         startPosition = gameObject.transform.position;
-        isBouncing = false;
-        isFrozen = false;
-        enableBounce = true;
-        speed = 5;
-        bounceSpeed = (speed <= 0) ? 5 : speed / 2;
-        bounceMaxHeight = .2f;
-        bounceMinHeight = .05f;
+       //isBouncing = false;
+       //isFrozen = false;
+       //enableBounce = true;
+       //speed = 5;
+       //bounceSpeed = (speed <= 0) ? 5 : speed / 2;
+       //bounceMaxHeight = .2f;
+       //bounceMinHeight = .05f;
     }
 
     // Update is called once per frame
