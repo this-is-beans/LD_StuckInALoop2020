@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 6592875565790740800}
   - component: {fileID: 667147842624212872}
   m_Layer: 8
-  m_Name: Container Prefab (1)
+  m_Name: Locker
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -119,7 +119,7 @@ BoxCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0, y: 0.625}
+  m_Offset: {x: 0, y: 0.2}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.16666667}
@@ -130,7 +130,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 1.125, y: 1.875}
+  m_Size: {x: 1.125, y: 1.125}
   m_EdgeRadius: 0
 --- !u!1001 &9049051733106545050
 PrefabInstance:

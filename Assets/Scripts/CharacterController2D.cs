@@ -6,10 +6,11 @@ using UnityEngine;
 using UnityEngine.UI;
 using Random = UnityEngine.Random;
 
-public class CharacterController2D : MonoBehaviour {
+public class CharacterController2D : MonoBehaviour
+{
     // blynxy just copied catboy, cause wtf is this unity stuff
     public SpriteRenderer characterSpriteRenderer;
-    public Rigidbody2D rbody;
+    Rigidbody2D rbody;
 
     // movement
     [SerializeField] private Vector2 moveVec2;
@@ -33,11 +34,11 @@ public class CharacterController2D : MonoBehaviour {
     [SerializeField] private GameObject hands;
     public Item heldItem;
 
+    public Action<Item> OnReceiveItem;
+    public Action OnRemoveItem;
 
-    // UI junk
-    private Text ui_interactDescription;
-    private Text ui_interactLabel;
-    public Text ui_heldLabel;
+    public Action<Interactable> OnInteractableProximity;
+    public Action OnInteractableClear;
 
     // Time Reset Stuff
     private bool isFrozen;
@@ -46,7 +47,7 @@ public class CharacterController2D : MonoBehaviour {
 
     // ANIMATION
 
-    public Animator animator;
+    Animator animator;
 
     /** space to think
     
@@ -58,13 +59,11 @@ public class CharacterController2D : MonoBehaviour {
     //     Handles.DrawWireDisc(gameObject.transform.position, gameObject.transform.forward, interactableAreaRadius);
     // }
 
-    void Start() {
+    void Start()
+    {
         animator = gameObject.GetComponent<Animator>();
         rbody = gameObject.GetComponent<Rigidbody2D>();
-        ui_interactDescription = GameObject.Find("UI_InteractDescription").GetComponent<Text>();
-        ui_interactLabel = GameObject.Find("UI_InteractLabel").GetComponent<Text>();
-        ui_heldLabel = GameObject.Find("UI_HeldLabel").GetComponent<Text>();
-        ui_heldLabel.text = "";
+
         startPosition = gameObject.transform.position;
         isBouncing = false;
         isFrozen = false;
@@ -76,10 +75,13 @@ public class CharacterController2D : MonoBehaviour {
     }
 
     // Update is called once per frame
-    void Update() {
-        if (!isFrozen) {
+    void Update()
+    {
+        if (!isFrozen)
+        {
             characterSpriteRenderer.sortingOrder = (Mathf.RoundToInt(transform.position.y * 16f) * -1);
-            if (heldItem != null) {
+            if (heldItem != null)
+            {
                 heldItem.itemSpriteRenderer.sortingOrder = characterSpriteRenderer.sortingOrder + 1;
             }
 
@@ -89,45 +91,48 @@ public class CharacterController2D : MonoBehaviour {
                 interactableAreaRadius,
                 LayerMask.GetMask("Interactable"));
 
-            Interactable targetItem = null;
-            if (interactables.Length > 0) {
-                foreach (Collider2D i in interactables) {
-                    if (i.TryGetComponent(out Interactable interactable)) {
-                        targetItem = interactable;
+            Interactable targetInteractable = null;
+            if (interactables.Length > 0)
+            {
+                foreach (Collider2D i in interactables)
+                {
+                    if (i.TryGetComponent(out Interactable interactable))
+                    {
+                        targetInteractable = interactable;
 
-                        if (targetItem.TryGetComponent(out Item item)) {
-                            ui_interactDescription.text = item.itemDef.itemDescription;
-                            ui_interactLabel.text = item.itemDef.itemName;
-                        }
+                        OnInteractableProximity?.Invoke(targetInteractable);
 
                         break;
                     }
                 }
             }
-            else {
-                ui_interactDescription.text = "";
-                ui_interactLabel.text = "";
+            else
+            {
+                OnInteractableClear?.Invoke();
             }
-
 
             /***
              * MOVEMENT SECTION
              */
             moveVec2 = new Vector2();
             // movement: left right up down
-            if (Input.GetKey(KeyCode.A) || Input.GetKey(KeyCode.LeftArrow)) {
+            if (Input.GetKey(KeyCode.A) || Input.GetKey(KeyCode.LeftArrow))
+            {
                 moveVec2 += Vector2.left;
             }
 
-            if (Input.GetKey(KeyCode.D) || Input.GetKey(KeyCode.RightArrow)) {
+            if (Input.GetKey(KeyCode.D) || Input.GetKey(KeyCode.RightArrow))
+            {
                 moveVec2 += Vector2.right;
             }
 
-            if (Input.GetKey(KeyCode.W) || Input.GetKey(KeyCode.UpArrow)) {
+            if (Input.GetKey(KeyCode.W) || Input.GetKey(KeyCode.UpArrow))
+            {
                 moveVec2 += Vector2.up;
             }
 
-            if (Input.GetKey(KeyCode.S) || Input.GetKey(KeyCode.DownArrow)) {
+            if (Input.GetKey(KeyCode.S) || Input.GetKey(KeyCode.DownArrow))
+            {
                 moveVec2 += Vector2.down;
             }
 
@@ -135,18 +140,23 @@ public class CharacterController2D : MonoBehaviour {
              * INTERACTION SECTION
              */
 
-            if (Input.GetKeyDown(KeyCode.Space) || Input.GetKeyDown(KeyCode.KeypadEnter)) {
-                if (targetItem) {
-                    Interact(targetItem);
+            if (Input.GetKeyDown(KeyCode.Space) || Input.GetKeyDown(KeyCode.KeypadEnter))
+            {
+                if (targetInteractable)
+                {
+                    Interact(targetInteractable);
                 }
-                else {
+                else
+                {
                     if (heldItem) DropItem();
                 }
             }
 
-            if (Input.GetKeyDown(KeyCode.Q) || Input.GetKeyDown(KeyCode.Alpha0)) {
+            if (Input.GetKeyDown(KeyCode.Q) || Input.GetKeyDown(KeyCode.Alpha0))
+            {
                 // do action maybe
-                if (heldItem) {
+                if (heldItem)
+                {
                     DropItem();
                 }
             }
@@ -154,19 +164,23 @@ public class CharacterController2D : MonoBehaviour {
             /***
              * ANIMATION SECTION
              */
-            if (enableBounce) {
+            if (enableBounce)
+            {
                 // if moving & not already bouncing, initiate a random bounce
-                if (moveVec2 != Vector2.zero && !isBouncing) {
+                if (moveVec2 != Vector2.zero && !isBouncing)
+                {
                     _bounceHeight = Random.Range(bounceMinHeight, bounceMaxHeight);
                     isBouncing = true;
                     bounceUp = true;
                 }
 
                 // if bounce initiated, process this frame's bounce
-                if (isBouncing) {
+                if (isBouncing)
+                {
                     Vector3 oldVector3 = characterSpriteRenderer.transform.localPosition;
                     // bounce direction up
-                    if (bounceUp) {
+                    if (bounceUp)
+                    {
                         characterSpriteRenderer.transform.localPosition = new Vector3(
                             oldVector3.x,
                             Math.Min(_bounceHeight + .3f, oldVector3.y + Time.deltaTime * bounceSpeed),
@@ -174,7 +188,8 @@ public class CharacterController2D : MonoBehaviour {
                         if (characterSpriteRenderer.transform.localPosition.y >= _bounceHeight)
                             bounceUp = false;
                     } // else bounce direction down
-                    else {
+                    else
+                    {
                         characterSpriteRenderer.transform.localPosition = new Vector3(
                             oldVector3.x,
                             Math.Max(0, oldVector3.y - Time.deltaTime * bounceSpeed),
@@ -182,7 +197,8 @@ public class CharacterController2D : MonoBehaviour {
                     }
                 }
 
-                if (characterSpriteRenderer.transform.localPosition.y == 0) {
+                if (characterSpriteRenderer.transform.localPosition.y == 0)
+                {
                     isBouncing = false;
                 }
             }
@@ -194,79 +210,88 @@ public class CharacterController2D : MonoBehaviour {
         }
     }
 
-    private void FixedUpdate() {
-        if (isFrozen) {
+    private void FixedUpdate()
+    {
+        if (isFrozen)
+        {
             rbody.velocity = Vector2.zero;
         }
-        else {
+        else
+        {
             rbody.MovePosition(rbody.position + moveVec2 * speed * Time.deltaTime);
         }
     }
 
-    void Interact(Interactable target) {
+    void Interact(Interactable target)
+    {
         // do some stupid thing with things that are connected
 
         Item returnedItem = target.Interact(heldItem);
 
-        if (!returnedItem) {
+        if (!returnedItem)
+        {
             RemoveItem();
-            heldItem = null;
             //item was taken, nothing returned
         }
-        else if (returnedItem == heldItem) {
+        else if (returnedItem == heldItem)
+        {
             //item was not taken
         }
-        else if (returnedItem != heldItem) {
+        else if (returnedItem != heldItem)
+        {
             //item was taken and new item given
-            
-            if (heldItem) {
+
+            if (heldItem)
+            {
                 RemoveItem();
-                heldItem = null;
             }
 
             AddItem(returnedItem);
         }
     }
 
-    void RemoveItem() {
-        ui_heldLabel.text = "";
-        heldItem.enabled = true;
-        heldItem.doNotReset = false;
-        heldItem.transform.SetParent(null);
-        heldItem.EnableBoxCollider2D();
-    }
-
-    void DropItem() {
-        RemoveItem();
-        heldItem.Drop();
+    void RemoveItem()
+    {
+        OnRemoveItem?.Invoke();
         heldItem = null;
     }
 
-    void AddItem(Item item) {
-        if (heldItem) {
-            DropItem();
+    void DropItem()
+    {
+        heldItem.Dropped();
+        RemoveItem();
+    }
+
+    void AddItem(Item item)
+    {
+        if (heldItem != null)
+        {
+            Debug.LogError("Trying to add item about hands are occupied! (call remove item first)");
         }
-        
+
         heldItem = item;
         heldItem.enabled = false;
         heldItem.doNotReset = true;
-        heldItem.DisableBoxCollider2D();
-        ui_heldLabel.text = heldItem.itemDef.itemName;
+        //ui_heldLabel.text = heldItem.itemDef.itemName;
         heldItem.gameObject.layer = 2; //set layer to ignore raycast
         heldItem.transform.SetParent(hands.transform);
         heldItem.transform.localPosition = Vector3.zero;
         item.itemSpriteRenderer.sortingOrder = Mathf.RoundToInt(transform.position.y * 16f) * -1;
+        OnReceiveItem?.Invoke(heldItem);
     }
 
-    public void Freeze() {
+    public void Freeze()
+    {
         this.isFrozen = true;
     }
 
-    public void UnFreeze() {
+    public void UnFreeze()
+    {
         this.isFrozen = false;
     }
 
-    public void ResetState() {
+    public void ResetState()
+    {
         gameObject.transform.localPosition = startPosition;
     }
 }

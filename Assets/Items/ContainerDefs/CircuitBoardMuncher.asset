@@ -12,6 +12,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9dbbed016a24e464b99bbeb1346f2c62, type: 3}
   m_Name: CircuitBoardMuncher
   m_EditorClassIdentifier: 
+  containerName: Circuit Board Muncher
+  description: 
   defaultSprite: {fileID: 8617373319216870104, guid: aa1146017606a064c986485c58506a5a, type: 3}
   openedSprite: {fileID: 8617373319216870104, guid: aa1146017606a064c986485c58506a5a, type: 3}
   lockType: 0

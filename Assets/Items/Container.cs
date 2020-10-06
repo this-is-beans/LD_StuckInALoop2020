@@ -56,6 +56,7 @@ public class Container : Interactable {
                 Open();
                 if (containerDef.consumesItem) {
                     item.Consume();
+                    return null;
                 }
             }
             else if (item.itemDef == containerDef.destroyItem) {

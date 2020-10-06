@@ -11,12 +11,15 @@ public enum LockType
 
 public class ContainerDef : ScriptableObject
 {
+    public string containerName;
+    public string description;
     public Sprite defaultSprite;
     public Sprite openedSprite;
 
     public LockType lockType;
     public ItemDef keyItem;
     public bool consumesItem;
+    public bool requiresOutsideActivation;
     public ItemDef destroyItem;
 
     public int maxHP;
