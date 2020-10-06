@@ -83,10 +83,10 @@ public class Item : Interactable {
                         transform.position, Quaternion.identity
                     );
                     newItem.SetDef(itemDef.combinableListTarget[i]);
-                    gameObject.SetActive(false);
-                    this.Drop();
-                    item.gameObject.SetActive(false);
-                    item.Drop();
+                    // gameObject.SetActive(false);
+                    Hide();
+                    // item.gameObject.SetActive(false);
+                    item.Hide();
                     newItem.Drop();
                     return null;
                 }
