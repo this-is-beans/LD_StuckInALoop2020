@@ -73,9 +73,11 @@ public class CharacterController2D : MonoBehaviour {
 
     // Update is called once per frame
     void Update() {
-        if (!isFrozen) {
+        if (!isFrozen)
+        {
             characterSpriteRenderer.sortingOrder = (Mathf.RoundToInt(transform.position.y * 16f) * -1);
-            if (heldItem != null) {
+            if (heldItem != null)
+            {
                 heldItem.itemSpriteRenderer.sortingOrder = characterSpriteRenderer.sortingOrder + 1;
             }
 
@@ -86,9 +88,12 @@ public class CharacterController2D : MonoBehaviour {
                 LayerMask.GetMask("Interactable"));
 
             Interactable targetInteractable = null;
-            if (interactables.Length > 0) {
-                foreach (Collider2D i in interactables) {
-                    if (i.TryGetComponent(out Interactable interactable)) {
+            if (interactables.Length > 0)
+            {
+                foreach (Collider2D i in interactables)
+                {
+                    if (i.TryGetComponent(out Interactable interactable))
+                    {
                         targetInteractable = interactable;
 
                         OnInteractableProximity?.Invoke(targetInteractable);
@@ -97,7 +102,8 @@ public class CharacterController2D : MonoBehaviour {
                     }
                 }
             }
-            else {
+            else
+            {
                 OnInteractableClear?.Invoke();
             }
 
@@ -106,27 +112,39 @@ public class CharacterController2D : MonoBehaviour {
              */
             moveVec2 = new Vector2();
             // movement: left right up down
-            if (Input.GetKey(KeyCode.A) || Input.GetKey(KeyCode.LeftArrow)) {
+            if (Input.GetKey(KeyCode.A) || Input.GetKey(KeyCode.LeftArrow))
+            {
                 moveVec2 += Vector2.left;
             }
 
-            if (Input.GetKey(KeyCode.D) || Input.GetKey(KeyCode.RightArrow)) {
+            if (Input.GetKey(KeyCode.D) || Input.GetKey(KeyCode.RightArrow))
+            {
                 moveVec2 += Vector2.right;
             }
 
-            if (Input.GetKey(KeyCode.W) || Input.GetKey(KeyCode.UpArrow)) {
+            if (Input.GetKey(KeyCode.W) || Input.GetKey(KeyCode.UpArrow))
+            {
                 moveVec2 += Vector2.up;
             }
 
-            if (Input.GetKey(KeyCode.S) || Input.GetKey(KeyCode.DownArrow)) {
+            if (Input.GetKey(KeyCode.S) || Input.GetKey(KeyCode.DownArrow))
+            {
                 moveVec2 += Vector2.down;
             }
 
-            if (moveVec2.magnitude > 0) {
-                animator.Play("Base Layer.Walk", 0);
+            if (moveVec2.magnitude > 0)
+            {
+                if (!animator.GetCurrentAnimatorStateInfo(0).IsName("Base Layer.Walk"))
+                {
+                    animator.Play("Base Layer.Walk", 0);
+                }
             }
-            else {
-                animator.Play("Base Layer.Idle", 0);
+            else
+            {
+                if (!animator.GetCurrentAnimatorStateInfo(0).IsName("Base Layer.Idle"))
+                {
+                    animator.Play("Base Layer.Idle", 0);
+                }
             }
             /***
              * INTERACTION SECTION

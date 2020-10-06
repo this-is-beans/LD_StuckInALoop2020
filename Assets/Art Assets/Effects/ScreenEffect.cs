@@ -5,22 +5,29 @@ using UnityEngine;
 public class ScreenEffect : MonoBehaviour
 {
     public Animator screenFade;
-    public Game game;
-
 
     void Start()
     {
-        
+        Game game = FindObjectOfType<Game>();
+        if (game != null)
+        {
+            game.OnTimeRunningOut += FadeInEffects;
+            game.OnReset += FadeOutEffects;
+        }
     }
 
     void Update()
     {
-        if (game.timer < 5)
-        {
-            screenFade.SetBool("Fade", true);
-        } else
-        {
-            screenFade.SetBool("Fade", false);
-        }
+
+    }
+
+    public void FadeInEffects()
+    {
+        screenFade.SetBool("Fade", true);
+    }
+
+    public void FadeOutEffects()
+    {
+        screenFade.SetBool("Fade", false);
     }
 }

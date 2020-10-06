@@ -1,4 +1,5 @@
-﻿using System.Collections;
+﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
@@ -15,7 +16,12 @@ public class Game : MonoBehaviour
     public GameObject timeMachineGameObject;
     public Machine timeMachine;
 
-    [ContextMenu("Resort All Sprites")]
+    bool timeWarning;
+
+    public Action OnTimeRunningOut;
+    public Action OnReset;
+
+    [ContextMenu("Re-sort All Sprites")]
     public void SortSprites()
     {
         SpriteRenderer[] spriteRenderers = FindObjectsOfType<SpriteRenderer>();
@@ -26,7 +32,8 @@ public class Game : MonoBehaviour
         }
     }
 
-    void Start() {
+    void Start()
+    {
         timeMachine = timeMachineGameObject.GetComponent<Machine>();
         timer = ResetTime;
         resetCounter = 0;
@@ -35,22 +42,27 @@ public class Game : MonoBehaviour
 
     void Update()
     {
-        if (!timeMachine.isBroken) {
+        if (!timeMachine.isBroken)
+        {
             // WIN CONDITION
             pause = true;
-            
         }
-       if (pause)
+
+        if (pause)
         {
             return;
         }
 
-
         timer -= Time.deltaTime;
 
-        if (timer <= 0)
+        if (timer < 5 && !timeWarning)
         {
-            StartCoroutine (ResetLoop());
+            timeWarning = true;
+            OnTimeRunningOut?.Invoke();
+        }
+        else if (timer <= 0)
+        {
+            StartCoroutine(ResetLoop());
             pause = true;
         }
 
@@ -58,12 +70,16 @@ public class Game : MonoBehaviour
         //timeDisplayText.text = minutes.ToString("D2") + ":" + seconds.ToString("D2");
     }
 
+    public void WinCondition()
+    {
+        pause = true;
+    }
+
     IEnumerator ResetLoop()
     {
 
         CharacterController2D character = FindObjectOfType<CharacterController2D>();
-        //character.Freeze();
-        
+        //character.Freeze();        
         
         Item[] allItems = FindObjectsOfType<Item>();
 
@@ -126,6 +142,8 @@ public class Game : MonoBehaviour
         timer = ResetTime;
 
         pause = false;
+        OnReset?.Invoke();
+        timeWarning = false;
         resetCounter++;
         resetCounterText.text = "" + resetCounter + " Resets";
     }

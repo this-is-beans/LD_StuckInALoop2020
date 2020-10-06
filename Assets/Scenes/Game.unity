@@ -8400,7 +8400,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   screenFade: {fileID: 1188450015}
-  game: {fileID: 743405311}
 --- !u!95 &1188450015
 Animator:
   serializedVersion: 3
