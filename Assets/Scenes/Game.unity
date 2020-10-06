@@ -4560,7 +4560,6 @@ MonoBehaviour:
   transmutedItemDef: {fileID: 0}
   recipeDefs:
   - {fileID: 11400000, guid: 8a4f4122579b64e7c9c8e1d72340b544, type: 2}
-  consumedItems: []
   spriteRenderer: {fileID: 572111976}
   damageParticle: {fileID: 0}
   minThrowRange: {x: 0, y: 0}
@@ -6974,7 +6973,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5305737756509337921, guid: 24803b97cd003c04d82b4148f6d77d13, type: 3}
       propertyPath: OnActivate.m_PersistentCalls.m_Calls.Array.size
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 5305737756509337921, guid: 24803b97cd003c04d82b4148f6d77d13, type: 3}
       propertyPath: containerDef
@@ -6991,6 +6990,22 @@ PrefabInstance:
     - target: {fileID: 5305737756509337921, guid: 24803b97cd003c04d82b4148f6d77d13, type: 3}
       propertyPath: damageParticle
       value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 5305737756509337921, guid: 24803b97cd003c04d82b4148f6d77d13, type: 3}
+      propertyPath: OnActivate.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 2114093580}
+    - target: {fileID: 5305737756509337921, guid: 24803b97cd003c04d82b4148f6d77d13, type: 3}
+      propertyPath: OnActivate.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
+      value: Machine, Assembly-CSharp
+      objectReference: {fileID: 0}
+    - target: {fileID: 5305737756509337921, guid: 24803b97cd003c04d82b4148f6d77d13, type: 3}
+      propertyPath: OnActivate.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: TryCrafting
+      objectReference: {fileID: 0}
+    - target: {fileID: 5305737756509337921, guid: 24803b97cd003c04d82b4148f6d77d13, type: 3}
+      propertyPath: OnActivate.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
+      value: UnityEngine.Object, UnityEngine
       objectReference: {fileID: 0}
     - target: {fileID: 8271990743670076614, guid: 24803b97cd003c04d82b4148f6d77d13, type: 3}
       propertyPath: m_SpriteTilingProperty.pivot.x
@@ -8633,7 +8648,6 @@ MonoBehaviour:
   recipeDefs:
   - {fileID: 11400000, guid: b3468d7257625425690cbadba9992b2c, type: 2}
   - {fileID: 11400000, guid: 2c5384112966e45529df62bc7364ae61, type: 2}
-  consumedItems: []
   spriteRenderer: {fileID: 1327871357}
   damageParticle: {fileID: 0}
   minThrowRange: {x: 0, y: 0}
@@ -8772,7 +8786,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3538704307158663235, guid: 599e8949fcf76744da9a54a630aeccba, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -11.94
+      value: -12.94
       objectReference: {fileID: 0}
     - target: {fileID: 3538704307158663235, guid: 599e8949fcf76744da9a54a630aeccba, type: 3}
       propertyPath: m_LocalPosition.z
@@ -8812,7 +8826,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6339903713653007023, guid: 599e8949fcf76744da9a54a630aeccba, type: 3}
       propertyPath: m_SortingOrder
-      value: 236
+      value: 207
       objectReference: {fileID: 0}
     - target: {fileID: 7842336455983462737, guid: 599e8949fcf76744da9a54a630aeccba, type: 3}
       propertyPath: m_Name
@@ -11165,7 +11179,7 @@ AudioSource:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1660971056}
-  m_Enabled: 1
+  m_Enabled: 0
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 8300000, guid: 690830f75b8cbb244863d3689c468650, type: 3}
@@ -14017,6 +14031,17 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 4611990e9bebe954da25b6fd3b91075d, type: 3}
+--- !u!114 &2114093580 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 5305737756509337921, guid: 24803b97cd003c04d82b4148f6d77d13, type: 3}
+  m_PrefabInstance: {fileID: 997974607}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 05da0b92a645c544fb4803fe2a7fd7fe, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &2129824880
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -14272,7 +14297,7 @@ PrefabInstance:
       objectReference: {fileID: 196001120}
     - target: {fileID: 4585761087915352806, guid: 6cd8a7c42c6fd8346aee171ba9f4ab09, type: 3}
       propertyPath: ResetTime
-      value: 60
+      value: 600
       objectReference: {fileID: 0}
     - target: {fileID: 4585761087915352806, guid: 6cd8a7c42c6fd8346aee171ba9f4ab09, type: 3}
       propertyPath: resetCounterText
