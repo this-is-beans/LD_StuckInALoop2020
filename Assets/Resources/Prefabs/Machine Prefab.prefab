@@ -99,7 +99,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 0
+  m_SortingOrder: 119
   m_Sprite: {fileID: 0}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
@@ -125,12 +125,15 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   containerDef: {fileID: 0}
   transmutedItemDef: {fileID: 0}
+  recipeDefs: []
   spriteRenderer: {fileID: 5519162463556030457}
   damageParticle: {fileID: 7061308224495887449}
-  minThrowRange: {x: -1, y: -1}
-  maxThrowRange: {x: 1, y: -1.5}
+  minThrowRange: {x: -0.4, y: -0.29}
+  maxThrowRange: {x: 0.83, y: -1.43}
   doNotReset: 0
   currentHP: 0
+  isBroken: 0
+  fixingRecipe: {fileID: 0}
   OnActivate:
     m_PersistentCalls:
       m_Calls:
