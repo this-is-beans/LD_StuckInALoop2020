@@ -190,6 +190,13 @@ public class Item : Interactable
         itemSpriteRenderer.sprite = itemDef.defaultSprite;
     }
 
+    public Item Clone()
+    {
+        Item clone = Instantiate(this);
+        clone.isOriginal = false;
+        return clone;
+    }
+
     public void ResetState()
     {
         if (doNotReset)

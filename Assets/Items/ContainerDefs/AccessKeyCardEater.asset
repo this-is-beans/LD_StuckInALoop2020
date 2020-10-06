@@ -12,8 +12,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9dbbed016a24e464b99bbeb1346f2c62, type: 3}
   m_Name: AccessKeyCardEater
   m_EditorClassIdentifier: 
-  containerName: Access Key Card Eater
-  description: 
+  containerName: Key Card Combiner
+  description: Combine Green and Blue Key Cards
   defaultSprite: {fileID: 4311717631345251028, guid: aa1146017606a064c986485c58506a5a, type: 3}
   openedSprite: {fileID: 4311717631345251028, guid: aa1146017606a064c986485c58506a5a, type: 3}
   acceptedItem: {fileID: 0}

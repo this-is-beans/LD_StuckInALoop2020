@@ -68,6 +68,17 @@ public class Machine : Interactable
 
     bool CheckIfAcceptedItem(Item item)
     {
+        if (recipeDefs != null && recipeDefs.Count > 0)
+        {
+            foreach (RecipeDef recipe in recipeDefs)
+            {
+                if (recipe.requiredItems.Contains(item.itemDef))
+                {
+                    return true;
+                }
+            }
+        }
+
         if (containerDef.acceptedItem == item.itemDef || containerDef.acceptedItems.Contains(item.itemDef))
         {
             return true;

@@ -300,6 +300,14 @@ public class CharacterController2D : MonoBehaviour
 
     public void ResetState()
     {
+        if (heldItem != null)
+        {
+            Item clone = heldItem.Clone();
+            heldItem.doNotReset = false;
+            heldItem.ResetState();
+            RemoveItem();
+            AddItem(clone);
+        }
         gameObject.transform.localPosition = startPosition;
     }
 }
