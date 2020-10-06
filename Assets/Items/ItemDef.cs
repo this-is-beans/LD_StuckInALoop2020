@@ -2,13 +2,13 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public enum ToolType
-{
-    NONE,
-    KEY,
-    SCREWDRIVER,
-
-}
+//public enum ToolType
+//{
+//    NONE,
+//    KEY,
+//    SCREWDRIVER,
+//
+//}
 
 public class ItemDef : ScriptableObject
 {
@@ -18,7 +18,7 @@ public class ItemDef : ScriptableObject
     public Color itemTextColor;
     public string itemDescription;
 
-    public ToolType toolType;
+    //public ToolType toolType;
     public int maxUses;
     public int damageStrength;
 

@@ -12,6 +12,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9dbbed016a24e464b99bbeb1346f2c62, type: 3}
   m_Name: Keyslot_Red
   m_EditorClassIdentifier: 
+  containerName: Red Keycard Reader
+  description: 
   defaultSprite: {fileID: 8173725159927097591, guid: aa1146017606a064c986485c58506a5a, type: 3}
   openedSprite: {fileID: -858629488806664373, guid: aa1146017606a064c986485c58506a5a, type: 3}
   lockType: 0
