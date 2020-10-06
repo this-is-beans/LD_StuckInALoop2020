@@ -13,7 +13,7 @@ public class Machine : Interactable
     public ItemDef transmutedItemDef;
     Item storedItem;
     public List<RecipeDef> recipeDefs;
-    public List<ItemDef> consumedItems;
+    List<ItemDef> consumedItems;
 
     public SpriteRenderer spriteRenderer;
     public ParticleSystem damageParticle;
@@ -41,6 +41,8 @@ public class Machine : Interactable
         {
             Debug.LogError("Machine has no def: " + name);
         }
+
+        consumedItems = new List<ItemDef>();
     }
 
     // Update is called once per frame
@@ -50,8 +52,6 @@ public class Machine : Interactable
 
     private void OnValidate()
     {
-
-
         spriteRenderer = GetComponent<SpriteRenderer>();
         if (containerDef != null)
         {
@@ -66,13 +66,37 @@ public class Machine : Interactable
         }
     }
 
+    bool CheckIfAcceptedItem(Item item)
+    {
+        if (containerDef.acceptedItem == item.itemDef || containerDef.acceptedItems.Contains(item.itemDef))
+        {
+            return true;
+        }
+        else
+        {
+            return false;
+        }
+    }
+
+    bool CheckIfDestructiveItem(Item item)
+    {
+        if (containerDef.destructiveItem == item.itemDef || containerDef.destructiveItems.Contains(item.itemDef))
+        {
+            return true;
+        }
+        else
+        {
+            return false;
+        }
+    }
+
     public override Item Interact(Item item)
     {
         print("interacting with: " + containerDef.name);
         if (!item)
         {
             print("no item given");
-            if (!containerDef.keyItem)
+            if (!containerDef.acceptedItem && containerDef.acceptedItems.Count == 0)
             {
                 if (!isActive)
                 {
@@ -94,10 +118,11 @@ public class Machine : Interactable
         }
         else
         {
-            if (item.itemDef == containerDef.keyItem)
+            if (CheckIfAcceptedItem(item))
             {
-                if (isActive)
+                if (consumedItems.Contains(item.itemDef))
                 {
+                    print("I have already consumed: " + item.itemDef.itemName);
                     return item;
                 }
                 else if (containerDef.consumesItem)
@@ -120,9 +145,16 @@ public class Machine : Interactable
                     return null;
                 }
             }
+            else if (CheckIfDestructiveItem(item))
+            {
+                //Bash(item.itemDef.damageStrength);
+                //item.Deplete(1);
+                return item;
+            }
             else
             {
                 print("You tried to give me an incompatible item, if you wanted to store any item use a Storage object instead.");
+                return item;
             }
         }
 
@@ -140,12 +172,11 @@ public class Machine : Interactable
         print("Activated: " + containerDef.name);
 
         // not sure what this does --blynxy
-        if (!isActive)
-        {
-            isActive = true;
-            spriteRenderer.sprite = containerDef.openedSprite;
-            OnActivate?.Invoke();
-        }
+
+        isActive = true;
+        spriteRenderer.sprite = containerDef.openedSprite;
+        OnActivate?.Invoke();
+
     }
 
     public void TryRepair()
@@ -178,6 +209,7 @@ public class Machine : Interactable
             {
                 if (!consumedItems.Contains(requiredItem))
                 {
+                    print("missing: " + requiredItem.itemName);
                     consumedAllRequiredItems = false;
                     break;
                 }
