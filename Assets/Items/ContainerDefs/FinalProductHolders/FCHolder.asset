@@ -12,11 +12,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9dbbed016a24e464b99bbeb1346f2c62, type: 3}
   m_Name: FCHolder
   m_EditorClassIdentifier: 
+  containerName: Fuel Crystal Holder
+  description: 
   defaultSprite: {fileID: 2760429795273398444, guid: aa1146017606a064c986485c58506a5a, type: 3}
   openedSprite: {fileID: 2760429795273398444, guid: aa1146017606a064c986485c58506a5a, type: 3}
   lockType: 0
   keyItem: {fileID: 11400000, guid: 4d02c05b3a2474643b936658104b2da6, type: 2}
   consumesItem: 1
+  requiresOutsideActivation: 0
   destroyItem: {fileID: 0}
   maxHP: 0
   isInvincible: 1

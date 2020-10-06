@@ -47,7 +47,7 @@ public class CharacterController2D : MonoBehaviour
 
     // ANIMATION
 
-    Animator animator;
+    public Animator animator;
 
     /** space to think
     
@@ -61,7 +61,7 @@ public class CharacterController2D : MonoBehaviour
 
     void Start()
     {
-        animator = gameObject.GetComponent<Animator>();
+        //animator = gameObject.GetComponentInChildren<Animator>();
         rbody = gameObject.GetComponent<Rigidbody2D>();
 
         startPosition = gameObject.transform.position;
@@ -136,6 +136,14 @@ public class CharacterController2D : MonoBehaviour
                 moveVec2 += Vector2.down;
             }
 
+            if (moveVec2.magnitude > 0)
+            {
+                animator.Play("Base Layer.Walk", 0);
+            }
+            else
+            {
+                animator.Play("Base Layer.Idle", 0);
+            }
             /***
              * INTERACTION SECTION
              */
@@ -164,44 +172,44 @@ public class CharacterController2D : MonoBehaviour
             /***
              * ANIMATION SECTION
              */
-            if (enableBounce)
-            {
-                // if moving & not already bouncing, initiate a random bounce
-                if (moveVec2 != Vector2.zero && !isBouncing)
-                {
-                    _bounceHeight = Random.Range(bounceMinHeight, bounceMaxHeight);
-                    isBouncing = true;
-                    bounceUp = true;
-                }
-
-                // if bounce initiated, process this frame's bounce
-                if (isBouncing)
-                {
-                    Vector3 oldVector3 = characterSpriteRenderer.transform.localPosition;
-                    // bounce direction up
-                    if (bounceUp)
-                    {
-                        characterSpriteRenderer.transform.localPosition = new Vector3(
-                            oldVector3.x,
-                            Math.Min(_bounceHeight + .3f, oldVector3.y + Time.deltaTime * bounceSpeed),
-                            0);
-                        if (characterSpriteRenderer.transform.localPosition.y >= _bounceHeight)
-                            bounceUp = false;
-                    } // else bounce direction down
-                    else
-                    {
-                        characterSpriteRenderer.transform.localPosition = new Vector3(
-                            oldVector3.x,
-                            Math.Max(0, oldVector3.y - Time.deltaTime * bounceSpeed),
-                            0);
-                    }
-                }
-
-                if (characterSpriteRenderer.transform.localPosition.y == 0)
-                {
-                    isBouncing = false;
-                }
-            }
+            //if (enableBounce)
+            //{
+            //    // if moving & not already bouncing, initiate a random bounce
+            //    if (moveVec2 != Vector2.zero && !isBouncing)
+            //    {
+            //        _bounceHeight = Random.Range(bounceMinHeight, bounceMaxHeight);
+            //        isBouncing = true;
+            //        bounceUp = true;
+            //    }
+            //
+            //    // if bounce initiated, process this frame's bounce
+            //    if (isBouncing)
+            //    {
+            //        Vector3 oldVector3 = characterSpriteRenderer.transform.localPosition;
+            //        // bounce direction up
+            //        if (bounceUp)
+            //        {
+            //            characterSpriteRenderer.transform.localPosition = new Vector3(
+            //                oldVector3.x,
+            //                Math.Min(_bounceHeight + .3f, oldVector3.y + Time.deltaTime * bounceSpeed),
+            //                0);
+            //            if (characterSpriteRenderer.transform.localPosition.y >= _bounceHeight)
+            //                bounceUp = false;
+            //        } // else bounce direction down
+            //        else
+            //        {
+            //            characterSpriteRenderer.transform.localPosition = new Vector3(
+            //                oldVector3.x,
+            //                Math.Max(0, oldVector3.y - Time.deltaTime * bounceSpeed),
+            //                0);
+            //        }
+            //    }
+            //
+            //    if (characterSpriteRenderer.transform.localPosition.y == 0)
+            //    {
+            //        isBouncing = false;
+            //    }
+            //}
 
 
             //transform.position = new Vector3(
