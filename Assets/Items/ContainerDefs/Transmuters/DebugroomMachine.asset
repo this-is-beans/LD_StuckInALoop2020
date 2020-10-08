@@ -16,10 +16,11 @@ MonoBehaviour:
   description: 
   defaultSprite: {fileID: 4311717631345251028, guid: aa1146017606a064c986485c58506a5a, type: 3}
   openedSprite: {fileID: 4311717631345251028, guid: aa1146017606a064c986485c58506a5a, type: 3}
-  acceptedItem: {fileID: 0}
+  acceptedItem: {fileID: 11400000, guid: 20519acb7ccf10341b7cdf47f127a1bc, type: 2}
   acceptedItems:
   - {fileID: 11400000, guid: 20519acb7ccf10341b7cdf47f127a1bc, type: 2}
-  destructiveItem: {fileID: 0}
+  - {fileID: 11400000, guid: 1637f022570a5be448629f913dfa06a6, type: 2}
+  destructiveItem: {fileID: 11400000, guid: 4d02c05b3a2474643b936658104b2da6, type: 2}
   destructiveItems:
   - {fileID: 11400000, guid: 4d02c05b3a2474643b936658104b2da6, type: 2}
   consumesItem: 0
