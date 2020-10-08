@@ -1,0 +1,21 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: cdb1be981cae4e1ebbc058002fd01921, type: 3}
+  m_Name: _Debug_RockAndGooToCrystal
+  m_EditorClassIdentifier: 
+  recipeName: Charge Battery
+  recipeDescription: 
+  requiredItems:
+  - {fileID: 11400000, guid: 1637f022570a5be448629f913dfa06a6, type: 2}
+  - {fileID: 11400000, guid: 20519acb7ccf10341b7cdf47f127a1bc, type: 2}
+  returnedItems:
+  - {fileID: 11400000, guid: 4d02c05b3a2474643b936658104b2da6, type: 2}
