@@ -10,7 +10,7 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 9dbbed016a24e464b99bbeb1346f2c62, type: 3}
-  m_Name: DebugroomMachine
+  m_Name: DebugroomMachine_ConsumesItems
   m_EditorClassIdentifier: 
   containerName: Machine Four
   description: 
@@ -23,7 +23,7 @@ MonoBehaviour:
   destructiveItem: {fileID: 11400000, guid: 4d02c05b3a2474643b936658104b2da6, type: 2}
   destructiveItems:
   - {fileID: 11400000, guid: 4d02c05b3a2474643b936658104b2da6, type: 2}
-  consumesItem: 0
+  consumesItem: 1
   requiresOutsideActivation: 0
   maxHP: 0
   isInvincible: 1
