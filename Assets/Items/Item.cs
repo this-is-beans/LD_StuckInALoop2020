@@ -15,7 +15,7 @@ public class Item : Interactable
     public bool doNotReset;
 
     Vector2 originalPosition;
-    bool isOriginal;
+    public bool isOriginal;
     private BoxCollider2D boxCollider;
 
     public Action<Item> OnTaken;
@@ -53,7 +53,7 @@ public class Item : Interactable
             gameObject.layer = 8; //set layer to interactable
         }
 
-        isOriginal = true; //items placed in the world in the editor won't be destroyed on reset
+        //isOriginal = true; //items placed in the world in the editor won't be destroyed on reset
     }
 
     public void SetDef(ItemDef itemDef)
@@ -199,6 +199,8 @@ public class Item : Interactable
 
     public void ResetState()
     {
+        //Debug.Log("resetting " + itemDef.itemName);
+
         if (doNotReset)
         {
             return;
@@ -220,6 +222,7 @@ public class Item : Interactable
         }
         else
         {
+            //Debug.Log("destroying " + itemDef.itemName);
             Destroy(gameObject);
         }
     }
