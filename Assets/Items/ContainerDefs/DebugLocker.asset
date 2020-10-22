@@ -1,0 +1,26 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9dbbed016a24e464b99bbeb1346f2c62, type: 3}
+  m_Name: DebugLocker
+  m_EditorClassIdentifier: 
+  containerName: Locker
+  description: Require Rock to open
+  defaultSprite: {fileID: -7805655902021012329, guid: aa1146017606a064c986485c58506a5a, type: 3}
+  openedSprite: {fileID: -3874083704860503495, guid: aa1146017606a064c986485c58506a5a, type: 3}
+  acceptedItem: {fileID: 11400000, guid: 20519acb7ccf10341b7cdf47f127a1bc, type: 2}
+  acceptedItems: []
+  destructiveItem: {fileID: 0}
+  destructiveItems: []
+  consumesItem: 0
+  requiresOutsideActivation: 0
+  maxHP: 3
+  isInvincible: 0
