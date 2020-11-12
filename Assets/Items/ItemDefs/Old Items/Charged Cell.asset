@@ -17,7 +17,7 @@ MonoBehaviour:
   damagedSprite: {fileID: 21300000, guid: 1f1d840cdf75b2a40b105485b5ec5a82, type: 3}
   itemTextColor: {r: 0, g: 1, b: 0, a: 0}
   itemDescription: This battery is ready to go!
-  toolType: 0
   maxUses: 1
+  damageStrength: 0
   combinableList: []
   combinableListTarget: []

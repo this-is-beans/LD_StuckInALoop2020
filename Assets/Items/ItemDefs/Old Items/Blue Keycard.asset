@@ -17,7 +17,7 @@ MonoBehaviour:
   damagedSprite: {fileID: 0}
   itemTextColor: {r: 0, g: 0.31312633, b: 1, a: 0}
   itemDescription: Blue-level security access.
-  toolType: 0
   maxUses: 0
+  damageStrength: 0
   combinableList: []
   combinableListTarget: []
